@@ -90,6 +90,9 @@
         });
     });
     xhr.send(null);
+
+    document.onmousedown = function( ev ){ if( ev.button == 2 ) document.isRightClick = true; }
+	document.onmouseup = function( ev ){ document.isRightClick = false;	}
 </script>
 </body>
 
