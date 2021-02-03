@@ -1,4 +1,16 @@
 {
-	"groups": [],
-	"resources": []
+	"groups": [
+		{
+			"keys": "lobby_json",
+			"name": "lobby"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/lobby.json",
+			"type": "sheet",
+			"name": "lobby_json",
+			"subkeys": "ad_bg,ad_frame,avatar,bar_bottom,bar_up,bg,btn_bank,btn_bg_off,btn_bg_on,btn_collect,btn_deal,btn_disable,btn_player_outline,btn_setting,ends_in,experience_bg,experience_progress_bar,icon_coin,icon_dinero,icon_experience,icon_facebook,icon_gift,icon_info,icon_piggybank,icon_profile,icon_support,icon_survey_on,icon_tournament,icon_vip_club,icon_wheel,icon_zendesk,locked,number_bg,page_point,page_point_bg,popup_bg_side,puzzle_icon,puzzle_special_event,red_point,ribbon,side_tab_dark,side_tab_light,starts_in,time_base_lobby,wheel_cover,wheel_light,wheel_light_bg,wheel_time_bg"
+		}
+	]
 }

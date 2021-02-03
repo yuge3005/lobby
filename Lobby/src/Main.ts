@@ -1,5 +1,7 @@
 class Main extends egret.DisplayObjectContainer {
 
+    protected isMobile: boolean;
+
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
@@ -42,7 +44,20 @@ class Main extends egret.DisplayObjectContainer {
      * 创建游戏场景
      * Create a game scene
      */
-    private createGameScene() {
-        
+    private async createGameScene() {
+        await RES.loadGroup( "lobby", 0, new LoadingUI );
+        let stageW = this.stage.stageWidth;
+		let stageH = this.stage.stageHeight;
+		let isMobile: boolean = stageW < stageH;
+		try{
+			isMobile = eval( "isMobile()" );
+		}catch(e){}
+		this.isMobile = isMobile;
+
+		if( isMobile ){
+			this.x = stageW;
+			this.rotation = 90;
+		}
+		this.addChild( new Lobby );
     }
 }
