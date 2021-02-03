@@ -1,6 +1,6 @@
 class GameTabLayer extends egret.DisplayObjectContainer{
 
-	public static tabStrings: Array<string> = ["favorite", "multiplayer", "slot", "bingo"];
+	public static tabStrings: Array<string> = ["favorite", "multiplayer", "Slot", "bingo"];
     private tabs: Array<TouchDownButton> = [];
 	private tabsTx: Array<TextLabel> = [];
 
