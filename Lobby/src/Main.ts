@@ -46,6 +46,7 @@ class Main extends egret.DisplayObjectContainer {
      */
     private async createGameScene() {
         await RES.loadGroup( "lobby", 0, new LoadingUI );
+
         let stageW = this.stage.stageWidth;
 		let stageH = this.stage.stageHeight;
 		let isMobile: boolean = stageW < stageH;
@@ -60,6 +61,8 @@ class Main extends egret.DisplayObjectContainer {
 		}
         this.scaleX = 960/2250;
         this.scaleY = 540/1125;
+        
+        MuLang.txt = RES.getRes( "lobby_tx" );
 		this.addChild( new Lobby );
     }
 }
