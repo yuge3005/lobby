@@ -58,6 +58,8 @@ class Main extends egret.DisplayObjectContainer {
 			this.x = stageW;
 			this.rotation = 90;
 		}
+        this.scaleX = 960/2250;
+        this.scaleY = 540/1125;
 		this.addChild( new Lobby );
     }
 }
