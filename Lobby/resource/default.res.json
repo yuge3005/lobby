@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "lobby_json,open_list_mp3,lobby_tx",
+			"keys": "lobby_json,open_list_mp3,lobby_tx,game_icons_json",
 			"name": "lobby"
 		}
 	],
@@ -21,6 +21,12 @@
 			"url": "config/lobby.tx",
 			"type": "json",
 			"name": "lobby_tx"
+		},
+		{
+			"url": "assets/game_icons.json",
+			"type": "sheet",
+			"name": "game_icons_json",
+			"subkeys": "25_lines,7_bingo,Golden_fortune_icon,T90,T90s,american_champion,bingo_3,bingo_bene,bingo_glow,bingo_glow_long,bingo_money_icon,black_star,bonus_bingo,carnaval,coming_soon,coming_soon_long,copacabana,double_bingo,double_mania,era_do_gelo,game_icon,gold_ball,green_mark,halloween,halloweenX,hot_bingo,icon_VIPbingo,icon_aztecs,icon_carnaval_long,icon_prakaramba,lotto,lucky_diamond,mexico,mexico_long,nineballs,orange_mark,pachinko_2,pachinko_3,paris,paris_long,pharao_s,pink_mark,red_mark,showball_1,showball_2,showball_3,silver_ball,super-goal,turbomania"
 		}
 	]
 }
