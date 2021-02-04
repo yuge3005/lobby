@@ -152,11 +152,11 @@ class GameIconListLayer extends egret.Sprite{
 		this.dragStarContentX = this.currentContent.x;
 	}
 
-	private dragSliderPosition( x: number ){
-		x -= this.dragStarStageX;
-		x /= this.parent.parent.parent.scaleX;
-		x += this.dragStarContentX;
-		let p: number = x;
+	private dragSliderPosition( dis: number ){
+		dis -= Main.isMobile ? this.dragStarStageY : this.dragStarStageX;
+		dis /= this.parent.parent.parent.scaleX;
+		dis += this.dragStarContentX;
+		let p: number = dis;
 		if( p > 0 ) p = 0;
 		if( p < -this.contentWidth ) p = -this.contentWidth;
 		this.currentContent.x = p;
@@ -173,15 +173,16 @@ class GameIconListLayer extends egret.Sprite{
 
 	private onMove( event: egret.TouchEvent ){
 		if( !this.draging ){
-			if( Math.abs( event.stageX - this.dragStarStageX ) < 5  ) return;
-			if( Math.abs( event.stageX - this.dragStarStageX ) < Math.abs( event.stageY - this.dragStarStageY ) ){
+			if( ( !Main.isMobile && Math.abs( event.stageX - this.dragStarStageX ) < 5)  || (Main.isMobile && Math.abs( event.stageY - this.dragStarStageY ) < 5) ) return;
+			if( ( !Main.isMobile && Math.abs( event.stageX - this.dragStarStageX ) < Math.abs( event.stageY - this.dragStarStageY ) )
+				|| ( Main.isMobile && Math.abs( event.stageY - this.dragStarStageY ) < Math.abs( event.stageX - this.dragStarStageX ) ) ){
 				this.onGameListStopDrag( null );
 				return;
 			}
 			else this.draging = true;
 		}
 
-		this.dragSliderPosition( event.stageX );
+		this.dragSliderPosition( Main.isMobile ? event.stageY : event.stageX );
 	}
 
 	private resetDraging(){

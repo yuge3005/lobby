@@ -1,6 +1,6 @@
 class Main extends egret.DisplayObjectContainer {
 
-    protected isMobile: boolean;
+    public static isMobile: boolean;
 
     public constructor() {
         super();
@@ -53,7 +53,7 @@ class Main extends egret.DisplayObjectContainer {
 		try{
 			isMobile = eval( "isMobile()" );
 		}catch(e){}
-		this.isMobile = isMobile;
+		Main.isMobile = isMobile;
 
 		if( isMobile ){
 			this.x = stageW;
