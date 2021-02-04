@@ -11,6 +11,8 @@ class GameTabLayer extends egret.DisplayObjectContainer{
 
 		GameTabLayer.tabStrings.map( this.buildTab.bind( this ) );
 		this.cacheAsBitmap = true;
+
+		this.setTabTo( 0 );
 	}
 
 	private buildTab( item: string, index: number ){

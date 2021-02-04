@@ -38,11 +38,14 @@ class GameIconListLayer extends egret.Sprite{
 		this.favoriteList = [];
 		for( let i: number = 0; i < lists.length; i++ ){
 			let index: number = GameTabLayer.tabStrings.indexOf( lists[i]["category"] );
+			let isMulty: boolean = lists[i]["category"] == "multiplayer";
 			if( index >= 0 ){
 				this.iconListPages[ index ] = new egret.DisplayObjectContainer;
 				let j: number;
 				for( j = 0; j < lists[i]["list"].length; j++ ){
-					let pt: egret.Point = this.getPositionOnContent( j );
+					let pt: egret.Point;
+					if( isMulty ) pt = this.getSlotPosition( j );
+					else pt = this.getPositionOnContent( j );
 					if( GameIconsMapping[lists[i]["list"][j].id] ){
 						let iconName: string = GameIconsMapping[lists[i]["list"][j].id]["gameSmallIcon"];
 						this.buildIconByNameId( this.iconListPages[ index ], iconName, pt, lists[i]["list"][j].id );
@@ -50,11 +53,11 @@ class GameIconListLayer extends egret.Sprite{
 						this.setFav( lists[i]["list"][j].fav, lists[i]["list"][j] );
 					}
 					else{
-						let comingSoon: egret.Bitmap = Com.addBitmapAt( this.iconListPages[ index ], "game_icons_json.coming_soon", pt.x, pt.y );
+						let comingSoon: egret.Bitmap = Com.addBitmapAt( this.iconListPages[ index ], "game_icons_json.coming_soon" + ( isMulty ? "_long" : "" ), pt.x, pt.y );
 						comingSoon.scaleX = comingSoon.scaleY = 2;
 					}
 				}
-				this.pageMaxSize[index] = ( Math.ceil( j / 8 ) - 1 ) * this.pageWidth;
+				this.pageMaxSize[index] = ( Math.ceil( j / ( isMulty ? 4 : 8 ) ) - 1 ) * this.pageWidth;
 			}
 		}
 		
@@ -96,7 +99,7 @@ class GameIconListLayer extends egret.Sprite{
 		let i: number;
 		for( i = 0; i < newList.length; i++ ){
 			let pt: egret.Point = this.getPositionOnContent( i );
-			let iconName: string = GameIconsMapping[newList[i]["id"]]["gameSmallIcon"];
+			let iconName: string = GameIconsMapping[newList[i]["id"]]["favoriteIcon"];
 			let btn: TouchDownButton = this.buildIconByNameId( this.iconListPages[0], iconName, pt, newList[i]["id"] );
 		}
 		this.pageMaxSize[0] = ( Math.ceil( i / 8 ) - 1 ) * this.pageWidth;
@@ -105,6 +108,12 @@ class GameIconListLayer extends egret.Sprite{
 	private getPositionOnContent( i: number ): egret.Point{
 		let px: number = i % 4 * 386 + Math.floor( i / 8 ) * this.pageWidth;
 		let py: number = Math.floor( i % 8 / 4 ) * 350;
+		return new egret.Point( px, py );
+	}
+
+	private getSlotPosition( i: number ): egret.Point{
+		let px: number = i % 4 * 386 + Math.floor( i / 4 ) * this.pageWidth;
+		let py: number = 42;
 		return new egret.Point( px, py );
 	}
 
