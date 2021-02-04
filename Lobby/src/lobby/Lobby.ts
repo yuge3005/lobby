@@ -2,7 +2,9 @@ class Lobby extends egret.DisplayObjectContainer{
 
 	// private featureArea: FeatureArea;
     private gameList: GameList;
-	
+    private topBar: TopBar;
+    private socialBar: SocialBar;
+
 	public constructor() {
 		super();
 
@@ -17,5 +19,28 @@ class Lobby extends egret.DisplayObjectContainer{
         this.gameList = new GameList();
         this.gameList.loadGameList(PlayerConfig.player("canvas_data.icon_list"));
         Com.addObjectAt(this, this.gameList, 0, 0);
-	}
+
+        // top bar
+        this.topBar = new TopBar();
+        // this.topBar.addEventListener(Lobby.SHOW_BANK, this.showBank, this);
+        // this.topBar.addEventListener(Lobby.SHOW_USER_PROFILES, this.showUserProfile, this);
+        Com.addObjectAt(this, this.topBar, 0, 0);
+
+        // social bar
+        this.socialBar = new SocialBar();
+        // this.socialBar.addEventListener(Lobby.SHOW_BANK, this.showBank, this);
+        // this.socialBar.addEventListener(Lobby.SHOW_PUZZLE, this.showPuzzle, this);
+        // this.socialBar.addEventListener(Lobby.FIRST_WITH_PUZZLE, this.showPuzzleTutorial, this);
+        Com.addObjectAt(this, this.socialBar, 0, 940);
+
+        this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
+    }
+
+    /**
+     * on add to stage callback
+     */
+    private onAddToStage(): void {
+        // show enter lobby popup
+        Trigger.enterLobby();
+    }
 }
