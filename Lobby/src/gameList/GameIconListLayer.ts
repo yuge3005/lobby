@@ -46,16 +46,8 @@ class GameIconListLayer extends egret.Sprite{
 					if( GameIconsMapping[lists[i]["list"][j].id] ){
 						let iconName: string = GameIconsMapping[lists[i]["list"][j].id]["gameSmallIcon"];
 						this.buildIconByNameId( this.iconListPages[ index ], iconName, pt, lists[i]["list"][j].id );
-
-						let favIndex: number = lists[i]["list"][j].fav;
-						if( favIndex >= 0 ){
-							if( !this.favoriteList[favIndex] ) this.favoriteList[favIndex] = lists[i]["list"][j];
-							else{
-								egret.error( "favorite index error" );
-								egret.log( this.favoriteList[favIndex] );
-								egret.log( lists[i]["list"][j] );
-							}
-						}
+						
+						this.setFav( lists[i]["list"][j].fav, lists[i]["list"][j] );
 					}
 					else{
 						let comingSoon: egret.Bitmap = Com.addBitmapAt( this.iconListPages[ index ], "game_icons_json.coming_soon", pt.x, pt.y );
@@ -68,6 +60,17 @@ class GameIconListLayer extends egret.Sprite{
 		
 		this.buildFavoriteList();
 		this.setContent( this.iconListPages[0] );
+	}
+
+	private setFav( favIndex: number, item: Object ){
+		if( favIndex >= 0 ){
+			if( !this.favoriteList[favIndex] ) this.favoriteList[favIndex] = item;
+			else{
+				egret.error( "favorite index error" );
+				egret.log( this.favoriteList[favIndex] );
+				egret.log( item );
+			}
+		}
 	}
 
 	private buildFavoriteList(){
