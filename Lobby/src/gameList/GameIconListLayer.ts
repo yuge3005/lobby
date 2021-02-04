@@ -3,18 +3,30 @@ class GameIconListLayer extends egret.Sprite{
 	private iconListPages: Array<egret.DisplayObjectContainer>;
 	private pageMaxSize: Array<number>;
 
+	private get contentWidth(): number{
+		let index: number = this.iconListPages.indexOf( this.currentContent );
+		return this.pageMaxSize[index];
+	}
+
 	private pageWidth: number = 1600;
+	private maskRect: egret.Rectangle;
 
 	private currentContent: egret.DisplayObjectContainer;
 
 	private favoriteList: Array<Object>;
 
+	private dragStarStageX: number;
+	private dragStarStageY: number;
+	private dragStarContentX: number;
+
+	private draging: boolean;
+
 	public constructor() {
 		super();
 
-		let maskRect: egret.Rectangle = new egret.Rectangle( 0, 0, 1524, 700 );
-		this.mask = maskRect;
-		GraphicTool.drawRect( this, maskRect, 0, true, 0.0 );
+		this.maskRect = new egret.Rectangle( 0, 0, 1524, 700 );
+		this.mask = this.maskRect;
+		GraphicTool.drawRect( this, this.maskRect, 0, true, 0.0 );
 
 		this.addEventListener( egret.TouchEvent.TOUCH_BEGIN, this.onStartDrag, this );
 	}
@@ -50,9 +62,10 @@ class GameIconListLayer extends egret.Sprite{
 					else{
 						let comingSoon: egret.Bitmap = Com.addBitmapAt( this.iconListPages[ index ], "game_icons_json.coming_soon", px, py );
 						comingSoon.scaleX = comingSoon.scaleY = 2;
+						comingSoon.touchEnabled = false;
 					}
 				}
-				this.pageMaxSize[index] = Math.floor( j / 8 );
+				this.pageMaxSize[index] = ( Math.ceil( j / 8 ) - 1 ) * this.pageWidth;
 			}
 		}
 		
@@ -80,7 +93,8 @@ class GameIconListLayer extends egret.Sprite{
 		}
 		this.favoriteList = newList;
 		this.iconListPages[0] = new egret.DisplayObjectContainer;
-		for( let i: number = 0; i < newList.length; i++ ){
+		let i: number;
+		for( i = 0; i < newList.length; i++ ){
 			let px: number = i % 4 * 386 + Math.floor( i / 8 ) * this.pageWidth;
 			let py: number = Math.floor( i % 8 / 4 ) * 350;
 
@@ -89,6 +103,7 @@ class GameIconListLayer extends egret.Sprite{
 			btn.scaleX = btn.scaleY = 2;
 			btn.name = "" + newList[i]["id"];
 		}
+		this.pageMaxSize[0] = ( Math.ceil( i / 8 ) - 1 ) * this.pageWidth;
 	}
 
 	private setContent( content: egret.DisplayObjectContainer ){
@@ -98,6 +113,7 @@ class GameIconListLayer extends egret.Sprite{
 	}
 
 	private openGame( event: egret.TouchEvent ){
+		if( this.draging )return;
 		this.recordFavoriteIndex( event.target.name );
 		localStorage.setItem( "gotoGame" + event.target.name, "true" );
 		document.location.href = GameIconsMapping[event.target.name].gameURL;
@@ -129,16 +145,42 @@ class GameIconListLayer extends egret.Sprite{
 		this.stage.addEventListener( egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, this.onGameListStopDrag, this );
 		this.stage.addEventListener( egret.TouchEvent.TOUCH_MOVE, this.onMove, this );
 
-		// this.dragStarStageY = event.stageY;
-		// this.dragStarSliderY = this.slider.y;
-		// this.dragSliderPosition( event.stageY );
+		this.dragStarStageX = event.stageX;
+		this.dragStarStageY = event.stageY;
+		this.dragStarContentX = this.currentContent.x;
+	}
+
+	private dragSliderPosition( x: number ){
+		x -= this.dragStarStageX;
+		x /= this.parent.parent.parent.scaleX;
+		x += this.dragStarContentX;
+		let p: number = x;
+		if( p > 0 ) p = 0;
+		if( p < -this.contentWidth ) p = -this.contentWidth;
+		this.currentContent.x = p;
 	}
 
 	private onGameListStopDrag( event: egret.TouchEvent ){
-
+		this.stage.removeEventListener( egret.TouchEvent.TOUCH_END, this.onGameListStopDrag, this );
+		this.stage.removeEventListener( egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, this.onGameListStopDrag, this );
+		this.stage.removeEventListener( egret.TouchEvent.TOUCH_MOVE, this.onMove, this );
+		setTimeout( this.resetDraging.bind(this), 33 );
 	}
 
 	private onMove( event: egret.TouchEvent ){
+		if( !this.draging ){
+			if( Math.abs( event.stageX - this.dragStarStageX ) < 5  ) return;
+			if( Math.abs( event.stageX - this.dragStarStageX ) < Math.abs( event.stageY - this.dragStarStageY ) ){
+				this.onGameListStopDrag( null );
+				return;
+			}
+			else this.draging = true;
+		}
 
+		this.dragSliderPosition( event.stageX );
+	}
+
+	private resetDraging(){
+		this.draging = false;
 	}
 }
