@@ -4,14 +4,14 @@ class GameIconListLayer extends egret.Sprite{
 	private pageMaxSize: Array<number>;
 
 	private get contentWidth(): number{
-		let index: number = this.iconListPages.indexOf( this.currentContent );
-		return this.pageMaxSize[index];
+		return this.pageMaxSize[this.currentContentIndex];
 	}
 
 	private pageWidth: number = 1600;
 	private maskRect: egret.Rectangle;
 
 	private currentContent: egret.DisplayObjectContainer;
+	private currentContentIndex: number;
 
 	private favoriteList: Array<Object>;
 
@@ -29,6 +29,7 @@ class GameIconListLayer extends egret.Sprite{
 		GraphicTool.drawRect( this, this.maskRect, 0, true, 0.0 );
 
 		this.addEventListener( egret.TouchEvent.TOUCH_BEGIN, this.onStartDrag, this );
+		this.touchEnabled = true;
 	}
 
 	public loadGameList( lists: Array<Object> ){
@@ -110,6 +111,7 @@ class GameIconListLayer extends egret.Sprite{
 		this.removeChildren();
 		this.addChild( content );
 		this.currentContent = content;
+		this.currentContentIndex = this.iconListPages.indexOf( this.currentContent );
 	}
 
 	private openGame( event: egret.TouchEvent ){
@@ -165,6 +167,8 @@ class GameIconListLayer extends egret.Sprite{
 		this.stage.removeEventListener( egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, this.onGameListStopDrag, this );
 		this.stage.removeEventListener( egret.TouchEvent.TOUCH_MOVE, this.onMove, this );
 		setTimeout( this.resetDraging.bind(this), 33 );
+
+		if( this.draging ) TweenerTool.tweenTo( this.currentContent, { x: Math.round( this.currentContent.x / this.pageWidth ) * this.pageWidth }, 400, 0, null, null, egret.Ease.backOut );
 	}
 
 	private onMove( event: egret.TouchEvent ){
@@ -182,5 +186,9 @@ class GameIconListLayer extends egret.Sprite{
 
 	private resetDraging(){
 		this.draging = false;
+	}
+
+	public setListTo( index: number ){
+		this.setContent( this.iconListPages[index] );
 	}
 }

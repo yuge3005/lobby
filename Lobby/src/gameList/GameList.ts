@@ -20,6 +20,8 @@ class GameList extends egret.DisplayObjectContainer {
     }
 
     public tabChange( event: egret.Event ){
-        this.tabLayer.setTabTo( Number( event.data ) );
+        let index: number = Number( event.data );
+        this.tabLayer.setTabTo( index );
+        this.iconListLayer.setListTo( index );
     }
 }
