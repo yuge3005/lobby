@@ -1,28 +1,32 @@
-class GameIconListLayer extends egret.ScrollView{
+class GameIconListLayer extends egret.Sprite{
 
-	private iconListPages: Array<egret.Sprite>;
+	private iconListPages: Array<egret.DisplayObjectContainer>;
+	private pageMaxSize: Array<number>;
+
+	private pageWidth: number = 1600;
+
+	private currentContent: egret.DisplayObjectContainer
 
 	public constructor() {
 		super();
 
-		this.width = 1524;
-		this.height = 700;
+		let maskRect: egret.Rectangle = new egret.Rectangle( 0, 0, 1524, 700 );
+		this.mask = maskRect;
+		GraphicTool.drawRect( this, maskRect, 0, true, 0.0 );
 
-		this.verticalScrollPolicy = "off";
-		this.horizontalScrollPolicy = "on";
-
-		this.bounces = false;
-		this.addEventListener( egret.TouchEvent.TOUCH_END, this.onTouchEnd, this );
+		this.addEventListener( egret.TouchEvent.TOUCH_BEGIN, this.onStartDrag, this );
 	}
 
 	public loadGameList( lists: Array<Object> ){
 		this.iconListPages = [];
+		this.pageMaxSize = [];
 		for( let i: number = 0; i < lists.length; i++ ){
 			let index: number = GameTabLayer.tabStrings.indexOf( lists[i]["category"] );
 			if( index >= 0 ){
-				this.iconListPages[ index ] = new egret.Sprite;
-				for( let j: number = 0; j < lists[i]["list"].length; j++ ){
-					let px: number = j % 4 * 386 + Math.floor( j / 8 ) * 1600;
+				this.iconListPages[ index ] = new egret.DisplayObjectContainer;
+				let j: number;
+				for( j = 0; j < lists[i]["list"].length; j++ ){
+					let px: number = j % 4 * 386 + Math.floor( j / 8 ) * this.pageWidth;
 					let py: number = Math.floor( j % 8 / 4 ) * 350;
 					if( GameIconsMapping[lists[i]["list"][j].id] ){
 						let iconName: string = GameIconsMapping[lists[i]["list"][j].id]["gameSmallIcon"];
@@ -34,17 +38,29 @@ class GameIconListLayer extends egret.ScrollView{
 						comingSoon.scaleX = comingSoon.scaleY = 2;
 					}
 				}
-				GraphicTool.drawRect( this.iconListPages[ index ], new egret.Rectangle( 0, 0, this.iconListPages[ index ].width, this.iconListPages[ index ].height ), 0, true, 0.0 );
+				this.pageMaxSize[index] = Math.floor( j / 8 );
 			}
 		}
 		this.setContent( this.iconListPages[3] );
+	}
+
+	private setContent( content: egret.DisplayObjectContainer ){
+		this.removeChildren();
+		this.addChild( content );
+		this.currentContent = content;
 	}
 
 	private openGameasuredWidth( event: egret.TouchEvent ){
 		egret.log( 111 )
 	}
 
-	private onTouchEnd( event: egret.TouchEvent ){
-		
+	private onStartDrag( event: egret.TouchEvent ){
+		// this.stage.addEventListener( egret.TouchEvent.TOUCH_END, this.onSliderStopDrag, this );
+		// this.stage.addEventListener( egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, this.onSliderStopDrag, this );
+		// this.stage.addEventListener( egret.TouchEvent.TOUCH_MOVE, this.onMove, this );
+
+		// this.dragStarStageY = event.stageY;
+		// this.dragStarSliderY = this.slider.y;
+		// this.dragSliderPosition( event.stageY );
 	}
 }
