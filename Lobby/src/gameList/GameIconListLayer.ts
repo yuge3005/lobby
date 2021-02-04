@@ -98,33 +98,47 @@ class GameIconListLayer extends egret.Sprite{
 	}
 
 	private openGame( event: egret.TouchEvent ){
+		this.recordFavoriteIndex( event.target.name );
+		localStorage.setItem( "gotoGame" + event.target.name, "true" );
+		document.location.href = GameIconsMapping[event.target.name].gameURL;
+	}
+
+	private recordFavoriteIndex( indexStr: string ){
 		let favoriteThree: string = localStorage.getItem( "favorite" );
 		let favArr: Array<string>;
 		if( favoriteThree ){
 			favArr = favoriteThree.split( "," );
-			let inFavIndex: number = favArr.indexOf( event.target.name );
+			let inFavIndex: number = favArr.indexOf( indexStr );
 			if( inFavIndex < 0 ){
-				favArr.unshift( event.target.name );
+				favArr.unshift( indexStr );
 				if( favArr.length > 3 ) favArr.length = 3;
 			}
 			else{
 				favArr.splice( inFavIndex, 1 );
-				favArr.unshift( event.target.name );
+				favArr.unshift( indexStr );
 			}
 		}
 		else{
-			favArr = [ event.target.name ];
+			favArr = [ indexStr ];
 		}
 		localStorage.setItem( "favorite", favArr.join( "," ) );
 	}
 
 	private onStartDrag( event: egret.TouchEvent ){
-		// this.stage.addEventListener( egret.TouchEvent.TOUCH_END, this.onSliderStopDrag, this );
-		// this.stage.addEventListener( egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, this.onSliderStopDrag, this );
-		// this.stage.addEventListener( egret.TouchEvent.TOUCH_MOVE, this.onMove, this );
+		this.stage.addEventListener( egret.TouchEvent.TOUCH_END, this.onGameListStopDrag, this );
+		this.stage.addEventListener( egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, this.onGameListStopDrag, this );
+		this.stage.addEventListener( egret.TouchEvent.TOUCH_MOVE, this.onMove, this );
 
 		// this.dragStarStageY = event.stageY;
 		// this.dragStarSliderY = this.slider.y;
 		// this.dragSliderPosition( event.stageY );
+	}
+
+	private onGameListStopDrag( event: egret.TouchEvent ){
+
+	}
+
+	private onMove( event: egret.TouchEvent ){
+
 	}
 }
