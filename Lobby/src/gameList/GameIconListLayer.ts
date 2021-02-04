@@ -42,11 +42,10 @@ class GameIconListLayer extends egret.Sprite{
 				this.iconListPages[ index ] = new egret.DisplayObjectContainer;
 				let j: number;
 				for( j = 0; j < lists[i]["list"].length; j++ ){
-					let px: number = j % 4 * 386 + Math.floor( j / 8 ) * this.pageWidth;
-					let py: number = Math.floor( j % 8 / 4 ) * 350;
+					let pt: egret.Point = this.getPositionOnContent( j );
 					if( GameIconsMapping[lists[i]["list"][j].id] ){
 						let iconName: string = GameIconsMapping[lists[i]["list"][j].id]["gameSmallIcon"];
-						let btn: TouchDownButton = Com.addDownButtonAt( this.iconListPages[ index ], "game_icons_json." + iconName, "game_icons_json." + iconName, px, py, this.openGame.bind(this), true );
+						let btn: TouchDownButton = Com.addDownButtonAt( this.iconListPages[ index ], "game_icons_json." + iconName, "game_icons_json." + iconName, pt.x, pt.y, this.openGame.bind(this), true );
 						btn.scaleX = btn.scaleY = 2;
 						btn.name = "" + lists[i]["list"][j].id;
 
@@ -61,7 +60,7 @@ class GameIconListLayer extends egret.Sprite{
 						}
 					}
 					else{
-						let comingSoon: egret.Bitmap = Com.addBitmapAt( this.iconListPages[ index ], "game_icons_json.coming_soon", px, py );
+						let comingSoon: egret.Bitmap = Com.addBitmapAt( this.iconListPages[ index ], "game_icons_json.coming_soon", pt.x, pt.y );
 						comingSoon.scaleX = comingSoon.scaleY = 2;
 						comingSoon.touchEnabled = false;
 					}
@@ -96,15 +95,20 @@ class GameIconListLayer extends egret.Sprite{
 		this.iconListPages[0] = new egret.DisplayObjectContainer;
 		let i: number;
 		for( i = 0; i < newList.length; i++ ){
-			let px: number = i % 4 * 386 + Math.floor( i / 8 ) * this.pageWidth;
-			let py: number = Math.floor( i % 8 / 4 ) * 350;
+			let pt: egret.Point = this.getPositionOnContent( i );
 
 			let iconName: string = GameIconsMapping[newList[i]["id"]]["gameSmallIcon"];
-			let btn: TouchDownButton = Com.addDownButtonAt( this.iconListPages[0], "game_icons_json." + iconName, "game_icons_json." + iconName, px, py, this.openGame.bind(this), true );
+			let btn: TouchDownButton = Com.addDownButtonAt( this.iconListPages[0], "game_icons_json." + iconName, "game_icons_json." + iconName, pt.x, pt.y, this.openGame.bind(this), true );
 			btn.scaleX = btn.scaleY = 2;
 			btn.name = "" + newList[i]["id"];
 		}
 		this.pageMaxSize[0] = ( Math.ceil( i / 8 ) - 1 ) * this.pageWidth;
+	}
+
+	private getPositionOnContent( i: number ): egret.Point{
+		let px: number = i % 4 * 386 + Math.floor( i / 8 ) * this.pageWidth;
+		let py: number = Math.floor( i % 8 / 4 ) * 350;
+		return new egret.Point( px, py );
 	}
 
 	private setContent( content: egret.DisplayObjectContainer ){
