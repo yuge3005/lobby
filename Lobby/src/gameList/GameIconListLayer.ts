@@ -1,25 +1,18 @@
-class GameIconListLayer extends egret.Sprite{
+class GameIconListLayer extends DragItem{
 
 	private iconListPages: Array<egret.DisplayObjectContainer>;
 	private pageMaxSize: Array<number>;
 
-	private get contentWidth(): number{
+	protected get contentWidth(): number{
 		return this.pageMaxSize[this.currentContentIndex];
 	}
 
 	private pageWidth: number = 1600;
 	private maskRect: egret.Rectangle;
 
-	private currentContent: egret.DisplayObjectContainer;
 	private currentContentIndex: number;
 
 	private favoriteList: Array<Object>;
-
-	private dragStarStageX: number;
-	private dragStarStageY: number;
-	private dragStarContentX: number;
-
-	private draging: boolean;
 
 	public constructor() {
 		super();
@@ -27,9 +20,6 @@ class GameIconListLayer extends egret.Sprite{
 		this.maskRect = new egret.Rectangle( 0, 0, 1524, 700 );
 		this.mask = this.maskRect;
 		GraphicTool.drawRect( this, this.maskRect, 0, true, 0.0 );
-
-		this.addEventListener( egret.TouchEvent.TOUCH_BEGIN, this.onStartDrag, this );
-		this.touchEnabled = true;
 	}
 
 	public loadGameList( lists: Array<Object> ){
@@ -124,11 +114,9 @@ class GameIconListLayer extends egret.Sprite{
 		return btn;
 	}
 
-	private setContent( content: egret.DisplayObjectContainer ){
-		this.removeChildren();
-		this.addChild( content );
-		this.currentContent = content;
-		this.currentContentIndex = this.iconListPages.indexOf( this.currentContent );
+	protected setContent( content: egret.DisplayObjectContainer ){
+		super.setContent( content );
+		this.currentContentIndex = this.iconListPages.indexOf( content );
 	}
 
 	private openGame( event: egret.TouchEvent ){
@@ -157,53 +145,6 @@ class GameIconListLayer extends egret.Sprite{
 			favArr = [ indexStr ];
 		}
 		localStorage.setItem( "favorite", favArr.join( "," ) );
-	}
-
-	private onStartDrag( event: egret.TouchEvent ){
-		this.stage.addEventListener( egret.TouchEvent.TOUCH_END, this.onGameListStopDrag, this );
-		this.stage.addEventListener( egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, this.onGameListStopDrag, this );
-		this.stage.addEventListener( egret.TouchEvent.TOUCH_MOVE, this.onMove, this );
-
-		this.dragStarStageX = event.stageX;
-		this.dragStarStageY = event.stageY;
-		this.dragStarContentX = this.currentContent.x;
-	}
-
-	private dragSliderPosition( dis: number ){
-		dis -= Trigger.isMobile ? this.dragStarStageY : this.dragStarStageX;
-		dis /= Trigger.instance.stage.scaleX;
-		dis += this.dragStarContentX;
-		let p: number = dis;
-		if( p > 0 ) p = 0;
-		if( p < -this.contentWidth ) p = -this.contentWidth;
-		this.currentContent.x = p;
-	}
-
-	private onGameListStopDrag( event: egret.TouchEvent ){
-		this.stage.removeEventListener( egret.TouchEvent.TOUCH_END, this.onGameListStopDrag, this );
-		this.stage.removeEventListener( egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, this.onGameListStopDrag, this );
-		this.stage.removeEventListener( egret.TouchEvent.TOUCH_MOVE, this.onMove, this );
-		setTimeout( this.resetDraging.bind(this), 33 );
-
-		if( this.draging ) TweenerTool.tweenTo( this.currentContent, { x: Math.round( this.currentContent.x / this.pageWidth ) * this.pageWidth }, 400, 0, null, null, egret.Ease.backOut );
-	}
-
-	private onMove( event: egret.TouchEvent ){
-		if( !this.draging ){
-			if( ( !Trigger.isMobile && Math.abs( event.stageX - this.dragStarStageX ) < 5)  || (Trigger.isMobile && Math.abs( event.stageY - this.dragStarStageY ) < 5) ) return;
-			if( ( !Trigger.isMobile && Math.abs( event.stageX - this.dragStarStageX ) < Math.abs( event.stageY - this.dragStarStageY ) )
-				|| ( Trigger.isMobile && Math.abs( event.stageY - this.dragStarStageY ) < Math.abs( event.stageX - this.dragStarStageX ) ) ){
-				this.onGameListStopDrag( null );
-				return;
-			}
-			else this.draging = true;
-		}
-
-		this.dragSliderPosition( Trigger.isMobile ? event.stageY : event.stageX );
-	}
-
-	private resetDraging(){
-		this.draging = false;
 	}
 
 	public setListTo( index: number ){
