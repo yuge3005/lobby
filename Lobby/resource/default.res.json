@@ -5,15 +5,15 @@
 			"name": "lobby"
 		},
 		{
-			"keys": "icon_texts_en_json",
+			"keys": "icon_texts_en_json,welcome_en_png",
 			"name": "lobby_en"
 		},
 		{
-			"keys": "icon_texts_es_json",
+			"keys": "icon_texts_es_json,welcome_es_png",
 			"name": "lobby_es"
 		},
 		{
-			"keys": "icon_texts_pt_json",
+			"keys": "icon_texts_pt_json,welcome_pt_png",
 			"name": "lobby_pt"
 		}
 	],
@@ -63,6 +63,21 @@
 			"type": "sheet",
 			"name": "loyalty_level_icon_json",
 			"subkeys": "0,1,2,3,4,5,6"
+		},
+		{
+			"url": "assets/pt/welcome_pt.png",
+			"type": "image",
+			"name": "welcome_pt_png"
+		},
+		{
+			"url": "assets/en/welcome_en.png",
+			"type": "image",
+			"name": "welcome_en_png"
+		},
+		{
+			"url": "assets/es/welcome_es.png",
+			"type": "image",
+			"name": "welcome_es_png"
 		}
 	]
 }
