@@ -1,13 +1,10 @@
 {
     "projectName": "game_icons",
-    "options": {
-        "sizeMode": "free",
-        "useExtension": 0,
-        "layoutGap": 0,
-        "extend": 0,
-        "layoutMath": "0"
-    },
     "files": [
+        "./game_icon.png",
+        "./era_do_gelo.png",
+        "./double_mania.png",
+        "./double_bingo.png",
         "./copacabana.png",
         "./coming_soon_long.png",
         "./coming_soon.png",
@@ -52,11 +49,14 @@
         "./halloween.png",
         "./green_mark.png",
         "./Golden_fortune_icon.png",
-        "./gold_ball.png",
-        "./game_icon.png",
-        "./era_do_gelo.png",
-        "./double_mania.png",
-        "./double_bingo.png"
+        "./gold_ball.png"
     ],
+    "options": {
+        "extend": 0,
+        "layoutMath": "0",
+        "sizeMode": "free",
+        "useExtension": 0,
+        "layoutGap": 1
+    },
     "version": 5
 }
