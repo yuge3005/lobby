@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "lobby_json,open_list_mp3,lobby_tx,game_icons_json",
+			"keys": "lobby_json,open_list_mp3,lobby_tx,game_icons_json,loyalty_level_icon_json",
 			"name": "lobby"
 		},
 		{
@@ -57,6 +57,12 @@
 			"type": "sheet",
 			"name": "icon_texts_es_json",
 			"subkeys": "icon_dr_journey,icon_facebook,icon_gift,icon_loyalty,icon_profile,icon_question,icon_survey,icon_tourna,icon_vip"
+		},
+		{
+			"url": "assets/loyalty/loyalty_level_icon.json",
+			"type": "sheet",
+			"name": "loyalty_level_icon_json",
+			"subkeys": "0,1,2,3,4,5,6"
 		}
 	]
 }
