@@ -1,7 +1,4 @@
 class Main extends egret.DisplayObjectContainer {
-
-    public static isMobile: boolean;
-
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
@@ -54,7 +51,7 @@ class Main extends egret.DisplayObjectContainer {
 		try{
 			isMobile = eval( "isMobile()" );
 		}catch(e){}
-		Main.isMobile = isMobile;
+		Trigger.isMobile = isMobile;
 
 		if( isMobile ){
 			this.x = stageW;

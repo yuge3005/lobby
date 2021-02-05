@@ -1,4 +1,5 @@
 class Trigger {
+	public static isMobile: boolean;
 	public stage: Main;
 
 	private static _instance: Trigger;
