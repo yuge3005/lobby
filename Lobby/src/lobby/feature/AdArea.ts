@@ -30,6 +30,11 @@ class AdArea extends egret.DisplayObjectContainer {
         // this.adLayer.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onTouchDown, this);
         Com.addObjectAt( this, this.adLayer, 0, 0 );
 
+        let maskSp: egret.Shape = new egret.Shape;
+		this.addChild( maskSp );
+        GraphicTool.drawRect( maskSp, new egret.Rectangle( 3, 3, 315, 601 ), 0, false, 1, 30 );
+        this.adLayer.mask = maskSp;
+
         // this.defaultBg = Com.addBitmapAt(this, "lobby_json.ad_bg", 0, 0);
 
         let levelLocked = Number(PlayerConfig.player("score.level")) < 2;

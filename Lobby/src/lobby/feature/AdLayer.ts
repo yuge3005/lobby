@@ -7,14 +7,15 @@ class AdLayer extends DragItem{
 
 	public constructor() {
 		super();
-
-		let maskSp: egret.Shape = new egret.Shape;
-        GraphicTool.drawRect( maskSp, new egret.Rectangle( 3, 3, 315, 601 ), 0, false, 1, 30 );
-        this.mask = maskSp;
 	}
 
 	public setContent( content: egret.DisplayObject ){
 		super.setContent( content );
-		this.adWidth = Math.round( content.width - AdArea.adSize.x ) * AdArea.adSize.x;
+		this.adWidth = Math.max( Math.round( ( content.width - AdArea.adSize.x ) / AdArea.adSize.x ) * AdArea.adSize.x, 0 );
+	}
+
+	protected onGameListStopDrag( event: egret.TouchEvent ){
+		super.onGameListStopDrag( event );
+		if( this.draging ) TweenerTool.tweenTo( this.currentContent, { x: Math.round( this.currentContent.x / AdArea.adSize.x ) * AdArea.adSize.x }, 400, 0, null, null, egret.Ease.backOut );
 	}
 }
