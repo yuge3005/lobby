@@ -19,7 +19,7 @@ class DragItem extends egret.Sprite{
 		this.touchEnabled = true;
 	}
 
-	protected setContent( content: egret.DisplayObjectContainer ){
+	public setContent( content: egret.DisplayObjectContainer ){
 		this.removeChildren();
 		this.addChild( content );
 		this.currentContent = content;
@@ -59,13 +59,11 @@ class DragItem extends egret.Sprite{
 		this.currentContent.x = p;
 	}
 
-		private onGameListStopDrag( event: egret.TouchEvent ){
+	protected onGameListStopDrag( event: egret.TouchEvent ){
 		this.stage.removeEventListener( egret.TouchEvent.TOUCH_END, this.onGameListStopDrag, this );
 		this.stage.removeEventListener( egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, this.onGameListStopDrag, this );
 		this.stage.removeEventListener( egret.TouchEvent.TOUCH_MOVE, this.onMove, this );
 		setTimeout( this.resetDraging.bind(this), 10 );
-
-		if( this.draging ) TweenerTool.tweenTo( this.currentContent, { x: Math.round( this.currentContent.x / this.pageWidth ) * this.pageWidth }, 400, 0, null, null, egret.Ease.backOut );
 	}
 
 	private resetDraging(){

@@ -150,4 +150,9 @@ class GameIconListLayer extends DragItem{
 	public setListTo( index: number ){
 		this.setContent( this.iconListPages[index] );
 	}
+
+	protected onGameListStopDrag( event: egret.TouchEvent ){
+		super.onGameListStopDrag( event );
+		if( this.draging ) TweenerTool.tweenTo( this.currentContent, { x: Math.round( this.currentContent.x / this.pageWidth ) * this.pageWidth }, 400, 0, null, null, egret.Ease.backOut );
+	}
 }
