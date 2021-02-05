@@ -3,6 +3,18 @@
 		{
 			"keys": "lobby_json,open_list_mp3,lobby_tx,game_icons_json",
 			"name": "lobby"
+		},
+		{
+			"keys": "icon_texts_en_json",
+			"name": "lobby_en"
+		},
+		{
+			"keys": "icon_texts_es_json",
+			"name": "lobby_es"
+		},
+		{
+			"keys": "icon_texts_pt_json",
+			"name": "lobby_pt"
 		}
 	],
 	"resources": [
@@ -27,6 +39,24 @@
 			"type": "sheet",
 			"name": "game_icons_json",
 			"subkeys": "25_lines,7_bingo,Golden_fortune_icon,T90,T90s,american_champion,bingo_3,bingo_bene,bingo_glow,bingo_glow_long,bingo_money_icon,black_star,bonus_bingo,carnaval,coming_soon,coming_soon_long,copacabana,double_bingo,double_mania,era_do_gelo,game_icon,gold_ball,green_mark,halloween,halloweenX,hot_bingo,icon_VIPbingo,icon_aztecs,icon_carnaval_long,icon_prakaramba,lotto,lucky_diamond,mexico,mexico_long,nineballs,orange_mark,pachinko_2,pachinko_3,paris,paris_long,pharao_s,pink_mark,red_mark,showball_1,showball_2,showball_3,silver_ball,super-goal,turbomania"
+		},
+		{
+			"url": "assets/en/icon_texts_en.json",
+			"type": "sheet",
+			"name": "icon_texts_en_json",
+			"subkeys": "icon_dr_journey,icon_facebook,icon_gift,icon_loyalty,icon_profile,icon_survey,icon_tourna,icon_vip"
+		},
+		{
+			"url": "assets/pt/icon_texts_pt.json",
+			"type": "sheet",
+			"name": "icon_texts_pt_json",
+			"subkeys": "icon_dr_journey,icon_facebook,icon_gift,icon_loyalty,icon_profile,icon_question,icon_survey,icon_tourna,icon_vip"
+		},
+		{
+			"url": "assets/es/icon_texts_es.json",
+			"type": "sheet",
+			"name": "icon_texts_es_json",
+			"subkeys": "icon_dr_journey,icon_facebook,icon_gift,icon_loyalty,icon_profile,icon_question,icon_survey,icon_tourna,icon_vip"
 		}
 	]
 }

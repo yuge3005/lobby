@@ -1,0 +1,9 @@
+{"file":"icon_texts_en.png","frames":{
+"icon_vip":{"x":0,"y":170,"w":154,"h":76,"offX":6,"offY":0,"sourceW":167,"sourceH":76},
+"icon_dr_journey":{"x":164,"y":170,"w":185,"h":56,"offX":0,"offY":0,"sourceW":185,"sourceH":56},
+"icon_facebook":{"x":171,"y":84,"w":181,"h":50,"offX":0,"offY":0,"sourceW":181,"sourceH":50},
+"icon_gift":{"x":362,"y":53,"w":137,"h":47,"offX":0,"offY":0,"sourceW":137,"sourceH":47},
+"icon_loyalty":{"x":0,"y":84,"w":161,"h":76,"offX":11,"offY":0,"sourceW":183,"sourceH":76},
+"icon_profile":{"x":362,"y":110,"w":133,"h":47,"offX":0,"offY":0,"sourceW":133,"sourceH":47},
+"icon_survey":{"x":227,"y":0,"w":159,"h":43,"offX":30,"offY":3,"sourceW":220,"sourceH":49},
+"icon_tourna":{"x":0,"y":0,"w":217,"h":74,"offX":0,"offY":0,"sourceW":217,"sourceH":74}}}

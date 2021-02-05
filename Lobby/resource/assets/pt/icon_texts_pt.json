@@ -1,0 +1,10 @@
+{"file":"icon_texts_pt.png","frames":{
+"icon_tourna":{"x":177,"y":182,"w":139,"h":47,"offX":39,"offY":13,"sourceW":217,"sourceH":74},
+"icon_vip":{"x":0,"y":182,"w":167,"h":48,"offX":0,"offY":14,"sourceW":167,"sourceH":76},
+"icon_dr_journey":{"x":0,"y":66,"w":186,"h":48,"offX":0,"offY":4,"sourceW":186,"sourceH":56},
+"icon_facebook":{"x":245,"y":59,"w":181,"h":50,"offX":0,"offY":0,"sourceW":181,"sourceH":50},
+"icon_gift":{"x":193,"y":124,"w":127,"h":46,"offX":5,"offY":0,"sourceW":137,"sourceH":46},
+"icon_loyalty":{"x":0,"y":124,"w":183,"h":48,"offX":0,"offY":14,"sourceW":183,"sourceH":76},
+"icon_profile":{"x":326,"y":180,"w":109,"h":46,"offX":12,"offY":0,"sourceW":133,"sourceH":46},
+"icon_question":{"x":0,"y":0,"w":235,"h":56,"offX":0,"offY":0,"sourceW":235,"sourceH":56},
+"icon_survey":{"x":245,"y":0,"w":198,"h":49,"offX":11,"offY":0,"sourceW":220,"sourceH":49}}}

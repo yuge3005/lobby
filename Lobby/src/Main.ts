@@ -45,6 +45,7 @@ class Main extends egret.DisplayObjectContainer {
      * Create a game scene
      */
     private async createGameScene() {
+        this.combineConfig();
         await RES.loadGroup( "lobby", 0, new LoadingUI );
 
         let stageW = this.stage.stageWidth;
@@ -66,5 +67,15 @@ class Main extends egret.DisplayObjectContainer {
         
         MuLang.txt = RES.getRes( "lobby_tx" );
 		this.addChild( new Lobby );
+    }
+
+    private combineConfig(){
+        try{
+			let group: Object = RES["config"].config.groups;
+			group["lobby"] = ( group["lobby"] as Array<string> ).concat( group["lobby_" + MuLang.language] );
+		}
+		catch( e ){
+			egret.error(e);
+		}
     }
 }
