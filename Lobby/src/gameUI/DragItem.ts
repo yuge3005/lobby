@@ -1,6 +1,6 @@
 class DragItem extends egret.Sprite{
 
-	protected currentContent: egret.DisplayObjectContainer;
+	protected currentContent: egret.DisplayObject;
 
 	private dragStarStageX: number;
 	private dragStarStageY: number;
@@ -19,7 +19,7 @@ class DragItem extends egret.Sprite{
 		this.touchEnabled = true;
 	}
 
-	public setContent( content: egret.DisplayObjectContainer ){
+	public setContent( content: egret.DisplayObject ){
 		this.removeChildren();
 		this.addChild( content );
 		this.currentContent = content;

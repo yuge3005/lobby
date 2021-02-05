@@ -1,12 +1,11 @@
-class FeatureArea extends egret.DisplayObjectContainer {
+class AdArea extends egret.DisplayObjectContainer {
     public static ITEM_START: string = "ITEM_START";
     public static ITEM_END: string = "ITEM_END";
 
     public static adSize: egret.Point;
 
-    private adLayer: egret.DisplayObjectContainer;
+    private adLayer: AdLayer;
 
-    private welcomeAds: egret.Bitmap;
     private currentItemIndex: number = 0;
     private defaultBg: egret.Bitmap;
     private autoScrollTimer: egret.Timer;
@@ -22,24 +21,20 @@ class FeatureArea extends egret.DisplayObjectContainer {
 
         Com.addBitmapAt(this, "lobby_json.ad_frame", 0, 0);
 
-        FeatureArea.adSize = new egret.Point(321, 614);
+        AdArea.adSize = new egret.Point(321, 614);
 
-        this.adLayer = new egret.DisplayObjectContainer;
+        this.adLayer = new AdLayer;
         // this.adLayer.touchEnabled = true;
         // this.adLayer.touchChildren = false;
         // this.adLayer.visible = !locked;
         // this.adLayer.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onTouchDown, this);
         Com.addObjectAt( this, this.adLayer, 0, 0 );
 
-        let maskSp: egret.Shape = new egret.Shape;
-        GraphicTool.drawRect( maskSp, new egret.Rectangle( 3, 3, 315, 601 ), 0, false, 1, 30 );
-        this.adLayer.mask = maskSp;
-
         // this.defaultBg = Com.addBitmapAt(this, "lobby_json.ad_bg", 0, 0);
 
         let levelLocked = Number(PlayerConfig.player("score.level")) < 2;
         if (levelLocked) {
-			this.welcomeAds = Com.addBitmapAt(this.adLayer, "welcome_" + MuLang.language + "_png", 0, 0);
+            this.adLayer.setContent( Com.addBitmapAt(this, "welcome_" + MuLang.language + "_png", 0, 0) );
 		}
         else{
             
@@ -57,10 +52,10 @@ class FeatureArea extends egret.DisplayObjectContainer {
         this.features = new Array<FeatureItem>(data.length);
         for (let i = 0; i < data.length; i++) {
             this.features[i] = new FeatureItem(i, data[i]);
-            this.features[i].addEventListener(FeatureArea.ITEM_START, this.itemStart, this);
-            this.features[i].addEventListener(FeatureArea.ITEM_END, this.itemEnd, this);
+            this.features[i].addEventListener(AdArea.ITEM_START, this.itemStart, this);
+            this.features[i].addEventListener(AdArea.ITEM_END, this.itemEnd, this);
             if (this.features[i].status === 1) {
-                Com.addObjectAt(this.adLayer, this.features[i], this.adLayer.numChildren * FeatureArea.adSize.x, 0);
+                Com.addObjectAt(this.adLayer, this.features[i], this.adLayer.numChildren * AdArea.adSize.x, 0);
             }
         }
 
@@ -76,9 +71,9 @@ class FeatureArea extends egret.DisplayObjectContainer {
 			this.autoScrollTimer.stop();
 
 			egret.Tween.removeTweens(this.adLayer);
-			egret.Tween.get(this.adLayer).to({ x: -this.currentItemIndex * FeatureArea.adSize.x }, 500, egret.Ease.circOut);
+			egret.Tween.get(this.adLayer).to({ x: -this.currentItemIndex * AdArea.adSize.x }, 500, egret.Ease.circOut);
 		}
-		Com.addObjectAt(this.adLayer, this.features[index], this.adLayer.numChildren * FeatureArea.adSize.x, 0);
+		Com.addObjectAt(this.adLayer, this.features[index], this.adLayer.numChildren * AdArea.adSize.x, 0);
 
 		this.defaultBg.visible = false;
 
@@ -103,7 +98,7 @@ class FeatureArea extends egret.DisplayObjectContainer {
 
 		this.adLayer.removeChildAt(pos);
 		for (let i = pos; i < this.adLayer.numChildren; i++) {
-			let newX = this.adLayer.getChildAt(i).x - FeatureArea.adSize.x;
+			let newX = this.adLayer.getChildAt(i).x - AdArea.adSize.x;
 			egret.Tween.get(this.adLayer.getChildAt(i)).to({ x: newX }, 500);
 		}
 
@@ -140,9 +135,9 @@ class FeatureArea extends egret.DisplayObjectContainer {
      */
 	private onTouchMove( event: egret.TouchEvent ){
 		let movePoit: egret.Point = new egret.Point( event.stageX, event.stageY );
-		let newX: number = - this.currentItemIndex * FeatureArea.adSize.x + movePoit.x - this.touchDowmPos.x;
+		let newX: number = - this.currentItemIndex * AdArea.adSize.x + movePoit.x - this.touchDowmPos.x;
 		newX = newX >= 0 ? 0 : newX;
-		newX = newX <= -(FeatureVo.ads.length-1) * FeatureArea.adSize.x ? -(FeatureVo.ads.length-1) * FeatureArea.adSize.x : newX;
+		newX = newX <= -(FeatureVo.ads.length-1) * AdArea.adSize.x ? -(FeatureVo.ads.length-1) * AdArea.adSize.x : newX;
 		this.adLayer.x = newX >= 0 ? 0 : newX;
 	}
 
@@ -169,7 +164,7 @@ class FeatureArea extends egret.DisplayObjectContainer {
      * on touch
      */
 	private onTouch(){
-		this.adLayer.x = -this.currentItemIndex * FeatureArea.adSize.x;
+		this.adLayer.x = -this.currentItemIndex * AdArea.adSize.x;
         AdPopupTrigger.doWhateverYuoWant(GlobelSettings[(<FeatureItem>this.adLayer.getChildAt(this.currentItemIndex)).name]);
 	}
 
@@ -177,11 +172,11 @@ class FeatureArea extends egret.DisplayObjectContainer {
      * end move
      */
 	private endMove(){
-		let newIndex: number = Math.round( -this.adLayer.x / FeatureArea.adSize.x );
+		let newIndex: number = Math.round( -this.adLayer.x / AdArea.adSize.x );
 		newIndex = newIndex <= 0 ? 0 : newIndex;
 		newIndex = newIndex >= this.adLayer.numChildren ? this.adLayer.numChildren - 1 : newIndex;
 		this.currentItemIndex = newIndex;
-		egret.Tween.get(this.adLayer).to({x: -this.currentItemIndex * FeatureArea.adSize.x}, 500, egret.Ease.circOut);
+		egret.Tween.get(this.adLayer).to({x: -this.currentItemIndex * AdArea.adSize.x}, 500, egret.Ease.circOut);
 	}
 
     /**
@@ -205,7 +200,7 @@ class FeatureArea extends egret.DisplayObjectContainer {
 		newIndex = newIndex >= this.adLayer.numChildren ? 0 : newIndex;
 		this.currentItemIndex = newIndex;
         
-        egret.Tween.get(this.adLayer).to({x: -this.currentItemIndex * FeatureArea.adSize.x}, 500, egret.Ease.circOut);
+        egret.Tween.get(this.adLayer).to({x: -this.currentItemIndex * AdArea.adSize.x}, 500, egret.Ease.circOut);
     }
 
     /**

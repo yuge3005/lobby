@@ -1,6 +1,6 @@
 class Lobby extends egret.DisplayObjectContainer{
 
-	private featureArea: FeatureArea;
+	private featureArea: AdArea;
     private gameList: GameList;
     private topBar: TopBar;
     private socialBar: SocialBar;
@@ -11,7 +11,7 @@ class Lobby extends egret.DisplayObjectContainer{
 		let bg: egret.Bitmap = Com.addBitmapAt( this, "lobby_json.bg", 0, 0 );
 		bg.scaleX = bg.scaleY = 2;
 
-        this.featureArea = new FeatureArea();
+        this.featureArea = new AdArea();
         Com.addObjectAt(this, this.featureArea, 231, 208);
 
         this.gameList = new GameList();

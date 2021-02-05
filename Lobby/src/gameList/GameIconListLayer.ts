@@ -114,9 +114,9 @@ class GameIconListLayer extends DragItem{
 		return btn;
 	}
 
-	protected setContent( content: egret.DisplayObjectContainer ){
+	public setContent( content: egret.DisplayObject ){
 		super.setContent( content );
-		this.currentContentIndex = this.iconListPages.indexOf( content );
+		this.currentContentIndex = this.iconListPages.indexOf( content as egret.DisplayObjectContainer );
 	}
 
 	private openGame( event: egret.TouchEvent ){
