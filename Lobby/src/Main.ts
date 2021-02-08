@@ -63,6 +63,9 @@ class Main extends egret.DisplayObjectContainer {
         Trigger.instance.stage = this;
         PlayerConfig.init();
         
+        try{eval("removeLoadingProgress()");}
+        catch(e){};
+        
         MuLang.txt = RES.getRes( "lobby_tx" );
 		this.addChild( new Lobby );
     }
