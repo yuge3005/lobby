@@ -61,6 +61,7 @@ class Main extends egret.DisplayObjectContainer {
         this.scaleY = 540/1125;
 
         Trigger.instance.stage = this;
+        PlayerConfig.init();
         
         MuLang.txt = RES.getRes( "lobby_tx" );
 		this.addChild( new Lobby );

@@ -1,83 +1,261 @@
 class PlayerConfig {
+	private static configObject: JSON;
+	private static playerObject: JSON;
+	private static timestampGap: number;
 
-	public static serverVertion: number = 2;
-	
-	public constructor() {
+	public constructor() {}
+
+	/**
+	 * 初始化, 获取网络配置和用户信息
+	 */
+	public static init():void {
+		let config = null;
+		let player = null;
+
+		try {
+			config = eval("getConfig()");
+		} catch(e) {
+			console.error(e);
+		}
+
+		try {
+			player = eval("getPlayer()");
+		} catch(e) {
+			console.error(e);
+		}
+
+		if (typeof config === "undefined" || config === null || typeof player === "undefined" || player === null) {
+			console.error("can not get player or config information, please refresh again.");
+			return;
+		}
+		
+		if (typeof config === "string") {
+			config = JSON.parse(config);
+		}
+
+		if (typeof player === "string") {
+			player = JSON.parse(player);
+		}
+
+		this.configObject = config;
+		this.playerObject = player;
+
+		// if( GlobelSettings.isForCom ) player.facebook = player.custom;
+		// PlayerConfig.player("platform", "com");
+
+		this.initExternalContents(player["external_contents"], config["version_po"] );
+		// Wheel.setBonus(player["bonus"]);
+
+		// get timestamp gap
+		let localTimestamp = Math.floor(new Date().valueOf() / 1000);
+		PlayerConfig.timestampGap = Number(PlayerConfig.player("time")) - localTimestamp;
+
+		// // auto time
+		// let autoTimeTimer = new egret.Timer(1000, 0);
+		// autoTimeTimer.addEventListener(egret.TimerEvent.TIMER, function () {
+		// 	this.playerObject["time"] = Math.floor(new Date().valueOf() / 1000) + PlayerConfig.timestampGap;
+
+		// 	if (this.playerObject["time"] > Number(this.playerObject["mission"]["task_reset_time"])) {
+		// 		if (Lobby.getInstance()) Lobby.getInstance().lockMission(2);
+		// 	}
+		// }, this);
+		// autoTimeTimer.start();
 	}
 
-	private static _playerData: Object;
-	private static get playerData(): Object{
-		if( !this._playerData ){
-			let playerStr: string = localStorage.getItem("player");
-			if( playerStr ){
-				try{
-					this._playerData = JSON.parse( playerStr );
+	/**
+	 * 获取玩家数据, 或修改玩家数据
+	 * @param parameter 要获取的参数名称, 层级之间以.拼接成字符串,如PlayerConfig.player("facebook.id")
+	 * 					the name that key for you want get some value from player
+	 * @param value 要修改参数的值,如PlayerConfig.player("score.coins", 41230000)
+	 * 					the value that update with @parameter
+	 * @param force 是否强制更改参数值(当value为null)
+	 */
+	public static player(parameter: string, value: any = null, force: boolean = false):any {
+		if (!this.playerObject) return null;
+		
+		let player = this.playerObject;
+		if (parameter && parameter !== "") {
+			if (parameter.indexOf(".")>=0) {
+				let valueIndex = null;
+				parameter.split(".").map((param: string) => {
+					try{
+						if (param !== "") {
+							player = player[param];
+							if (value!==null || force) {
+								if (typeof valueIndex==="undefined" || valueIndex===null) valueIndex = "";
+								valueIndex += "[\"" + param + "\"]"
+							}
+						}
+					} catch(e) {
+						player = null;
+						valueIndex = null;
+					}
+				});
+				if (valueIndex!==null) {
+					eval("this.playerObject" + valueIndex + " = value;");
 				}
-				catch(e){
-					this._playerData = null;
+			} else {
+				if (value !== null || force) eval("this.playerObject[\"" + parameter + "\"] = value;");
+				player = this.playerObject[parameter];
+			}
+		}
+
+		return typeof player === "undefined" || player === null ? null : player;
+	}
+
+	/**
+	 * 获取配置数据, 或修改配置值
+	 * @param parameter 要获取的参数名称, 层级之间以.拼接成字符串,如PlayerConfig.config("http")
+	 * 					the name that key for you want get some value from player
+	 * @param value 要修改参数的值,如PlayerConfig.config("host", "127.0.0.1")
+	 * 					the value that update with @parameter
+	 */
+	public static config(parameter: string, value: any = null):any {
+		if (!this.configObject) return null;
+
+		let config = this.configObject;
+		if (parameter && parameter !== "") {
+			if (parameter.indexOf(".")>=0) {
+				let valueIndex = null;
+				parameter.split(".").map((param: string) => {
+					try{
+						if (param !== "") {
+							config = config[param];
+							if (value!==null) {
+								if (typeof valueIndex==="undefined" || valueIndex===null) valueIndex = "";
+								valueIndex += "[\"" + param + "\"]"
+							}
+						}
+					} catch(e) {
+						config = null;
+						valueIndex = null;
+					}
+				});
+				if (valueIndex!==null) {
+					eval("this.configObject" + valueIndex + " = value;");
+				}
+			} else {
+				if (value !== null) eval("this.configObject[\"" + parameter + "\"] = value;");
+				config = this.configObject[parameter];
+			}
+		}
+
+		return typeof config === "undefined" || config === null ? null : config;
+	}
+
+	/**
+	 * 初始化popups
+	 */
+	private static initExternalContents(dataSource: JSON, version_po: string ):void {
+		let list = dataSource["list"];
+		if (list && list.length>0) {
+			for (let i=0; i<list.length; i++) {
+				switch (list[i].type) {
+					case "pig_bank":
+					case "bank":
+					case "chipbank":
+					case "po":
+					case "popup":
+						if (list[i].type === "pig_bank") PiggyBankVo.init(list[i]);
+						if (list[i].type === "bank") Bank.init(list[i]);
+						if (list[i].type === "chipbank") ChipBank.init(list[i]);
+
+						if( list[i]["art"] && list[i]["art"].length ){
+							let poPath: string = list[i]["art"][0]["file"]["file_id_html5"];
+							if (poPath.indexOf(".swf") < 0 && poPath.indexOf(".png") < 0 ) {
+								let className: string = poPath.replace(/.*\/(.*)\//, "$1"), products = list[i]["products"];
+								
+								if (className === "" || className === "assets") continue;
+								if (list[i].type !== "popup" && !list[i]["products"]) continue;
+
+								// coins bank and chips bank
+								if (list[i].type === "bank" || list[i].type === "chipbank") {
+									let isABtest = this.playerObject["ab"] && this.playerObject["ab"]["bank_art"] === "blocky";
+									if (isABtest) {
+										className += "_B";
+										poPath = poPath.substring(0, poPath.length - 1) + "_B/";
+									}
+									if (!GlobelSettings.bankPoVo) {
+										GlobelSettings.bankPoVo = new PoVo(className, poPath + "load.js" + "?" + version_po, poPath + "data.res.json");
+									}
+									if (typeof GlobelSettings[className] === "undefined") GlobelSettings[className] = {};
+									GlobelSettings[className][list[i].type] = products;
+									GlobelSettings["bankVersionClass"] = className;
+								} else if (list[i]["type"] === "pig_bank") {
+									let product = (products && products.length > 0) ? products[0]: null;
+									if (!product) continue;
+									GlobelSettings.pigBankPoVo = new PoVo(className, poPath + "load.js" + "?" + version_po, poPath + "data.res.json");
+									if (list[i]["triggers"]) {
+										Trigger.registTrigger(list[i]["triggers"], className, poPath + "load.js" + "?" + version_po, poPath + "data.res.json");
+									}
+									
+									GlobelSettings[className] = product;
+								} else {
+									if (list[i].type === "po") {
+										let product = (products && products.length > 0) ? products[0]: null;
+										if (!product) continue;
+
+										Trigger.registPo(list[i]["triggers"], className, poPath + "load.js" + "?" + version_po, poPath + "data.res.json");
+
+										// time limit
+										if (typeof list[i]["timer_seconds"] !== "undefined" && list[i]["timer_seconds"] !== null) {
+											let currentTime = Number(this.playerObject["time"]);
+											let expiredTime = Number(list[i]["expired_time"]);
+											let cooldownTime = Number(list[i]["cooldown_end_time"]);
+											Trigger.registLimits(className, Number(product["product_id"]), expiredTime - currentTime, cooldownTime - currentTime);
+										}
+
+										GlobelSettings[className] = product;
+									} else if (list[i].type === "popup") {
+										// time limit
+										if (typeof list[i]["display_start_time"] !== "undefined" && list[i]["display_start_time"] !== null &&
+											typeof list[i]["display_end_time"] !== "undefined" && list[i]["display_end_time"] !== null) {
+											let startTime = Utils.transformUTCStringToDate(list[i]["display_start_time"]).valueOf();
+											let endTime = Utils.transformUTCStringToDate(list[i]["display_end_time"]).valueOf();
+											Trigger.registPopupLimits(className, null, startTime, endTime);
+										}
+
+										GlobelSettings[className] = list[i]["triggers"];
+										if(list[i].click_show_game_id) GlobelSettings[className].featured = list[i].click_show_game_id;
+									}
+
+									Trigger.registTrigger(list[i]["triggers"], className, poPath + "load.js" + "?" + version_po, poPath + "data.res.json");
+								}
+							}
+							// lobby ads feature
+							else if( poPath.indexOf(".png") > 0 && list[i].triggers ){
+								let lanIndex: number = 0;
+								if( GlobelSettings.language == "pt" ) lanIndex = 1;
+								else if( GlobelSettings.language == "es" ) lanIndex = 2;
+								poPath = list[i]["art"][lanIndex]["file"]["file_id_html5"];
+								FeatureVo.pushAds({
+									"name": list[i]["name"],
+									"poPath": poPath,
+									"data": list[i]
+								});
+								GlobelSettings[list[i]["name"]] = list[i]["triggers"];
+							}
+						}
+						break;
+					case "wheel": 
+						Wheel.init(list[i]);
+						break;
+					case "variables": 
+						Variable.init(list[i]);
+						break;
+					case "bonus": 
+						Link.init(list[i]);
+						break;
+					case "wheel_purchased":
+						SpinWheelVo.pushWheelData(list[i]);
+						break;
+					default: break;
 				}
 			}
 		}
-		return this._playerData;
 	}
 
-	private static _configData: Object;
-	private static get configData(): Object{
-		if( !this._configData ){
-			let configStr: string = localStorage.getItem("config");
-			if( configStr ){
-				try{
-					this._configData = JSON.parse( configStr );
-				}
-				catch(e){
-					this._configData = null;
-				}
-			}
-		}
-		return this._configData;
+	public static updateUser():void {
+		
 	}
-
-	private static playerConfig: Object = { "user.id": requestStr( "id" ), "score.level": 2538, "score.this_level_xp": 2500, "score.next_level_xp": 3500, "score.xp": 3000,
-		"mission": {"task_is_process":"0","unlock_level":10,"task":{"387285":{"is_active":"1","type":"1","current":"1","target":"2","id":"387285"},"387286":{"is_active":"0","type":"1","current":"1","target":"6","id":"387286"},"387287":{"is_active":"0","type":"1","current":"0","target":"15","id":"387287"}},"score_info":{"score_is_process":"0"}},"mission.unlock_level":3000, "canvas_data.icon_list": [{"category":"bingo","list":[{"referenceID":"90T","id":39,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":1,"unlock_loyalty_level":0,"end_time":"","fav":2},{"referenceID":"PAK","id":41,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":3,"unlock_loyalty_level":0,"end_time":"","fav":5},{"referenceID":"PHS","id":42,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":5,"unlock_loyalty_level":0,"end_time":"","fav":6},{"referenceID":"NIB","id":38,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":7,"unlock_loyalty_level":0,"end_time":"","fav":7},{"referenceID":"SHB3","id":20,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":11,"unlock_loyalty_level":0,"end_time":"","fav":9},{"referenceID":"SILB","id":49,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":13,"unlock_loyalty_level":0,"end_time":"","fav":10},{"referenceID":"BLK","id":23,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":15,"unlock_loyalty_level":0,"end_time":"","fav":11},{"referenceID":"PRA","id":48,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":17,"unlock_loyalty_level":0,"end_time":"","fav":12},{"referenceID":"SHB1","id":22,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":19,"unlock_loyalty_level":0,"end_time":"","fav":13},{"referenceID":"GBL","id":56,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":21,"unlock_loyalty_level":0,"end_time":"","fav":14},{"referenceID":"TMN","id":51,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":24,"unlock_loyalty_level":0,"end_time":"","fav":15},{"referenceID":"VBNG","id":52,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":26,"unlock_loyalty_level":0,"end_time":"","fav":16},{"referenceID":"HOT","id":54,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":28,"unlock_loyalty_level":0,"end_time":"","fav":17},{"referenceID":"D90T","id":57,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":30,"unlock_loyalty_level":0,"end_time":"","fav":18},{"referenceID":"SHB2","id":21,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":32,"unlock_loyalty_level":0,"end_time":"","fav":19},{"referenceID":"AZTE","id":50,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":34,"unlock_loyalty_level":0,"end_time":"","fav":20},{"referenceID":"BOL3","id":24,"overlay":"","height":1,"width":1,"icon_scale":1.05,"type":"game","unlock_level":36,"unlock_loyalty_level":0,"end_time":"","fav":21},{"referenceID":"DBLB","id":45,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":38,"unlock_loyalty_level":0,"end_time":"","fav":22},{"referenceID":"AMC","id":19,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":42,"unlock_loyalty_level":0,"end_time":"","fav":23},{"referenceID":"PA2","id":61,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":44,"unlock_loyalty_level":0,"end_time":"","fav":24},{"referenceID":"TPB","id":62,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":48,"unlock_loyalty_level":0,"end_time":"","fav":26},{"referenceID":"BOB","id":65,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":50,"unlock_loyalty_level":0,"end_time":"","fav":27},{"referenceID":"CPB","id":68,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":52,"unlock_loyalty_level":0,"end_time":"","fav":28},{"referenceID":"BBN","id":69,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":54,"unlock_loyalty_level":0,"end_time":"","fav":29},{"referenceID":"SPG","id":70,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":56,"unlock_loyalty_level":0,"end_time":"","fav":30},{"referenceID":"SLT","id":71,"overlay":"OVERLAY_VIP","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":58,"unlock_loyalty_level":0,"end_time":"","fav":31},{"referenceID":"COMING_SOON_EMPTY","overlay":"OVERLAY_COMING_SOON_TEXT","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":-1,"unlock_loyalty_level":-1,"end_time":"","is_remote_download":false,"is_featured":false,"featured_img_src":"","fav":-1},{"referenceID":"COMING_SOON_EMPTY","overlay":"OVERLAY_COMING_SOON_TEXT","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":-1,"unlock_loyalty_level":-1,"end_time":"","is_remote_download":false,"is_featured":false,"featured_img_src":"","fav":-1},{"referenceID":"COMING_SOON_EMPTY","overlay":"OVERLAY_COMING_SOON_TEXT","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":-1,"unlock_loyalty_level":-1,"end_time":"","is_remote_download":false,"is_featured":false,"featured_img_src":"","fav":-1},{"referenceID":"COMING_SOON_EMPTY","overlay":"OVERLAY_COMING_SOON_TEXT","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":-1,"unlock_loyalty_level":-1,"end_time":"","is_remote_download":false,"is_featured":false,"featured_img_src":"","fav":-1},{"referenceID":"COMING_SOON_EMPTY"},{"referenceID":"COMING_SOON_EMPTY"}]},{"category":"Slot","list":[{"referenceID":"HWL","id":46,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":1,"unlock_loyalty_level":0,"end_time":"","fav":3},{"referenceID":"HW25","id":66,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":2,"unlock_loyalty_level":0,"end_time":"","fav":4},{"referenceID":"ERA","id":47,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":9,"unlock_loyalty_level":0,"end_time":"","fav":8},{"referenceID":"halloweenX","id":63,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":46,"unlock_loyalty_level":0,"end_time":"","fav":25},{"referenceID":"COMING_SOON_EMPTY","overlay":"OVERLAY_COMING_SOON_TEXT","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":-1,"unlock_loyalty_level":-1,"end_time":"","is_remote_download":false,"is_featured":false,"featured_img_src":"","fav":-1},{"referenceID":"COMING_SOON_EMPTY","overlay":"OVERLAY_COMING_SOON_TEXT","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":-1,"unlock_loyalty_level":-1,"end_time":"","is_remote_download":false,"is_featured":false,"featured_img_src":"","fav":-1},{"referenceID":"COMING_SOON_EMPTY"},{"referenceID":"COMING_SOON_EMPTY"}]},{"category":"multiplayer","list":[{"referenceID":"MEX","id":74,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":2,"unlock_loyalty_level":0,"is_classic":true,"end_time":"","fav":32},{"referenceID":"CNV","id":67,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":1,"unlock_loyalty_level":0,"is_classic":true,"end_time":"","fav":33},{"referenceID":"PAS","id":72,"overlay":"","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":1,"unlock_loyalty_level":0,"is_classic":true,"end_time":"","fav":34},{"referenceID":"COMING_SOON_EMPTY","overlay":"OVERLAY_COMING_SOON_TEXT","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":-1,"unlock_loyalty_level":-1,"end_time":"","is_remote_download":false,"is_featured":false,"featured_img_src":"","fav":-1},{"referenceID":"COMING_SOON_EMPTY","overlay":"OVERLAY_COMING_SOON_TEXT","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":-1,"unlock_loyalty_level":-1,"end_time":"","is_remote_download":false,"is_featured":false,"featured_img_src":"","fav":-1},{"referenceID":"COMING_SOON_EMPTY","overlay":"OVERLAY_COMING_SOON_TEXT","height":1,"width":1,"icon_scale":1,"type":"game","unlock_level":-1,"unlock_loyalty_level":-1,"end_time":"","is_remote_download":false,"is_featured":false,"featured_img_src":"","fav":-1},{"referenceID":"COMING_SOON_EMPTY"},{"referenceID":"COMING_SOON_EMPTY"}]}], "loyalty.loyalty_level": 4, "facebook_id": "115260495912054","questioner": [] };
-	private static mission: Object = {};
-
-	public static player( key: string ){
-		try{
-			let item: any = eval( "this.playerData." + key );
-			return item;
-		}
-		catch(e){
-			let rs = this.playerConfig[key];
-			if( key=="user.id" && !rs ) rs = "243972732";
-			return rs;
-		}
-	}
-
-	public static config( key: string ){
-		try{
-			let item: any = eval( "this.configData." + key );
-			return item;
-		}
-		catch(e){
-			let rs = this.playerConfig[key];
-			if( key=="http" && !rs ) rs = "https";
-			if( key=="host" && !rs ) rs = "staging.doutorbingo.com";
-			if( key=="platform" && !rs ) rs = "com";
-			return rs;
-		}
-	}
-
-	public static get properties(): string {
-		return localStorage.getItem("user_account_info");
-	}
-}
-
-function requestStr( str ){
-	var resItems: Array<string> = location.search.split( /[?&]/ );
-	var items: Object = Object;
-	for( var i = 0; i < resItems.length; i++ ){
-		var item: Array<string> = resItems[i].split("=");
-		if( item.length == 2 ) items[item[0]] = item[1];
-	}
-	return items[str];
 }

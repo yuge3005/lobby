@@ -7,7 +7,7 @@ class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
     public onProgress(current: number, total: number): void {
         let progress = document.getElementById("loading_progress_div");
         if (progress) {
-            progress.style.width = Math.floor(1320 * (.18 + current / total * .82)) + "px";
+            progress.style.width = Math.floor(1000 * (.18 + current / total * .82)) + "px";
         }
     }
 }
