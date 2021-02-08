@@ -263,3 +263,29 @@ class PlayerConfig {
 		return localStorage.getItem("user_account_info");
 	}
 }
+
+let getConfig = function() {
+    return {
+        "cdn":"https://s3.amazonaws.com/doctor-bingo-staging/",
+        "html":{
+            "sfs":{
+                "ip":"52.2.30.161",
+                "port":8989
+            }
+        },
+        "lang":"pt_BR",
+        "http": "https",
+        "host": "staging.doutorbingo.com",
+        "version_po": "v0.3.8"
+    };
+}
+
+let getPlayer = function() {
+	let player = null;
+	if (localStorage) {
+		let playerData = localStorage.getItem("player");
+		if (playerData) player = JSON.parse(playerData);
+	}
+
+    return player;
+}

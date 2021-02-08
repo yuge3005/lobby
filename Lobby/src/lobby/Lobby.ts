@@ -9,6 +9,8 @@ class Lobby extends egret.DisplayObjectContainer{
 	public constructor() {
 		super();
 
+        Lobby._instance = this;
+
 		let bg: egret.Bitmap = Com.addBitmapAt( this, "lobby_json.bg", 0, 0 );
 		bg.scaleX = bg.scaleY = 2;
 

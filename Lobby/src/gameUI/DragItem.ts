@@ -1,5 +1,8 @@
 class DragItem extends egret.Sprite{
 
+	public static START_DRAG: string = "startDrag";
+	public static STOP_DRAG: string = "stopDrag";
+
 	protected currentContent: egret.DisplayObject;
 
 	private dragStarStageX: number;
@@ -33,6 +36,8 @@ class DragItem extends egret.Sprite{
 		this.dragStarStageX = event.stageX;
 		this.dragStarStageY = event.stageY;
 		this.dragStarContentX = this.currentContent.x;
+
+		this.dispatchEvent( new egret.Event( DragItem.START_DRAG ) );
 	}
 
 	private onMove( event: egret.TouchEvent ){
@@ -68,5 +73,6 @@ class DragItem extends egret.Sprite{
 
 	private resetDraging(){
 		this.draging = false;
+		this.dispatchEvent( new egret.Event( DragItem.STOP_DRAG ) );
 	}
 }
