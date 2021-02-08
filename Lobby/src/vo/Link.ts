@@ -101,25 +101,25 @@ class Link {
 	}
 
 	public static showPopup(): void {
-		if (!Link.links || Link.links.length === 0) return;
-		Link.instance = Link.links.splice(0, 1)[0];
+		// if (!Link.links || Link.links.length === 0) return;
+		// Link.instance = Link.links.splice(0, 1)[0];
 
-		let popup: GenericPo;
-		if (Link.isExpired || Link.isNotAvailable) {
-			LinkedExpired.isExpired = Link.instance.status === "expired";
-			popup = new LinkedExpired();
-		} else {
-			// if (Link.instance.bonusType === "manual")
-			// 	popup = new LinkBonus();
-			// else if (Link.instance.bonusType === "chips")
-			// 	popup = new LinkDinero();
+		// let popup: GenericPo;
+		// if (Link.isExpired || Link.isNotAvailable) {
+		// 	LinkedExpired.isExpired = Link.instance.status === "expired";
+		// 	popup = new LinkedExpired();
+		// } else {
+		// 	// if (Link.instance.bonusType === "manual")
+		// 	// 	popup = new LinkBonus();
+		// 	// else if (Link.instance.bonusType === "chips")
+		// 	// 	popup = new LinkDinero();
 			
-			popup = new ScratchCard();
-		}
-		if (popup) {
-			popup.addEventListener(egret.Event.REMOVED_FROM_STAGE, Link.clean, Link);
-			Trigger.insertInstance(popup);
-		}
+		// 	popup = new ScratchCard();
+		// }
+		// if (popup) {
+		// 	popup.addEventListener(egret.Event.REMOVED_FROM_STAGE, Link.clean, Link);
+		// 	Trigger.insertInstance(popup);
+		// }
 	}
 
 	public static clean(): void {

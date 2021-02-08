@@ -20,14 +20,14 @@ class SpinWheelVo {
                 if (wheel["type"] === "wheel_purchased") {
                     let wheelData = this.wheelList.splice(index, 1)[0];
 
-                    Wheel.modal = SpinWheel.SpinWheelModel["COINS"];
+                    // Wheel.modal = SpinWheel.SpinWheelModel["COINS"];
 			        Wheel.initPurchased(wheelData);
 
                     if (Wheel.hasPurchase) {
                         // wheel popup
-                        let wheelPopup = new SpinWheel();
-                        wheelPopup.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.showPurchasedWheelList.bind(this), this);
-                        Trigger.insertInstance(wheelPopup);
+                        // let wheelPopup = new SpinWheel();
+                        // wheelPopup.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.showPurchasedWheelList.bind(this), this);
+                        // Trigger.insertInstance(wheelPopup);
                         return;
                     }
                 }

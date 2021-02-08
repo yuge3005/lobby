@@ -1,6 +1,7 @@
 class Lobby extends egret.DisplayObjectContainer{
 
-	private featureArea: AdArea;
+    private static _instance: Lobby;
+    private featureArea: AdArea;
     private gameList: GameList;
     private topBar: TopBar;
     private socialBar: SocialBar;
@@ -38,5 +39,9 @@ class Lobby extends egret.DisplayObjectContainer{
     private onAddToStage(): void {
         // show enter lobby popup
         Trigger.enterLobby();
+    }
+
+    public static getInstance(): Lobby {
+        return this._instance;
     }
 }

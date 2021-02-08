@@ -42,10 +42,8 @@ class AdArea extends egret.DisplayObjectContainer {
             this.adLayer.setContent( Com.addBitmapAt(this, "welcome_" + MuLang.language + "_png", 0, 0) );
 		}
         else{
-            
+            if (FeatureVo.haveAds) this.loadFeatureData(FeatureVo.ads);
         }
-
-        // if (FeatureVo.haveAds) this.loadFeatureData(FeatureVo.ads);
     }
 
     /**
@@ -170,7 +168,7 @@ class AdArea extends egret.DisplayObjectContainer {
      */
 	private onTouch(){
 		this.adLayer.x = -this.currentItemIndex * AdArea.adSize.x;
-        AdPopupTrigger.doWhateverYuoWant(GlobelSettings[(<FeatureItem>this.adLayer.getChildAt(this.currentItemIndex)).name]);
+        // AdPopupTrigger.doWhateverYuoWant(GlobelSettings[(<FeatureItem>this.adLayer.getChildAt(this.currentItemIndex)).name]);
 	}
 
     /**
@@ -212,7 +210,7 @@ class AdArea extends egret.DisplayObjectContainer {
      * remove ads lock
      */
     public removeAdLock() {
-        this.welcomeAds && (this.welcomeAds.visible = false);
+        // this.welcomeAds && (this.welcomeAds.visible = false);
         this.adLayer && (this.adLayer.visible = true);
         if (!this.adLayer) this.defaultBg.visible = true;
 	}
