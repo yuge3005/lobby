@@ -18,6 +18,18 @@ class Trigger {
 		this.instance.trigs.registTrigger( trigObject, className, classUrl, configUrl );
 	}
 
+	public static registPo( trigObject: Object, className: string, classUrl: string, configUrl: string){
+		this.instance.trigs.registPo(trigObject, className, classUrl, configUrl);
+	}
+
+	public static registLimits(className: string, productId: number, expiredTime: number, cooldownTime: number): void {
+		this.instance.trigs.registLimits(className, productId, expiredTime, cooldownTime);
+	}
+
+	public static registPopupLimits(className: string, productId: number, startTime: number, endTime: number): void {
+		this.instance.trigs.registPopupLimits(className, productId, startTime, endTime);
+	}
+
 	/**
 	 * enter lobby
 	 */

@@ -258,4 +258,8 @@ class PlayerConfig {
 	public static updateUser():void {
 		
 	}
+
+	public static get properties(): string {
+		return localStorage.getItem("user_account_info");
+	}
 }
