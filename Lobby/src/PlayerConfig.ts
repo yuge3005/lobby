@@ -210,8 +210,8 @@ class PlayerConfig {
 										// time limit
 										if (typeof list[i]["display_start_time"] !== "undefined" && list[i]["display_start_time"] !== null &&
 											typeof list[i]["display_end_time"] !== "undefined" && list[i]["display_end_time"] !== null) {
-											let startTime = Utils.transformUTCStringToDate(list[i]["display_start_time"]).valueOf();
-											let endTime = Utils.transformUTCStringToDate(list[i]["display_end_time"]).valueOf();
+											let startTime = MDS.transformUTCStringToDate(list[i]["display_start_time"]).valueOf();
+											let endTime = MDS.transformUTCStringToDate(list[i]["display_end_time"]).valueOf();
 											Trigger.registPopupLimits(className, null, startTime, endTime);
 										}
 
