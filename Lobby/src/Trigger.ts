@@ -8,7 +8,14 @@ class Trigger {
 		return this._instance;
 	}
 
+	private trigs: TriggerVo;
+
 	public constructor() {
+		this.trigs = new TriggerVo();
+	}
+
+	public static registTrigger( trigObject: Object, className: string, classUrl: string, configUrl: string ){
+		this.instance.trigs.registTrigger( trigObject, className, classUrl, configUrl );
 	}
 
 	/**

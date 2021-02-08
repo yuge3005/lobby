@@ -225,8 +225,8 @@ class PlayerConfig {
 							// lobby ads feature
 							else if( poPath.indexOf(".png") > 0 && list[i].triggers ){
 								let lanIndex: number = 0;
-								if( GlobelSettings.language == "pt" ) lanIndex = 1;
-								else if( GlobelSettings.language == "es" ) lanIndex = 2;
+								if( MuLang.language == "pt" ) lanIndex = 1;
+								else if( MuLang.language == "es" ) lanIndex = 2;
 								poPath = list[i]["art"][lanIndex]["file"]["file_id_html5"];
 								FeatureVo.pushAds({
 									"name": list[i]["name"],
