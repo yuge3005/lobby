@@ -11,9 +11,11 @@ class CoinsBar extends egret.DisplayObjectContainer{
         this.coinsText.stroke = 2;
         this.coinsText.strokeColor = 0x9D7806;
 
-        let coinIcon = Com.addDownButtonAt(this, "lobby_json.icon_coin", "lobby_json.icon_coin", 0, 0, this.showBank.bind(this), true );
+        Com.addDownButtonAt(this, "lobby_json.icon_coin", "lobby_json.icon_coin", 0, 0, this.showBank.bind(this), true );
 
         this.onCoinsChanged(Number(UserVo.get("coins")));
+
+        UserVo.onCoinsChanged = this.onCoinsChanged.bind(this);
 	}
 
     private onCoinsChanged(coins: number): void {

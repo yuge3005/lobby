@@ -13,7 +13,7 @@ class DineroBar extends egret.DisplayObjectContainer{
         this.dineroText.strokeColor = 0x41A948;
         this.onDineroChanged(Number(UserVo.get("dineros")));
 
-        let dineroIcon = Com.addDownButtonAt(this, "lobby_json.icon_dinero", "lobby_json.icon_dinero", 224, 0, this.showBank.bind(this), true );
+        Com.addDownButtonAt(this, "lobby_json.icon_dinero", "lobby_json.icon_dinero", 224, 0, this.showBank.bind(this), true );
 
 		UserVo.onDineroChanged = this.onDineroChanged.bind(this);
 	}

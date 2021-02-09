@@ -80,11 +80,8 @@ class TopBar extends egret.DisplayObjectContainer {
         this.piggyBank.addEventListener(egret.TouchEvent.TOUCH_TAP, this.openPiggyBank, this);
 
         // setting btn
-        let settingBtn = Com.addBitmapAt(this, "lobby_json.btn_setting", 2014, 17);
-        settingBtn.touchEnabled = true;
-        settingBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.showSetting, this);
+        let settingBtn = Com.addDownButtonAt(this, "lobby_json.btn_setting", "lobby_json.btn_setting", 2014, 17, this.showSetting.bind(this), true );
 
-        // UserVo.onCoinsChanged = this.onCoinsChanged.bind(this);
         this.cacheAsBitmap = true;
     }
 
