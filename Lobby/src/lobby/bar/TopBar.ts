@@ -1,9 +1,5 @@
 class TopBar extends egret.DisplayObjectContainer {
-    private userHead: egret.Bitmap;
-    private redPoint: RedPoint;
-    private xpProgress: egret.Bitmap;
-    private xpProgressText: egret.TextField;
-    private levelText: egret.TextField;
+
     private coinsText: egret.TextField;
     private dineroText: egret.TextField;
     private piggyBank: egret.Bitmap;
@@ -26,45 +22,8 @@ class TopBar extends egret.DisplayObjectContainer {
         bar_up.scaleX = bar_up.scaleY = 2;
 
         // user level area
-        let userLevelArea = new egret.DisplayObjectContainer();
+        let userLevelArea = new LevelBar();
         Com.addObjectAt(this, userLevelArea, 65, 2);
-        // exp bg
-        Com.addBitmapAt(userLevelArea, "lobby_json.experience_bg", 39, 33);
-        this.xpProgress = Com.addBitmapAt(userLevelArea, "lobby_json.experience_progress_bar", 41, 33);
-        this.xpProgress.mask = new egret.Rectangle(0, 0, 0, 67);
-        // user head icon
-        this.userHead = Com.addBitmapAt(userLevelArea, "lobby_json.avatar", 0, 17);
-        this.userHead.touchEnabled = true;
-        this.userHead.addEventListener(egret.TouchEvent.TOUCH_TAP, this.showUserProfile, this);
-        // if (UserVo.get("fbId") !== "") Utils.downloadBitmapDataByFacebookID(UserVo.get("fbId"), 95, 95, this.loadHeadImage, this);
-        // head mask
-        let headMask: egret.Shape = new egret.Shape;
-        GraphicTool.drawCircle( headMask, new egret.Point( 47, 47 ), 47, 0 );
-        Com.addObjectAt(userLevelArea, headMask, 0, 17);
-        this.userHead.mask = headMask;
-        Com.addBitmapAt(userLevelArea, "lobby_json.btn_player_outline", 0, 17);
-        // red point
-        this.redPoint = new RedPoint();
-        Com.addObjectAt(userLevelArea, this.redPoint, 15, 30);
-        this.redPointCheck();
-        // level star
-        Com.addBitmapAt(userLevelArea, "lobby_json.icon_experience", 321, 0);
-        // xp progress text
-        this.xpProgressText = Com.addTextAt(userLevelArea, 108, 46, 212, 46, 32, false, false);
-        this.xpProgressText.fontFamily = "Righteous";
-        this.xpProgressText.verticalAlign = "middle";
-        this.xpProgressText.textColor = 0xFFFFFF;
-        this.xpProgressText.stroke = 2;
-        this.xpProgressText.strokeColor = 0x00045F;
-        // level text
-        this.levelText = Com.addTextAt(userLevelArea, 338, 39, 88, 46, 40, false, false);
-        this.levelText.fontFamily = "Righteous";
-        this.levelText.verticalAlign = "middle";
-        this.levelText.textColor = 0xFFFFFF;
-        this.levelText.stroke = 2;
-        this.levelText.strokeColor = 0x00045F;
-        this.onXpChanged(UserVo.get("xpProgress"));
-        this.onLevelChanged(UserVo.get("level"));
 
         // user coins area
         let userCoinsArea = new egret.DisplayObjectContainer();
@@ -163,17 +122,6 @@ class TopBar extends egret.DisplayObjectContainer {
     }
 
     /**
-     * load head image
-     */
-    private loadHeadImage(e: egret.Event): void {
-        let loader = <egret.ImageLoader>e.currentTarget;
-
-        let texture = new egret.Texture();
-        texture._setBitmapData(loader.data);
-        this.userHead.texture = texture;
-    }
-
-    /**
      * update overplus text
      * @param time 
      */
@@ -198,13 +146,6 @@ class TopBar extends egret.DisplayObjectContainer {
 		this.timeBg.visible = this.dealTimeOverplus.visible = false;
 		this.dealBtn.filters = [MatrixTool.colorMatrix(0.33, 0.33, 1)];
 	}
-
-    /**
-     * show user profile
-     */
-    private showUserProfile(): void {
-        // this.dispatchEvent(new egret.Event(Lobby.SHOW_USER_PROFILES));
-    }
 
     /**
      * show bank
@@ -243,22 +184,6 @@ class TopBar extends egret.DisplayObjectContainer {
     }
 
     /**
-     * on level changed
-     */
-    private onLevelChanged(level: number): void {
-        this.levelText.text = "" + level;
-    }
-
-    /**
-     * on xp changed
-     */
-    private onXpChanged(progress: number): void {
-        if (progress >= 1) progress = 1;
-        this.xpProgressText.text = (progress * 100) + "%";
-        this.xpProgress.mask.width = progress * 354;
-    }
-
-    /**
      * on coins changed
      */
     private onCoinsChanged(coins: number): void {
@@ -272,16 +197,5 @@ class TopBar extends egret.DisplayObjectContainer {
     private onDineroChanged(dinero: number): void {
         this.dineroText.text = Utils.formatCoinsNumber(dinero);
         this.dineroText.size = 52 - Math.max(this.dineroText.text.length - 6, 0) * 4;
-    }
-
-    /**
-     * red point check
-     */
-    public redPointCheck(): void {
-        let preferencesData = PlayerConfig.player("user_info.preferences");
-        let answersData = PlayerConfig.player("user_info.preferences_answer");
-		// let total = ((PlayerConfig.player("user_info.email_is_verified") || false) ? 0 : 1) + (((PlayerConfig.player("user_info.telephone_is_verified") || Number(PlayerConfig.player("loyalty.loyalty_level")) < 3) || false) ? 0 : 1) + (preferencesData.length - answersData.length);
-        
-        // this.redPoint.check(total);
     }
 }
