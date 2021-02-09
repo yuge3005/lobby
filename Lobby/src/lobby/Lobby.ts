@@ -1,5 +1,5 @@
 class Lobby extends egret.DisplayObjectContainer{
-
+    public static SHOW_BANK: string = "SHOW_BANK";
     public static SHOW_USER_PROFILES: string = "SHOW_USER_PROFILES";
 
     private static _instance: Lobby;

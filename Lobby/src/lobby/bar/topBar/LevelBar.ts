@@ -15,6 +15,9 @@ class LevelBar extends egret.DisplayObjectContainer{
 
         this.onXpChanged(UserVo.get("xpProgress"));
         this.onLevelChanged(UserVo.get("level"));
+
+        UserVo.onLevelChanged = this.onLevelChanged.bind(this);
+        UserVo.onXpChanged = this.onXpChanged.bind(this);
 	}
 
 	private addHead(){

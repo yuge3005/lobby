@@ -13,11 +13,11 @@ class Main extends egret.DisplayObjectContainer {
         })
 
         egret.lifecycle.onPause = () => {
-            egret.ticker.pause();
+            if( Trigger.isMobile ) egret.ticker.pause();
         }
 
         egret.lifecycle.onResume = () => {
-            egret.ticker.resume();
+            if( Trigger.isMobile ) egret.ticker.resume();
         }
 
         this.runGame().catch(e => {

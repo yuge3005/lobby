@@ -1,6 +1,5 @@
 class TopBar extends egret.DisplayObjectContainer {
 
-    private coinsText: egret.TextField;
     private dineroText: egret.TextField;
     private piggyBank: egret.Bitmap;
 
@@ -26,21 +25,8 @@ class TopBar extends egret.DisplayObjectContainer {
         Com.addObjectAt(this, userLevelArea, 65, 2);
 
         // user coins area
-        let userCoinsArea = new egret.DisplayObjectContainer();
-        Com.addObjectAt(this, userCoinsArea, 571, 22);
-        // text bg
-        Com.addBitmapAt(userCoinsArea, "lobby_json.number_bg", 5, 9);
-        this.coinsText = Com.addTextAt(userCoinsArea, 85, 14, 272, 72, 52, false, false);
-        this.coinsText.fontFamily = "Righteous";
-        this.coinsText.verticalAlign = "middle";
-        this.coinsText.textColor = 0xFFFFFF;
-        this.coinsText.stroke = 2;
-        this.coinsText.strokeColor = 0x9D7806;
-        this.onCoinsChanged(Number(UserVo.get("coins")));
-        // coin icon
-        let coinIcon = Com.addBitmapAt(userCoinsArea, "lobby_json.icon_coin", 0, 0);
-        coinIcon.touchEnabled = true;
-        coinIcon.addEventListener(egret.TouchEvent.TOUCH_TAP, this.showBank, this);
+        let userCoinsArea = new CoinsBar();
+        Com.addObjectAt(this, userCoinsArea, 525, 22);
 
         // bank btn
         let bankBtn = new egret.DisplayObjectContainer();
@@ -113,12 +99,14 @@ class TopBar extends egret.DisplayObjectContainer {
         settingBtn.touchEnabled = true;
         settingBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.showSetting, this);
 
-        // UserVo.onLevelChanged = this.onLevelChanged.bind(this);
-        // UserVo.onXpChanged = this.onXpChanged.bind(this);
         // UserVo.onCoinsChanged = this.onCoinsChanged.bind(this);
         // UserVo.onDineroChanged = this.onDineroChanged.bind(this);
 
         this.cacheAsBitmap = true;
+    }
+
+    private showBank( event: egret.TouchEvent ): void {
+        Trigger.instance.showBank();
     }
 
     /**
@@ -148,13 +136,6 @@ class TopBar extends egret.DisplayObjectContainer {
 	}
 
     /**
-     * show bank
-     */
-    private showBank(type: number = 0): void {
-        // this.dispatchEvent(new egret.Event(Lobby.SHOW_BANK, false, false, {"type": type}));
-    }
-
-    /**
      * show po
      */
     private showPo(): void {
@@ -181,14 +162,6 @@ class TopBar extends egret.DisplayObjectContainer {
      */
     private showSetting(): void {
         // Trigger.insertModel(SettingPopup);
-    }
-
-    /**
-     * on coins changed
-     */
-    private onCoinsChanged(coins: number): void {
-        this.coinsText.text = Utils.formatCoinsNumber(coins);
-        this.coinsText.size = 52 - Math.max(this.coinsText.text.length - 6, 0) * 4;
     }
 
     /**

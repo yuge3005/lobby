@@ -60,4 +60,13 @@ class Trigger {
 			this.showFirstWaitingModal();
 		}, this);
 	}
+
+	public showBank(type: number = 0) {
+		if (isNaN(type)) type = 0;
+		// Trigger.showBankTagIndex = type;
+
+		// this.waitingModals.unshift( GlobelSettings.bankPoVo );
+		// if( this.currentPo )this.closeCurrentPo();
+		// else this.showFirstWaitingModal();
+	}
 }
