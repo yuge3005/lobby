@@ -7,16 +7,42 @@ class Trigger {
 	private currentPoName: string;
 	private currentPo: GenericModal;
 
+	private poContainer: egret.DisplayObjectContainer;
+	private poShadow: egret.Shape;
+	private modalPreloader: egret.Bitmap;
+
 	private static _instance: Trigger;
 	public static get instance(): Trigger{
-		if( !this._instance ) this._instance = new Trigger;
+		if( !this._instance ){
+			this._instance = new Trigger;
+			this.instance.init();
+		}
 		return this._instance;
 	}
 
 	private trigs: TriggerVo;
 
+	private waitingModalsInstance: Array<GenericModal>;
 	public constructor() {
 		this.trigs = new TriggerVo();
+		this.waitingModalsInstance = new Array<GenericModal>();
+	}
+
+	public init(): void {
+		if (!this.poContainer) {
+			// po container
+			this.poContainer = new egret.DisplayObjectContainer();
+			// shadow
+			this.poShadow = new egret.Shape();
+			GraphicTool.drawRect(this.poShadow, new egret.Rectangle( 0, 0, this.size.x, this.size.y ), 0, false, 0.5);
+			this.poShadow.touchEnabled = true;
+			Com.addObjectAt(this.poContainer, this.poShadow, 0, 0);
+			// modal preloader
+			this.modalPreloader = Com.addBitmapAt(this.poContainer, "modalGeneric_json.loader", this.size.x >> 1, this.size.y >> 1);
+			this.modalPreloader.anchorOffsetX = this.modalPreloader.width >> 1;
+			this.modalPreloader.anchorOffsetY = this.modalPreloader.height >> 1;
+			egret.Tween.get(this.modalPreloader, {loop: true}).to({rotation: 359}, 1800);
+		}
 	}
 
 	public static registTrigger( trigObject: Object, className: string, classUrl: string, configUrl: string ){
@@ -51,22 +77,21 @@ class Trigger {
 	private addPo( event:egret.Event = null ){
 		this.currentPo.x = this.size.x >> 1;
 		this.currentPo.y = this.size.y >> 1;
-		this.currentPo.scaleX = 0.4;
-		this.currentPo.scaleY = 0.4;
-		this.currentPo.alpha = 0.4;
-		this.currentPo.touchEnabled = true;
+		this.currentPo.scaleX = 0.1;
+		this.currentPo.scaleY = 0.1;
+		this.currentPo.alpha = 0.2;
 		this.currentPo.addEventListener( GenericModal.CLOSE_MODAL, this.closeCurrentPo, this );
 		this.currentPo.addEventListener( GenericModal.MODAL_COMMAND, this.onModalCommand, this );
 
 		let scale = 1;
-		if (!this.currentPo.noScale) {
+		if (!this.currentPo["noScale"]) {
 			scale = Math.min(this.size.x / this.currentPo.width, this.size.y / this.currentPo.height, 1.5);
 		}
 
 		// add touch event
 		this.poShadow.once(egret.TouchEvent.TOUCH_TAP, this.quickClose, this);
 
-		this.poContainer.addChild(this.currentPo);
+		this.stage.addChild(this.currentPo);
 		let tw: egret.Tween = egret.Tween.get(this.currentPo);
 		tw.to({scaleX: scale, scaleY : scale, alpha: 1}, 300);
 
