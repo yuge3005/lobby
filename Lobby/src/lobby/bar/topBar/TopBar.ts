@@ -1,6 +1,5 @@
 class TopBar extends egret.DisplayObjectContainer {
 
-    private dineroText: egret.TextField;
     private piggyBank: egret.Bitmap;
 
     private dealBtn: egret.DisplayObjectContainer;
@@ -71,22 +70,8 @@ class TopBar extends egret.DisplayObjectContainer {
         this.timeBg.visible = this.dealTimeOverplus.visible = haveDealTimer;
 
         // user dinero area
-        let dineroArea = new egret.DisplayObjectContainer();
-        Com.addObjectAt(this, dineroArea, 1491, 31);
-        // text bg
-        Com.addBitmapAt(dineroArea, "lobby_json.number_bg", 0, 0);
-        // dinero text
-        this.dineroText = Com.addTextAt(dineroArea, 2, 2, 242, 72, 52, false, false);
-        this.dineroText.fontFamily = "Righteous";
-        this.dineroText.verticalAlign = "middle";
-        this.dineroText.textColor = 0xFFFFFF;
-        this.dineroText.stroke = 2;
-        this.dineroText.strokeColor = 0x41A948;
-        // this.onDineroChanged(Number(UserVo.get("dineros")));
-        // dinero icon
-        let dineroIcon = Com.addBitmapAt(dineroArea, "lobby_json.icon_dinero", 224, 0);
-        dineroIcon.touchEnabled = true;
-        dineroIcon.addEventListener(egret.TouchEvent.TOUCH_TAP, this.showBank.bind(this, 1), this);
+        let dineroArea = new DineroBar();
+        Com.addObjectAt(this, dineroArea, 1520, 31);
 
         // piggy bank
         this.piggyBank = Com.addBitmapAt(this, "lobby_json.icon_piggybank", 1882, 23);
@@ -100,8 +85,6 @@ class TopBar extends egret.DisplayObjectContainer {
         settingBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.showSetting, this);
 
         // UserVo.onCoinsChanged = this.onCoinsChanged.bind(this);
-        // UserVo.onDineroChanged = this.onDineroChanged.bind(this);
-
         this.cacheAsBitmap = true;
     }
 
@@ -162,13 +145,5 @@ class TopBar extends egret.DisplayObjectContainer {
      */
     private showSetting(): void {
         // Trigger.insertModel(SettingPopup);
-    }
-
-    /**
-     * on dinero changed
-     */
-    private onDineroChanged(dinero: number): void {
-        this.dineroText.text = Utils.formatCoinsNumber(dinero);
-        this.dineroText.size = 52 - Math.max(this.dineroText.text.length - 6, 0) * 4;
     }
 }
