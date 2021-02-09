@@ -57,8 +57,6 @@ class Main extends egret.DisplayObjectContainer {
 			this.x = stageW;
 			this.rotation = 90;
 		}
-        this.scaleX = 960/2250;
-        this.scaleY = 540/1125;
 
         Trigger.instance.stage = this;
         PlayerConfig.init();
@@ -67,6 +65,8 @@ class Main extends egret.DisplayObjectContainer {
         try{eval("removeLoadingProgress()");}
         catch(e){};
         
+        this.scaleX = Trigger.instance.scale.x;
+        this.scaleY = Trigger.instance.scale.y;
         MuLang.txt = RES.getRes( "lobby_tx" );
 		this.addChild( new Lobby );
     }

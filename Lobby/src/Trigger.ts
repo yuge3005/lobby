@@ -1,6 +1,8 @@
 class Trigger {
 	public static isMobile: boolean;
 	public stage: Main;
+	public size: egret.Point = new egret.Point( 2250, 1125);
+	public scale: egret.Point = new egret.Point( 960 / 2250, 540 / 1125);
 
 	private currentPoName: string;
 	private currentPo: GenericModal;
@@ -44,6 +46,31 @@ class Trigger {
 	 */
 	private enterLobbyTrigger() {
 	
+	}
+
+	private addPo( event:egret.Event = null ){
+		this.currentPo.x = this.size.x >> 1;
+		this.currentPo.y = this.size.y >> 1;
+		this.currentPo.scaleX = 0.4;
+		this.currentPo.scaleY = 0.4;
+		this.currentPo.alpha = 0.4;
+		this.currentPo.touchEnabled = true;
+		this.currentPo.addEventListener( GenericModal.CLOSE_MODAL, this.closeCurrentPo, this );
+		this.currentPo.addEventListener( GenericModal.MODAL_COMMAND, this.onModalCommand, this );
+
+		let scale = 1;
+		if (!this.currentPo.noScale) {
+			scale = Math.min(this.size.x / this.currentPo.width, this.size.y / this.currentPo.height, 1.5);
+		}
+
+		// add touch event
+		this.poShadow.once(egret.TouchEvent.TOUCH_TAP, this.quickClose, this);
+
+		this.poContainer.addChild(this.currentPo);
+		let tw: egret.Tween = egret.Tween.get(this.currentPo);
+		tw.to({scaleX: scale, scaleY : scale, alpha: 1}, 300);
+
+		this.modalPreloader.visible = false;
 	}
 
 	public closeCurrentPo() {
