@@ -62,6 +62,7 @@ class Main extends egret.DisplayObjectContainer {
 
         Trigger.instance.stage = this;
         PlayerConfig.init();
+        UserVo.init();
         
         try{eval("removeLoadingProgress()");}
         catch(e){};

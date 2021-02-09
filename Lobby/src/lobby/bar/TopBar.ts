@@ -27,7 +27,7 @@ class TopBar extends egret.DisplayObjectContainer {
 
         // user level area
         let userLevelArea = new egret.DisplayObjectContainer();
-        Com.addObjectAt(this, userLevelArea, 143, 2);
+        Com.addObjectAt(this, userLevelArea, 65, 2);
         // exp bg
         Com.addBitmapAt(userLevelArea, "lobby_json.experience_bg", 39, 33);
         this.xpProgress = Com.addBitmapAt(userLevelArea, "lobby_json.experience_progress_bar", 41, 33);
@@ -63,8 +63,8 @@ class TopBar extends egret.DisplayObjectContainer {
         this.levelText.textColor = 0xFFFFFF;
         this.levelText.stroke = 2;
         this.levelText.strokeColor = 0x00045F;
-        // this.onXpChanged(UserVo.get("xpProgress"));
-        // this.onLevelChanged(UserVo.get("level"));
+        this.onXpChanged(UserVo.get("xpProgress"));
+        this.onLevelChanged(UserVo.get("level"));
 
         // user coins area
         let userCoinsArea = new egret.DisplayObjectContainer();
@@ -77,7 +77,7 @@ class TopBar extends egret.DisplayObjectContainer {
         this.coinsText.textColor = 0xFFFFFF;
         this.coinsText.stroke = 2;
         this.coinsText.strokeColor = 0x9D7806;
-        // this.onCoinsChanged(Number(UserVo.get("coins")));
+        this.onCoinsChanged(Number(UserVo.get("coins")));
         // coin icon
         let coinIcon = Com.addBitmapAt(userCoinsArea, "lobby_json.icon_coin", 0, 0);
         coinIcon.touchEnabled = true;
