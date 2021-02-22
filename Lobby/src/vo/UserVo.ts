@@ -146,7 +146,7 @@ class UserVo {
 		UserVo.updateData(properties);
 
 		// update loyalty data
-		// LoyaltyVo.updateData(data);
+		LoyaltyVo.updateData(data);
 	}
 
 	/**

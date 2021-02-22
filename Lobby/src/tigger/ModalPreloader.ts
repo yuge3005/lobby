@@ -14,7 +14,7 @@ class ModalPreloader extends egret.DisplayObjectContainer{
 
 	private onAdd( event: egret.Event ){
 		this.addEventListener( egret.Event.REMOVED_FROM_STAGE, this.onRemove, this );
-		egret.Tween.get(this.entity, {loop: true}).to({rotation: 1800}, 1800);
+		egret.Tween.get(this.entity, {loop: true}).to({rotation: 1800}, 7200);
 	}
 
 	private onRemove( event: egret.Event ){

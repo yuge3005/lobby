@@ -5,6 +5,10 @@ class GlobelSettings {
 	public constructor() {
 	}
 
+	public static get language(): string{
+		return MuLang.language;
+	}
+
     public static get isRightClick(): boolean{
         return document["isRightClick"];
     }
