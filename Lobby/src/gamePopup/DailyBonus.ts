@@ -281,7 +281,7 @@ class DailyBonus extends GenericPo {
 
 			let rewardItems = data["reward_items"];
 			if (rewardItems) {
-				ExtendItemVo.showItems(rewardItems, new egret.Point(x, y), this.collectedCallback.bind(this));
+				// ExtendItemVo.showItems(rewardItems, new egret.Point(x, y), this.collectedCallback.bind(this));
 			}
 
 			let gap = this.todayBonus / 40;

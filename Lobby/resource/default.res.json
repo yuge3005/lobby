@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "lobby_json,open_list_mp3,lobby_tx,game_icons_json,loyalty_level_icon_json,modalGeneric_json",
+			"keys": "lobby_json,open_list_mp3,lobby_tx,game_icons_json,loyalty_level_icon_json,modalGeneric_json,loyalty_privilege_json",
 			"name": "lobby"
 		},
 		{
@@ -84,6 +84,12 @@
 			"type": "sheet",
 			"name": "modalGeneric_json",
 			"subkeys": "closePopUpBtn1,closePopUpBtn2,loader"
+		},
+		{
+			"url": "assets/loyalty/loyalty_privilege.json",
+			"type": "sheet",
+			"name": "loyalty_privilege_json",
+			"subkeys": "arrow_up,icon_bg,light_bg"
 		}
 	]
 }
