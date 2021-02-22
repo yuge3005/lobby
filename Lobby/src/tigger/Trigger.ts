@@ -81,10 +81,10 @@ class Trigger {
             //     FirstUserExperienceVo.showExperienceEffect(experience);
 			// }
 			
-			// if (Number(PlayerConfig.player("score.level")) > 2 && !PlayerConfig.player("collected_daily_bonus")) {
-			// 	let dailyBonus = new DailyBonus();
-			// 	Trigger.insertInstance(dailyBonus);
-			// }
+			if (Number(PlayerConfig.player("score.level")) > 2 && !PlayerConfig.player("collected_daily_bonus")) {
+				let dailyBonus = new DailyBonus();
+				Trigger.insertInstance(dailyBonus);
+			}
 
 			// if (Boolean(PlayerConfig.player("is_first_login_chips")) && !Boolean(PlayerConfig.player("is_new"))) {
 			// 	ToolbarUserCoins.addDineros( -Number(PlayerConfig.player("init_chips") ) );
@@ -186,7 +186,11 @@ class Trigger {
 	}
 
 	public static insertInstance(instance: GenericModal): void {
-		Trigger.instance.showInstance(instance);
+		if( Trigger.instance.currentPo ){
+			Trigger.instance.waitingModals.unshift( instance );
+			Trigger.instance.closeCurrentPo();
+		}
+		else Trigger.instance.showInstance(instance);
 	}
 
 	private showInstance(instance: GenericModal): void {
