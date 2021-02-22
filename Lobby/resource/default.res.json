@@ -15,6 +15,10 @@
 		{
 			"keys": "icon_texts_pt_json,welcome_pt_png",
 			"name": "lobby_pt"
+		},
+		{
+			"keys": "daily_bonus_json",
+			"name": "daily_bonus"
 		}
 	],
 	"resources": [
@@ -90,6 +94,12 @@
 			"type": "sheet",
 			"name": "loyalty_privilege_json",
 			"subkeys": "arrow_up,icon_bg,light_bg"
+		},
+		{
+			"url": "assets/daily_bonus/daily_bonus.json",
+			"type": "sheet",
+			"name": "daily_bonus_json",
+			"subkeys": "Stack-1,Stack-2,Stack-3,Stack-4,Stack-5,bg,collect_btn,day,day_arrow,today,today_arrow"
 		}
 	]
 }
