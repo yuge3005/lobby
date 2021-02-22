@@ -236,7 +236,6 @@ class Trigger {
 			this.showPoWithClassName( className, assetConfigUrl );
 			return;
 		}
-		this.currentPo = new GenericPo();
         var s = document.createElement('script');
         s.async = false;
         s.src = classUrl;
