@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "lobby_json,open_list_mp3,lobby_tx,game_icons_json,loyalty_level_icon_json,modalGeneric_json,loyalty_privilege_json",
+			"keys": "lobby_json,open_list_mp3,lobby_tx,game_icons_json,loyalty_level_icon_json,modalGeneric_json,loyalty_privilege_json,collect_coins_mp3,flyingCoins_json,flyingCoins_png",
 			"name": "lobby"
 		},
 		{
@@ -100,6 +100,21 @@
 			"type": "sheet",
 			"name": "daily_bonus_json",
 			"subkeys": "Stack-1,Stack-2,Stack-3,Stack-4,Stack-5,bg,collect_btn,day,day_arrow,today,today_arrow"
+		},
+		{
+			"url": "assets/coins/collect_coins.mp3",
+			"type": "sound",
+			"name": "collect_coins_mp3"
+		},
+		{
+			"url": "assets/coins/flyingCoins.png",
+			"type": "image",
+			"name": "flyingCoins_png"
+		},
+		{
+			"url": "assets/coins/flyingCoins.json",
+			"type": "json",
+			"name": "flyingCoins_json"
 		}
 	]
 }
