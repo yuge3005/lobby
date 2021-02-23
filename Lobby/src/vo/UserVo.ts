@@ -12,9 +12,9 @@ class UserVo {
 	private fbId: string = "";
 	private accessToken: string;
 	private _coins: number;
-	private _coinsTimer: egret.Timer;
 	private _dinero: number;
-	private _dineroTimer: egret.Timer;
+	private _coinsReal: number;
+	private _dineroReal: number;
 	private _level: number;
 	private _xp: number;
 	private thisLevelXp: number;
@@ -28,8 +28,8 @@ class UserVo {
 		let score = PlayerConfig.player("score");
 		let settings = PlayerConfig.player("settings");
 
-		this._coins = Number(score["coins"]);
-		this._dinero = Number(score["chips"]);
+		this._coinsReal = this._coins = Number(score["coins"]);
+		this._dineroReal = this._dinero = Number(score["chips"]);
 		this._level = Number(score["level"]);
 		this.xp = Number(score["xp"]);
 		this.thisLevelXp = Number(score["this_level_xp"]);
@@ -67,8 +67,8 @@ class UserVo {
 	 */
 	public static updateData(data: Object): void {
 		let coins = data["coins"];
-		if (coins && coins !== this._instance._coins) {
-			this._instance.coins = coins;
+		if ( coins != null && coins !== this._instance._coins) {
+			this.coinsTo( coins );
 		}
 
 		let dineros = data["chips"];
@@ -167,20 +167,11 @@ class UserVo {
 	}
 
 	private set coins(coins: number) {
-		if (this._coinsTimer) this._coinsTimer = null;
+		if( this._coins == coins ) return;
+		this._coins = coins;
 		if (UserVo.onCoinsChanged) {
-			let gap = (coins - this._coins) / 10;
-			this._coinsTimer = new egret.Timer(50, 10);
-			this._coinsTimer.addEventListener(egret.TimerEvent.TIMER, function(gap: number) {
-				this._coins += gap;
-				UserVo.onCoinsChanged(Math.floor(this._coins));
-			}.bind(this, gap), this);
-			this._coinsTimer.addEventListener(egret.TimerEvent.TIMER_COMPLETE, function(coins: number) {
-				this._coins = coins;
-				UserVo.onCoinsChanged(Math.floor(this._coins));
-			}.bind(this, coins), this);
-			this._coinsTimer.start();
-		} else this._coins = coins;
+			UserVo.onCoinsChanged( coins );
+		}
 	}
 
 	private get coins(): number {
@@ -188,20 +179,18 @@ class UserVo {
 	}
 
 	private set dineros(dineros: number) {
-		if (this._dineroTimer) this._dineroTimer = null;
 		if (UserVo.onDineroChanged) {
 			let gap = (dineros - this._dinero) / 10;
-			this._dineroTimer = new egret.Timer(50, 10);
-			this._dineroTimer.addEventListener(egret.TimerEvent.TIMER, function(gap: number) {
-				this._dinero += gap;
-				UserVo.onDineroChanged(Math.floor(this._dinero));
-			}.bind(this, gap), this);
-			this._dineroTimer.addEventListener(egret.TimerEvent.TIMER_COMPLETE, function(dineros: number) {
-				this._dinero = dineros;
-				UserVo.onDineroChanged(Math.floor(this._dinero));
-			}.bind(this, dineros), this);
-			this._dineroTimer.start();
 		} else this._dinero = dineros;
+	}
+
+	public static addCoins( coins: number ){
+		this.coinsTo( coins + this._instance._coinsReal );
+	}
+
+	public static coinsTo( coins: number ){
+		this._instance._coinsReal = coins;
+		TweenerTool.tweenTo( this._instance, { coins: coins }, 400 );
 	}
 
 	private get dineros(): number {
