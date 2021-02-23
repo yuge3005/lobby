@@ -19,14 +19,14 @@ class UserVo {
 	private _xp: number;
 	private thisLevelXp: number;
 	private nextLevelXp: number;
-	private _xpProgress: number;
 	private levelMultiplier: number;
 	private chipsLevelMultiplier: number;
 	private levelMultiplierPuzzle: number;
 	private blockPurchase: boolean;
 
 	constructor() {
-		let score = PlayerConfig.player("score"), settings = PlayerConfig.player("settings");
+		let score = PlayerConfig.player("score");
+		let settings = PlayerConfig.player("settings");
 
 		this._coins = Number(score["coins"]);
 		this._dinero = Number(score["chips"]);
@@ -34,7 +34,6 @@ class UserVo {
 		this.xp = Number(score["xp"]);
 		this.thisLevelXp = Number(score["this_level_xp"]);
 		this.nextLevelXp = Number(score["next_level_xp"]);
-		this.xpProgress = Math.floor((this.xp - this.thisLevelXp) * 100 / (this.nextLevelXp - this.thisLevelXp)) / 100;
 
 		this.levelMultiplier = Number(PlayerConfig.player("levelMultiplier"));
 		this.chipsLevelMultiplier = Number(PlayerConfig.player("chipsLevelMultiplier"));
@@ -53,7 +52,7 @@ class UserVo {
 			} catch(e) {}
 		}
 
-		if (this.xp > this.nextLevelXp) this.requestLevelUp();
+		// if (this.xp > this.nextLevelXp) this.requestLevelUp();
 	}
 
 	/**
@@ -211,7 +210,6 @@ class UserVo {
 
 	private set xp(xp: number) {
 		this._xp = xp;
-		this.xpProgress = Math.floor((xp - this.thisLevelXp) * 100 / (this.nextLevelXp - this.thisLevelXp)) / 100;
 		UserVo.onXpChanged && UserVo.onXpChanged(this.xpProgress);
 	}
 
@@ -220,19 +218,16 @@ class UserVo {
 	}
 
 	private set level(level: number) {
+		if( this._level == level ) return;
 		this._level = level;
-		UserVo.onLevelChanged && UserVo.onLevelChanged(level);
+		if( UserVo.onLevelChanged ) UserVo.onLevelChanged( level );
 	}
 
 	private get level(): number {
 		return this._level;
 	}
 
-	private set xpProgress(progress: number) {
-		this._xpProgress = progress;
-	}
-
 	private get xpProgress(): number {
-		return this._xpProgress;
+		return Math.floor((this.xp - this.thisLevelXp) * 100 / (this.nextLevelXp - this.thisLevelXp)) / 100;
 	}
 }

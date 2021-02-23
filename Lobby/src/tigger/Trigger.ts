@@ -281,4 +281,10 @@ class Trigger {
 		// if( this.currentPo )this.closeCurrentPo();
 		// else this.showFirstWaitingModal();
 	}
+
+	public static flyingCoins( count: number, startPosition: egret.Point ){
+		let flyCoins: FlyingCoins = new FlyingCoins();
+		flyCoins.fly( count, startPosition, new egret.Point( 1000, 520 ), new egret.Point( 400, 300 ), 0.2, 0.1, 0.1 );
+		this.instance.stage.addChild( flyCoins );
+	}
 }
