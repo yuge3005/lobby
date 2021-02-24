@@ -56,7 +56,7 @@ class SpinWheel extends GenericPo{
 			scaleLevel = maxBonus.toString().length - 3;
 		}
 		else if (Wheel.modal === SpinWheel.SpinWheelModel["PO_COINS"]) {
-			this.coins = Congratulations.buyingPoWheel;
+			// this.coins = Congratulations.buyingPoWheel;
 			maxBonus = this.wheel.product.getMaxCoins();
 			scaleLevel = maxBonus.toString().length - 3;
 		}
@@ -256,7 +256,7 @@ class SpinWheel extends GenericPo{
 		let ob: Object = JSON.parse( data );
 		this.runWheelTo(ob["sector"]);
 		Wheel.spinWheelCoinsNumber = ob["reward"]["value"];
-		SoundManager.instance.play("wheel_running_mp3");
+		SoundManager.play("wheel_running_mp3");
 	}
 
 	private getDataFailed(message: string){
@@ -315,7 +315,7 @@ class SpinWheel extends GenericPo{
 		this.startCoinsTextAnimation(true);
 		this.startCoinsAnimation();
 
-		SoundManager.instance.play("win_wheel1_mp3");
+		SoundManager.play("win_wheel1_mp3");
 	}
 
 	/**
@@ -356,8 +356,9 @@ class SpinWheel extends GenericPo{
 	 * collect coins
 	 */
 	private requestCollectCoins():void {
-		ToolbarUserCoins.add(Wheel.spinWheelCoinsNumber, 20, 2000);
-		Trigger.flyingCoins(40, new egret.Point(1080, 553), new egret.Point(700, 500), 0.2, 0.1, 0.7, this.closeSpinWheel.bind(this));
+		UserVo.addCoins( Wheel.spinWheelCoinsNumber );
+		Trigger.flyingCoins(40, new egret.Point(1080, 553) );
+		TweenerTool.tweenTo( this, { alpha: 1 }, 500, 0, this.closeSpinWheel.bind(this) );
 	}
 
 	/**

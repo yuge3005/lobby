@@ -460,7 +460,7 @@ class SpinWheelVIP extends GenericPo {
 		egret.Tween.get(this.flagContainer.mask).to({height: 1123}, 1600);
 		egret.Tween.get(this.winText).wait(1000).to({scaleX: 0.7, scaleY: 0.7}, 300, egret.Ease.backInOut);
 		egret.Tween.get(this.coinsText).wait(1000).to({scaleX: 0.75, scaleY: 0.75}, 300, egret.Ease.backInOut);
-		egret.Tween.get(this.coinsIcon).wait(1000).to({alpha: 1}, 500).wait(1500).call( () => { SoundManager.instance.play( "win_wheel2_mp3" ); } );
+		egret.Tween.get(this.coinsIcon).wait(1000).to({alpha: 1}, 500).wait(1500).call( () => { SoundManager.play( "win_wheel2_mp3" ); } );
 		this.startCoinsTextAnimation(true);
 		this.startCoinsAnimation();
 	}
@@ -500,8 +500,9 @@ class SpinWheelVIP extends GenericPo {
 	}
 
 	private requestCollectCoins(): void {
-		ToolbarUserCoins.add(Wheel.spinWheelCoinsNumber, 20, 2000);
-		Trigger.flyingCoins(40, new egret.Point(1140, 570), new egret.Point(700, 500), 0.2, 0.1, 0.7, this.closeSpinWheel.bind(this));
+		UserVo.addCoins( Wheel.spinWheelCoinsNumber );
+		Trigger.flyingCoins(40, new egret.Point(1140, 570) );
+		TweenerTool.tweenTo( this, { alpha: 1 }, 500, 0, this.closeSpinWheel.bind(this) );
 	}
 
 	private closeSpinWheel(): void {
