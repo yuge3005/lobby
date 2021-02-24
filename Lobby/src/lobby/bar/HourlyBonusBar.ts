@@ -1,7 +1,7 @@
 
 class HourlyBonusBar extends egret.DisplayObjectContainer {
     private _enabled: boolean;
-    // private bonus: BonusVo;
+    private bonus: BonusVo;
     private collectTimes: number;
     private hourlyBonus: Object;
 	private levelUpBonus: Object;
@@ -20,11 +20,11 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
 
         this.touchEnabled = true;
 
-        // this.bonus = new Wheel().bonus;
-        // this.hourlyBonus = this.bonus.get("hourlyBonuses");
-		// this.levelUpBonus = this.bonus.get("levelUpBonus");
-		// this.collectTimes = this.bonus.get("hourlyBonusCount") || 0;
-		// this.timeNextBonus = this.bonus.get("timeNextBonus");
+        this.bonus = new Wheel().bonus;
+        this.hourlyBonus = this.bonus.get("hourlyBonuses");
+		this.levelUpBonus = this.bonus.get("levelUpBonus");
+		this.collectTimes = this.bonus.get("hourlyBonusCount") || 0;
+		this.timeNextBonus = this.bonus.get("timeNextBonus");
 
         // wheel bg
         Com.addBitmapAt(this, "lobby_json.icon_wheel", 90, 0);
@@ -111,21 +111,21 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
     private onTouched(e: egret.TouchEvent): void {
         e.stopImmediatePropagation();
 
-        // if (this.enabled) {
-        //     if (this.collectTimes < 4) {
-        //         this.showBank();
-        //     } else {
-        //         Wheel.modal = SpinWheel.SpinWheelModel["RANDOM"];
-		//         Trigger.insertModel(SpinWheel);
-        //     }
-        // } else {
-        //     if (Boolean(UserVo.get("blockPurchase"))) {
-        //         this.showBank();
-        //     } else {
-        //         Wheel.modal = SpinWheel.SpinWheelModel["COINS"];
-		// 		Trigger.insertInstance(new SpinWheelVIP());
-        //     }
-        // }
+        if (this.enabled) {
+            if (this.collectTimes < 4) {
+                this.showBank();
+            } else {
+                Wheel.modal = SpinWheel.SpinWheelModel["RANDOM"];
+		        Trigger.insertInstance(new SpinWheel());
+            }
+        } else {
+            if (Boolean(UserVo.get("blockPurchase"))) {
+                this.showBank();
+            } else {
+                Wheel.modal = SpinWheel.SpinWheelModel["COINS"];
+				Trigger.insertInstance(new SpinWheelVIP());
+            }
+        }
     }
 
     /**
@@ -133,14 +133,14 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
      */
     public updateBonusData(data: any): void {
         let update = data["update"];
-        // PlayerConfig.player("bonus.hourly_bonus_count", update["bonus"]["hourly_bonus_count"]);
-        // PlayerConfig.player("bonus.random", update["bonus"]["random"]);
-        // PlayerConfig.player("bonus.time_next_bonus", Number(update["bonus"]["time_next_bonus"]));
-        // PlayerConfig.player("score.coins", update["score"]["coins"]);
-        // Wheel.updateBonus(PlayerConfig.player("bonus"));
+        PlayerConfig.player("bonus.hourly_bonus_count", update["bonus"]["hourly_bonus_count"]);
+        PlayerConfig.player("bonus.random", update["bonus"]["random"]);
+        PlayerConfig.player("bonus.time_next_bonus", Number(update["bonus"]["time_next_bonus"]));
+        PlayerConfig.player("score.coins", update["score"]["coins"]);
+        Wheel.updateBonus(PlayerConfig.player("bonus"));
 
         this.timeNextBonus = Number(update["bonus"]["time_next_bonus"]);
-        // this.bonus.update("timeNextBonus", Number(update["bonus"]["time_next_bonus"]));
+        this.bonus.update("timeNextBonus", Number(update["bonus"]["time_next_bonus"]));
 
         this.enabled = false;
         if (this.collectTimes < 4) {
@@ -155,8 +155,8 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
             this.collectTimes = 0;
             this.setPointsStatus();
 
-            // Wheel.sector = Number(data["sector"]);
-            // Wheel.spinWheelCoinsNumber = Number(data["reward"]["value"]);
+            Wheel.sector = Number(data["sector"]);
+            Wheel.spinWheelCoinsNumber = Number(data["reward"]["value"]);
         }
 
         if (data["mission_value"]) {
@@ -168,7 +168,7 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
      * show bank
      */
     private showBank(): void {
-        // this.dispatchEvent(new egret.Event(Lobby.SHOW_BANK));
+        this.dispatchEvent(new egret.Event(Lobby.SHOW_BANK));
     }
 
 	public get enabled(){

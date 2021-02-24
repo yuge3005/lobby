@@ -8,7 +8,7 @@ class SocialBar extends egret.DisplayObjectContainer {
     private inform: egret.DisplayObjectContainer;
     private hourlyBonus: egret.DisplayObjectContainer;
     private album: egret.DisplayObjectContainer;
-    // private questionsRedPoint: RedPoint;
+    private questionsRedPoint: RedPoint;
 
     private goldTournamentTip: egret.DisplayObjectContainer;
 
@@ -124,9 +124,9 @@ class SocialBar extends egret.DisplayObjectContainer {
         Com.addBitmapAt(this.surveyOn, "icon_texts_" + MuLang.language + "_json.icon_survey", 0, 65);
         if (questions.length > 0) {
             // red point
-            // this.questionsRedPoint = new RedPoint();
-            // Com.addObjectAt(this.surveyOn, this.questionsRedPoint, 145, 11);
-            // this.questionsRedPoint.check(questions.length);
+            this.questionsRedPoint = new RedPoint();
+            Com.addObjectAt(this.surveyOn, this.questionsRedPoint, 145, 11);
+            this.questionsRedPoint.check(questions.length);
         }
 
         // inform

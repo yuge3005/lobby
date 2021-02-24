@@ -115,7 +115,7 @@ class AdArea extends egret.DisplayObjectContainer {
      * start timer
      */
     private startTimer(): void {
-        if (this.featuresContainer.numChildren > 1) {
+        if (this.featuresContainer && this.featuresContainer.numChildren > 1) {
             this.autoScrollTimer = new egret.Timer( 8000 );
             this.autoScrollTimer.addEventListener(egret.TimerEvent.TIMER, this.onTimer, this);
 			this.autoScrollTimer.start();
@@ -139,7 +139,6 @@ class AdArea extends egret.DisplayObjectContainer {
 		newIndex = newIndex >= this.featuresContainer.numChildren ? 0 : newIndex;
 		this.currentItemIndex = newIndex;
         
-        // egret.Tween.get(this.featuresContainer).to({x: -this.currentItemIndex * AdArea.adSize.x}, 400, egret.Ease.circOut);
         TweenerTool.tweenTo( this.featuresContainer, { x: -this.currentItemIndex * AdArea.adSize.x }, 400, 0, null, null, egret.Ease.backOut );
     }
 }
