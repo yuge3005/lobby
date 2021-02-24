@@ -5,15 +5,15 @@
 			"name": "lobby"
 		},
 		{
-			"keys": "icon_texts_en_json,welcome_en_png",
+			"keys": "icon_texts_en_json,welcome_en_png,loyalty_system_en_json",
 			"name": "lobby_en"
 		},
 		{
-			"keys": "icon_texts_es_json,welcome_es_png",
+			"keys": "icon_texts_es_json,welcome_es_png,loyalty_system_es_json",
 			"name": "lobby_es"
 		},
 		{
-			"keys": "icon_texts_pt_json,welcome_pt_png",
+			"keys": "icon_texts_pt_json,welcome_pt_png,loyalty_system_pt_json",
 			"name": "lobby_pt"
 		},
 		{
@@ -115,6 +115,24 @@
 			"url": "assets/coins/flyingCoins.json",
 			"type": "json",
 			"name": "flyingCoins_json"
+		},
+		{
+			"url": "assets/loyalty/es/loyalty_system_es.json",
+			"type": "sheet",
+			"name": "loyalty_system_es_json",
+			"subkeys": "FAQ_frame,Title_bg,arrow_gray,arrow_up,arrow_white,bg,bg_black,bg_detail,btn_back,btn_close,btn_long,btn_next,btn_next_border,btn_skip,bubble,buff,copper,faq_arrow,faq_arrow_highlight,golden,hide_door,highlight_bg,icon_bg,icon_blur,icon_light,level_1,level_2,level_3,level_4,level_5,level_6,level_7,level_border,light,light_1,light_2,light_4,light_bg,line,loyalty_icon,loyalty_lock,loyalty_points_icon,loyalty_title,point,progress_bar_bg,progress_bg,selected,silver,slider_bg,slider_button,star,time_bg,tutorial_arrow,tutorial_entrance_arrow,tutorial_entrance_line,tutorial_frame,wireframe_bg,wireframe_line"
+		},
+		{
+			"url": "assets/loyalty/pt/loyalty_system_pt.json",
+			"type": "sheet",
+			"name": "loyalty_system_pt_json",
+			"subkeys": "FAQ_frame,Title_bg,arrow_gray,arrow_up,arrow_white,bg,bg_black,bg_detail,btn_back,btn_close,btn_long,btn_next,btn_next_border,btn_skip,bubble,buff,copper,faq_arrow,faq_arrow_highlight,golden,hide_door,highlight_bg,icon_bg,icon_blur,icon_light,level_1,level_2,level_3,level_4,level_5,level_6,level_7,level_border,light,light_1,light_2,light_4,light_bg,line,loyalty_icon,loyalty_lock,loyalty_points_icon,loyalty_title,point,progress_bar_bg,progress_bg,selected,silver,slider_bg,slider_button,star,time_bg,tutorial_arrow,tutorial_entrance_arrow,tutorial_entrance_line,tutorial_frame,wireframe_bg,wireframe_line"
+		},
+		{
+			"url": "assets/loyalty/en/loyalty_system_en.json",
+			"type": "sheet",
+			"name": "loyalty_system_en_json",
+			"subkeys": "FAQ_frame,Title_bg,arrow_gray,arrow_up,arrow_white,bg,bg_black,bg_detail,btn_back,btn_close,btn_long,btn_next,btn_next_border,btn_skip,bubble,buff,copper,faq_arrow,faq_arrow_highlight,golden,hide_door,highlight_bg,icon_bg,icon_blur,icon_light,level_1,level_2,level_3,level_4,level_5,level_6,level_7,level_border,light,light_1,light_2,light_4,light_bg,line,loyalty_icon,loyalty_lock,loyalty_points_icon,loyalty_title,point,progress_bar_bg,progress_bg,selected,silver,slider_bg,slider_button,star,time_bg,tutorial_arrow,tutorial_entrance_arrow,tutorial_entrance_line,tutorial_frame,wireframe_bg,wireframe_line"
 		}
 	]
 }
