@@ -1,6 +1,4 @@
 class Trigger {
-	public static showBankTagIndex: number = 0;
-
 	public static isMobile: boolean;
 	public stage: Main;
 	public size: egret.Point = new egret.Point( 2250, 1125);
@@ -277,10 +275,11 @@ class Trigger {
 
 	public showBank(type: number = 0) {
 		if (isNaN(type)) type = 0;
-		Trigger.showBankTagIndex = type;
-		this.waitingModals.unshift( GlobelSettings.bankPoVo );
-		if( this.currentPo )this.closeCurrentPo();
-		else this.showFirstWaitingModal();
+		// Trigger.showBankTagIndex = type;
+
+		// this.waitingModals.unshift( GlobelSettings.bankPoVo );
+		// if( this.currentPo )this.closeCurrentPo();
+		// else this.showFirstWaitingModal();
 	}
 
 	public static flyingCoins( count: number, startPosition: egret.Point ){

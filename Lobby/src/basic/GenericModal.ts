@@ -67,6 +67,4 @@ class mouse{
 	public static setButtonMode( a: any ){
 
 	}
-
-	public static MouseEvent: Object = { MOUSE_OVER: "mouseover" };
 }
