@@ -1,7 +1,7 @@
 class DailyBonus extends GenericPo {
 	private today: egret.DisplayObjectContainer;
 	private animation: LoyaltyPrivilege;
-	private todayCoins: egret.TextField;
+	private todayCoins: TextLabel;
 	private days_in_a_row: number;
     private items: Array<egret.DisplayObjectContainer>;
     private bonusPosition: Array<Object>;
@@ -104,14 +104,13 @@ class DailyBonus extends GenericPo {
 			today.text = MuLang.getText("today");
 
 			// coins number
-			this.todayCoins = Com.addTextAt(result, 239, 234, 430, 124, 120, true, true);
+			this.todayCoins = Com.addLabelAt(result, 239, 234, 430, 124, 120, true, true);
 			this.todayCoins.fontFamily = "Righteous";
 			this.todayCoins.stroke = 4;
 			this.todayCoins.strokeColor = 0xC81255;
             this.todayCoins.anchorOffsetX = 215;
             this.todayCoins.anchorOffsetY = 62;
-			this.todayCoins.verticalAlign = "middle";
-            this.todayCoins.text = Utils.formatCoinsNumber(bonus);
+			this.todayCoins.setText( Utils.formatCoinsNumber(bonus) );
 
 			// coin text
 			let coinText = Com.addTextAt(result, 24, 300, 430, 62, 48, true, true);
@@ -177,15 +176,20 @@ class DailyBonus extends GenericPo {
 			day.visible = false;
 
             // coins number
-			let coins = Com.addTextAt(result, 172, 231, 290, 134, 100, true, true);
+			let coins: TextLabel = Com.addLabelAt(result, 172, 231, 290, 134, 100, true, true);
 			coins.fontFamily = "Righteous";
 			coins.stroke = 4;
 			coins.strokeColor = 0x0000ff;
 			coins.verticalAlign = "middle";
-            coins.textFlow = <Array<egret.ITextElement>>[
-                {"text": Utils.formatCoinsNumber(bonus), style: {}},
-                {"text": "\n" + MuLang.getText("coins", MuLang.CASE_UPPER), style: {size: 42}}
-            ];
+			coins.setText( Utils.formatCoinsNumber(bonus) );
+
+			// coin text
+			let coinText = Com.addTextAt(result, 95, 340, 430, 62, 48, true, true);
+			coinText.fontFamily = "Righteous";
+			coinText.verticalAlign = "middle";
+			coinText.stroke = 2;
+			coinText.strokeColor = 0xC81255;
+			coinText.text = MuLang.getText("coins", MuLang.CASE_UPPER);
 
 			// bonus icon
 			Com.addBitmapAt(result, "daily_bonus_json.Stack-" + (index + 1), this.bonusPosition[index]["x"], this.bonusPosition[index]["y"]);
@@ -196,6 +200,8 @@ class DailyBonus extends GenericPo {
 				GraphicTool.drawRect(shape, new egret.Rectangle(136, 114, 367, 415), 0x000000, true, .7, 52);
 				Com.addObjectAt(result, shape, 0, 0);
 			}
+
+			result.cacheAsBitmap = true;
 		}
 
 		result.scaleX = 0;
