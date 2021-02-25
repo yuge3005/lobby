@@ -67,13 +67,13 @@ class UserVo {
 	 */
 	public static updateData(data: Object): void {
 		let coins = data["coins"];
-		if ( coins != null && coins !== this._instance._coins) {
+		if ( coins != null && coins !== this._instance._coinsReal ) {
 			this.coinsTo( coins );
 		}
 
 		let dineros = data["chips"];
-		if (dineros && dineros !== this._instance._dinero) {
-			this._instance.dineros = dineros;
+		if ( dineros != null && dineros !== this._instance._dineroReal ) {
+			this.dineroTo( dineros );
 		}
 
 		let xp = data["xp"];
@@ -179,9 +179,11 @@ class UserVo {
 	}
 
 	private set dineros(dineros: number) {
+		if( this._dinero == dineros ) return;
+		this._dinero = dineros;
 		if (UserVo.onDineroChanged) {
-			let gap = (dineros - this._dinero) / 10;
-		} else this._dinero = dineros;
+			UserVo.onDineroChanged( dineros );
+		}
 	}
 
 	public static addCoins( coins: number ){
@@ -191,6 +193,15 @@ class UserVo {
 	public static coinsTo( coins: number ){
 		this._instance._coinsReal = coins;
 		TweenerTool.tweenTo( this._instance, { coins: coins }, 400 );
+	}
+
+	public static addDineros( dinero: number ){
+		this.dineroTo( dinero + this._instance._dineroReal );
+	}
+
+	public static dineroTo( dinero: number ){
+		this._instance._dineroReal = dinero;
+		TweenerTool.tweenTo( this._instance, { dinero: dinero }, 400 );
 	}
 
 	private get dineros(): number {
