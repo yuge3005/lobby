@@ -168,7 +168,7 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
      * show bank
      */
     private showBank(): void {
-        this.dispatchEvent(new egret.Event(Lobby.SHOW_BANK));
+        Trigger.instance.showBank();
     }
 
 	public get enabled(){

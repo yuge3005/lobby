@@ -142,7 +142,6 @@ class SocialBar extends egret.DisplayObjectContainer {
 
         // hourly bonus
         this.hourlyBonus = new HourlyBonusBar();
-        // this.hourlyBonus.addEventListener(Lobby.SHOW_BANK, this.showBank, this);
         Com.addObjectAt(this, this.hourlyBonus, 898, -55);
 
         // first user expierence
@@ -265,14 +264,7 @@ class SocialBar extends egret.DisplayObjectContainer {
      */
     public redPointCheck(): void {
         let questions = <Array<Object>>PlayerConfig.player("questioner");
-        // this.questionsRedPoint.check(questions.length);
-    }
-
-    /**
-     * show bank
-     */
-    private showBank(): void {
-        // this.dispatchEvent(new egret.Event(Lobby.SHOW_BANK, false, false, {"type": 0}));
+        this.questionsRedPoint.check(questions.length);
     }
 
     /**

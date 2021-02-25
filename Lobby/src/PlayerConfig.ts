@@ -44,7 +44,7 @@ class PlayerConfig {
 		// PlayerConfig.player("platform", "com");
 
 		this.initExternalContents(player["external_contents"], config["version_po"] );
-		// Wheel.setBonus(player["bonus"]);
+		Wheel.setBonus(player["bonus"]);
 
 		// get timestamp gap
 		let localTimestamp = Math.floor(new Date().valueOf() / 1000);

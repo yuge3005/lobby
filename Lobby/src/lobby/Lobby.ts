@@ -1,5 +1,4 @@
 class Lobby extends egret.DisplayObjectContainer{
-    public static SHOW_BANK: string = "SHOW_BANK";
     public static SHOW_USER_PROFILES: string = "SHOW_USER_PROFILES";
 
     private static _instance: Lobby;
@@ -24,12 +23,10 @@ class Lobby extends egret.DisplayObjectContainer{
         Com.addObjectAt(this, this.gameList, 0, 0);
 
         this.topBar = new TopBar();
-        // this.topBar.addEventListener(Lobby.SHOW_BANK, this.showBank, this);
         // this.topBar.addEventListener(Lobby.SHOW_USER_PROFILES, this.showUserProfile, this);
         Com.addObjectAt(this, this.topBar, 0, 0);
 
         this.socialBar = new SocialBar();
-        // this.socialBar.addEventListener(Lobby.SHOW_BANK, this.showBank, this);
         // this.socialBar.addEventListener(Lobby.SHOW_PUZZLE, this.showPuzzle, this);
         // this.socialBar.addEventListener(Lobby.FIRST_WITH_PUZZLE, this.showPuzzleTutorial, this);
         Com.addObjectAt(this, this.socialBar, 0, 940);
