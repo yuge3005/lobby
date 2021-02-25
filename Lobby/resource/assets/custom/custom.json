@@ -1,0 +1,5 @@
+{"file":"custom.png","frames":{
+"pay_bar":{"x":1,"y":79,"w":302,"h":32,"offX":11,"offY":10,"sourceW":324,"sourceH":49},
+"pay_bar_mask":{"x":1,"y":113,"w":299,"h":27,"offX":0,"offY":0,"sourceW":299,"sourceH":27},
+"pay_bar_light":{"x":1,"y":1,"w":502,"h":76,"offX":0,"offY":0,"sourceW":502,"sourceH":76},
+"close_blue":{"x":305,"y":79,"w":23,"h":23,"offX":0,"offY":0,"sourceW":23,"sourceH":23}}}

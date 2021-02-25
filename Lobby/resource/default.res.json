@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "lobby_json,open_list_mp3,lobby_tx,game_icons_json,loyalty_level_icon_json,modalGeneric_json,loyalty_privilege_json,collect_coins_mp3,flyingCoins_json,flyingCoins_png",
+			"keys": "lobby_json,open_list_mp3,lobby_tx,game_icons_json,loyalty_level_icon_json,modalGeneric_json,loyalty_privilege_json,collect_coins_mp3,flyingCoins_json,flyingCoins_png,custom_json",
 			"name": "lobby"
 		},
 		{
@@ -125,6 +125,12 @@
 			"type": "sheet",
 			"name": "facebook_wait_json",
 			"subkeys": "bg,coin"
+		},
+		{
+			"url": "assets/custom/custom.json",
+			"type": "sheet",
+			"name": "custom_json",
+			"subkeys": "close_blue,pay_bar,pay_bar_light,pay_bar_mask"
 		}
 	]
 }
