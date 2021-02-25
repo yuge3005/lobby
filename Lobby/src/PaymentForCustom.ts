@@ -60,11 +60,9 @@ class PaymentForCustom extends egret.DisplayObjectContainer{
 	private checkPurchase(){
 		let ob: Object = { mongo_id : this.purchaseId, token: new Date().getTime() };
 		// new DataServer().getDataFromUrl(eval("API_HOST") + "/api.php?command=check_com_transaction", this.getPurchaseCallback.bind(this), this, true, ob, null);
-		let http = new Http().instance("api.php?command=check_com_transaction", "POST", JSON.stringify(ob), true, this.getPurchaseCallback.bind(this) );
+		let http = new Http().instance( eval("API_HOST") + "/api.php?command=check_com_transaction", "POST", JSON.stringify(ob), true, this.getPurchaseCallback.bind(this) );
 		http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		http.send();
-
-        new DataServer().getDataFromUrl(eval("API_HOST") + "api.php?command=check_com_transaction", this.getPurchaseCallback, this, true, ob);
 	}
 
 	private getPurchaseCallback( data: any ){
