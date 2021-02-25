@@ -5,8 +5,6 @@ class Main extends egret.DisplayObjectContainer {
     public constructor() {
         super();
 
-		this.scaleX = this.scaleY = 0.5;
-
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
 
@@ -47,8 +45,8 @@ class Main extends egret.DisplayObjectContainer {
 	}
 
     private addPo( event:egret.Event = null ){
-		this.currentPo.x = this.stage.stageWidth * 2 >> 1;
-		this.currentPo.y = ( this.stage.stageHeight * 2 >> 1 ) + 100;
+		this.currentPo.x = this.stage.stageWidth >> 1;
+		this.currentPo.y = this.stage.stageHeight >> 1;
 		this.currentPo.scaleX = 0.4;
 		this.currentPo.scaleY = 0.4;
 		this.currentPo.addEventListener( "closeModal", this.closeCurrentPo, this  );
