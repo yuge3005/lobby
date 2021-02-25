@@ -37,14 +37,6 @@
     {
       "name": "promise",
       "path": "./promise"
-    },
-    {
-      "name": "mouse",
-      "path": "../library/mouse/libsrc"
-    },
-    {
-      "name": "particle",
-      "path": "../library/particle/libsrc"
     }
   ]
 }

@@ -8,11 +8,18 @@ class Com {
 	/**
      * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.
      */
-    public static createBitmapByName(name: string) {
-        let result = new egret.Bitmap();
-        let texture: egret.Texture = RES.getRes(name);
-        result.texture = texture;
-        return result;
+    public static createBitmapByName(name: string): egret.Bitmap{
+		let result = new egret.Bitmap();
+		let texture: egret.Texture = RES.getRes(name);
+		if( !texture )console.error( `picture ${name} does not exist`);
+		result.texture = texture;
+		return result;
+    }
+
+    public static addObjectAt( target: egret.DisplayObjectContainer, obj: egret.DisplayObject, x: number, y: number ): void{
+        target.addChild( obj );
+		obj.x = x;
+		obj.y = y;
     }
 
     public static addBitmapAt( target: egret.DisplayObjectContainer, assetName: string, x: number, y: number ): egret.Bitmap{
@@ -21,35 +28,19 @@ class Com {
 		return bit;
 	}
 
+	public static addBitmapAtMiddle( target: egret.DisplayObjectContainer, assetName: string, x: number, y: number ): egret.Bitmap{
+		let bit: egret.Bitmap = this.createBitmapByName( assetName );
+		this.addObjectAt( target, bit, x, y );
+		bit.anchorOffsetX = bit.width >> 1;
+		bit.anchorOffsetY = bit.height >> 1;
+		return bit;
+	}
+
 	public static addRotateBitmapAt( target: egret.DisplayObjectContainer, assetName: string, x: number, y: number, duration: number ): egret.Bitmap{
-		let bit: egret.Bitmap = Com.createBitmapByName( assetName );
-		bit.anchorOffsetX = bit.width / 2;
-		bit.anchorOffsetY = bit.height / 2;
+		let bit: egret.Bitmap = this.addBitmapAtMiddle( target, assetName, x, y );
 		egret.Tween.get(bit, {loop: true})
 		.to({rotation: 360}, duration)
 		.wait(0);
-		this.addObjectAt( target, bit, x, y );
-		return bit;
-	}
-
-    public static addObjectAt( target: egret.DisplayObjectContainer, obj: egret.DisplayObject, x: number, y: number ): void{
-        target.addChild( obj );
-		obj.x = x;
-		obj.y = y;
-    }
-
-    public static addButtonAt( target: egret.DisplayObjectContainer, assetName: string, x: number, y: number, onClickCallBack: Function, touchedScale: number = 1, normalScale: number = 1, touchedFilter: egret.Filter = null ): ScaleAbleButton{
-        let bit: ScaleAbleButton = new ScaleAbleButton( assetName, normalScale, touchedScale, touchedFilter );
-		this.addObjectAt( target, bit, x, y );
-		if (typeof onClickCallBack !== "undefined" && onClickCallBack !== null) bit.addEventListener( egret.TouchEvent.TOUCH_TAP, onClickCallBack, target );
-		return bit;
-	}
-
-	public static addDownButtonAt( target: egret.DisplayObjectContainer, assetNormal: string, assetTouched: string, x: number, y: number, onClickCallBack: Function, enableButton: boolean ): TouchDownButton{
-        let bit: TouchDownButton = new TouchDownButton( assetNormal, assetTouched );
-		this.addObjectAt( target, bit, x, y );
-		bit.enabled = enableButton;
-		bit.addEventListener( egret.TouchEvent.TOUCH_TAP, onClickCallBack, target );
 		return bit;
 	}
 
@@ -60,13 +51,6 @@ class Com {
 		return mc;
 	}
 
-	public static addMCButtonAt( target: egret.DisplayObjectContainer, mcf: egret.MovieClipDataFactory, assetName:string, x:number=0, y:number=0, onClickCallBack: Function ): MovieClipButton{
-		let mcBtn: MovieClipButton = new MovieClipButton( mcf.generateMovieClipData(assetName) );
-		this.addObjectAt( target, mcBtn, x, y );
-		mcBtn.addEventListener( egret.TouchEvent.TOUCH_TAP, onClickCallBack, target );
-		return mcBtn;
-	}
-
     public static addTextAt( target: egret.DisplayObjectContainer, x: number, y: number, width: number, height: number, size: number, stroke: boolean = false, bold: boolean = false ): egret.TextField{
 		let tx: egret.TextField = new egret.TextField;
 		tx.width = width;
@@ -75,6 +59,24 @@ class Com {
 		tx.textAlign = "center";
 
 		if( bold )tx.fontFamily = "Arial Black";		
+		else tx.fontFamily = "Arial";
+
+		if(stroke){
+			tx.stroke = 1;
+			tx.strokeColor = 0x000000;
+		}
+		this.addObjectAt( target, tx, x, y );
+		return tx;
+	}
+
+	public static addLabelAt( target: egret.DisplayObjectContainer, x: number, y: number, width: number, height: number, size: number, stroke: boolean = false, bold: boolean = false ): TextLabel{
+		let tx: TextLabel = new TextLabel;
+		tx.maxWidth = tx.width = width;
+		tx.height = height;
+		tx.maxSize = tx.size = size;
+		tx.textAlign = "center";
+
+		if( bold )tx.fontFamily = "Arial Black";
 		else tx.fontFamily = "Arial";
 
 		if(stroke){
@@ -98,5 +100,13 @@ class Com {
 		}
 		this.addObjectAt( target, bmpText, x, y );
 		return bmpText;
+	}
+
+	public static addDownButtonAt( target: egret.DisplayObjectContainer, assetNormal: string, assetTouched: string, x: number, y: number, onClickCallBack: Function, enableButton: boolean ): TouchDownButton{
+		let bit: TouchDownButton = new TouchDownButton( assetNormal, assetTouched );
+		this.addObjectAt( target, bit, x, y );
+		bit.enabled = enableButton;
+		bit.addEventListener( egret.TouchEvent.TOUCH_TAP, onClickCallBack, target );
+		return bit;
 	}
 }

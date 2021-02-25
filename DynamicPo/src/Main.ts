@@ -11,7 +11,6 @@ class Main extends egret.DisplayObjectContainer {
     }
 
 	private onAddToStage(event: egret.Event) {
-		mouse.enable( this.stage );
         this.loadDynamicClass( "po_brazil", "po_brazil/data.res.json", "po_brazil/load.js" );
 		this.stage.scaleMode = egret.StageScaleMode.NO_SCALE;
 	}
@@ -65,5 +64,14 @@ class Main extends egret.DisplayObjectContainer {
 		tw.call(function() {
 			this.removeChild( this.currentPo );
 		}, this);
+	}
+}
+
+class mouse{
+	public constructor() {
+	}
+	
+	public static setButtonMode( a: any, b: boolean = false ){
+
 	}
 }
