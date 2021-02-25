@@ -19,6 +19,10 @@
 		{
 			"keys": "daily_bonus_json",
 			"name": "daily_bonus"
+		},
+		{
+			"keys": "facebook_wait_json",
+			"name": "facebook_wait"
 		}
 	],
 	"resources": [
@@ -115,6 +119,12 @@
 			"url": "assets/coins/flyingCoins.json",
 			"type": "json",
 			"name": "flyingCoins_json"
+		},
+		{
+			"url": "assets/generic/facebook_wait.json",
+			"type": "sheet",
+			"name": "facebook_wait_json",
+			"subkeys": "bg,coin"
 		}
 	]
 }

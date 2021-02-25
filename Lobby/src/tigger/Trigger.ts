@@ -210,7 +210,7 @@ class Trigger {
 		this.currentPo.touchEnabled = true;
 		this.currentPo.once( GenericModal.CLOSE_MODAL, this.closeCurrentPo, this );
 		this.currentPo.once( TriggerVo.EXIT_BANK, this.exitBankTrigger, this );
-		// this.currentPo.addEventListener( GenericModal.MODAL_COMMAND, this.onModalCommand, this );
+		this.currentPo.addEventListener( GenericModal.MODAL_COMMAND, this.onModalCommand, this );
 
 		let scale = 1;
 		if (!this.currentPo["noScale"]) {
@@ -261,6 +261,44 @@ class Trigger {
 		this.currentPo = eval("new myClass(assetConfigUrl)");
 		if( this.currentPo.inited )this.addPo();
 		else this.currentPo.addEventListener( GenericModal.GENERIC_MODAL_LOADED, this.addPo, this );
+	}
+
+	private onModalCommand( event: egret.Event ){
+		switch( event["cmd"] ){
+			case "buyProduct":
+				let poData: Object = GlobelSettings[egret.getQualifiedClassName(event.target)];
+				new Payment().buy( poData["hash"], this.buyPo.bind(this, event["productType"] || 0 ) );
+				// Congratulations.buyingPoWheel = Congratulations.checkPoItemsWheel( poData["items"] );
+				break;
+			case "showBank":
+				this.showBank();
+				break;
+			case "buyBankProduct":
+				new Payment().buy(event["product_hash"], this.buyPo.bind(this, event["buy_type"]));
+				// Congratulations.buyingPoWheel = null;
+				break;
+			case "collect_bonus":
+				// if( this.currentPo )this.closeCurrentPo();
+				this["spinBar"].colectDailyBonus(event["callback"] || function () { });
+				break;
+		}
+	}
+
+	/**
+	 * buy po
+	 * @param buyType 0 - coins, 1 - dinero
+	 */
+	private buyPo(buyType: number, data: any): void {
+		Trigger.insertInstance( new FacebookWait );
+		if (data["status"] == 1) {
+			if (GlobelSettings.isForCom) {
+				eval("gtag('event', 'conversion', {'send_to': 'AW-922306755/JoztCJymjdEBEMOR5bcD','value': 1.0,'currency': 'USD','transaction_id': PaymentForcustom.currentPurchaseId})");
+			}
+			
+			egret.setTimeout(function (buyType: number, data: any) {
+				this.transationFinished(buyType, 0, data);
+			}.bind(this, buyType, data), this, 2600);
+		}
 	}
 
 	private removePoFromContainer(){
