@@ -1,0 +1,52 @@
+{
+	"groups": [
+		{
+			"keys": "pachinko2Online_lan_en_json,pachinko2Online_json,pachinko2OnlineAnimation_json,pachinko2OnlineAnimation_png",
+			"name": "pachinko2Online_en"
+		},
+		{
+			"keys": "pachinko2Online_lan_es_json,pachinko2Online_json,pachinko2OnlineAnimation_json,pachinko2OnlineAnimation_png",
+			"name": "pachinko2Online_es"
+		},
+		{
+			"keys": "pachinko2Online_lan_pt_json,pachinko2Online_json,pachinko2OnlineAnimation_json,pachinko2OnlineAnimation_png",
+			"name": "pachinko2Online_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "pachinko2OnlineAnimation.png",
+			"type": "image",
+			"name": "pachinko2OnlineAnimation_png"
+		},
+		{
+			"url": "pachinko2OnlineAnimation.json",
+			"type": "json",
+			"name": "pachinko2OnlineAnimation_json"
+		},
+		{
+			"url": "pachinko2Online_lan_pt.json",
+			"type": "sheet",
+			"name": "pachinko2Online_lan_pt_json",
+			"subkeys": "btn_buy_pt,coins_pt,free_pt,info_pt,new_game_pt"
+		},
+		{
+			"url": "pachinko2Online.json",
+			"type": "sheet",
+			"name": "pachinko2Online_json",
+			"subkeys": "01,02,03,04,05,06,07,Bitmap11,bell,bg,bg_cover,bg_light,btn_close,number_bg,plus,red_ball,title,wheel11,wheel_center"
+		},
+		{
+			"url": "pachinko2Online_lan_en.json",
+			"type": "sheet",
+			"name": "pachinko2Online_lan_en_json",
+			"subkeys": "btn_buy_en,coins_en,free_en,info_en,new_game_en"
+		},
+		{
+			"url": "pachinko2Online_lan_es.json",
+			"type": "sheet",
+			"name": "pachinko2Online_lan_es_json",
+			"subkeys": "btn_buy_es,coins_es,free_es,info_es,new_game_es"
+		}
+	]
+}

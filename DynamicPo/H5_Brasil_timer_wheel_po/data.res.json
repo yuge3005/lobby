@@ -1,0 +1,39 @@
+{
+	"groups": [
+		{
+			"keys": "random_7251_EN_png,Po_icons_json",
+			"name": "Standard_2180_en"
+		},
+		{
+			"keys": "random_7251_ES_png,Po_icons_json",
+			"name": "Standard_2180_es"
+		},
+		{
+			"keys": "random_7251_PT_png,Po_icons_json",
+			"name": "Standard_2180_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "random_7251_EN.png",
+			"type": "image",
+			"name": "random_7251_EN_png"
+		},
+		{
+			"url": "random_7251_PT.png",
+			"type": "image",
+			"name": "random_7251_PT_png"
+		},
+		{
+			"url": "random_7251_ES.png",
+			"type": "image",
+			"name": "random_7251_ES_png"
+		},
+		{
+			"url": "Po_icons.json",
+			"type": "sheet",
+			"name": "Po_icons_json",
+			"subkeys": "coin,dinero"
+		}
+	]
+}

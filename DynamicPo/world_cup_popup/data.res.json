@@ -1,0 +1,33 @@
+{
+	"groups": [
+		{
+			"keys": "world_cup_popup_EN_png",
+			"name": "world_cup_popup_en"
+		},
+		{
+			"keys": "world_cup_popup_ES_png",
+			"name": "world_cup_popup_es"
+		},
+		{
+			"keys": "world_cup_popup_PT_png",
+			"name": "world_cup_popup_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "world_cup_popup_EN.png",
+			"type": "image",
+			"name": "world_cup_popup_EN_png"
+		},
+		{
+			"url": "world_cup_popup_PT.png",
+			"type": "image",
+			"name": "world_cup_popup_PT_png"
+		},
+		{
+			"url": "world_cup_popup_ES.png",
+			"type": "image",
+			"name": "world_cup_popup_ES_png"
+		}
+	]
+}

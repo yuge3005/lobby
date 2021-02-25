@@ -1,0 +1,230 @@
+{
+	"groups": [
+		{
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,animation_json,animation_png,assets_json,fireworks_json,fireworks_png,assets2_json,po_en_json,po_es_json,po_pt_json,bank_light_json,bank_light_png,coins_json,coins_png,defaultNewBank_json,ooc_v1_json,ooc_v1_en_json,ooc_v1_es_json,ooc_v1_pt_json",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/CheckBox/checkbox_select_disabled.png",
+			"type": "image",
+			"name": "checkbox_select_disabled_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_select_down.png",
+			"type": "image",
+			"name": "checkbox_select_down_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_select_up.png",
+			"type": "image",
+			"name": "checkbox_select_up_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_unselect.png",
+			"type": "image",
+			"name": "checkbox_unselect_png"
+		},
+		{
+			"url": "assets/ItemRenderer/selected.png",
+			"type": "image",
+			"name": "selected_png"
+		},
+		{
+			"url": "assets/Panel/border.png",
+			"type": "image",
+			"name": "border_png"
+		},
+		{
+			"url": "assets/Panel/header.png",
+			"type": "image",
+			"name": "header_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_disabled.png",
+			"type": "image",
+			"name": "radiobutton_select_disabled_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_down.png",
+			"type": "image",
+			"name": "radiobutton_select_down_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_up.png",
+			"type": "image",
+			"name": "radiobutton_select_up_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_unselect.png",
+			"type": "image",
+			"name": "radiobutton_unselect_png"
+		},
+		{
+			"url": "assets/ScrollBar/roundthumb.png",
+			"type": "image",
+			"name": "roundthumb_png"
+		},
+		{
+			"url": "assets/Slider/thumb.png",
+			"type": "image",
+			"name": "thumb_png"
+		},
+		{
+			"url": "assets/Slider/track.png",
+			"type": "image",
+			"name": "track_png"
+		},
+		{
+			"url": "assets/Slider/tracklight.png",
+			"type": "image",
+			"name": "tracklight_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/handle.png",
+			"type": "image",
+			"name": "handle_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/off.png",
+			"type": "image",
+			"name": "off_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/on.png",
+			"type": "image",
+			"name": "on_png"
+		},
+		{
+			"url": "assets/Button/button_down.png",
+			"type": "image",
+			"name": "button_down_png"
+		},
+		{
+			"url": "assets/Button/button_up.png",
+			"type": "image",
+			"name": "button_up_png"
+		},
+		{
+			"url": "assets/ProgressBar/thumb_pb.png",
+			"type": "image",
+			"name": "thumb_pb_png"
+		},
+		{
+			"url": "assets/ProgressBar/track_pb.png",
+			"type": "image",
+			"name": "track_pb_png"
+		},
+		{
+			"url": "assets/ScrollBar/track_sb.png",
+			"type": "image",
+			"name": "track_sb_png"
+		},
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "animation_json",
+			"type": "json",
+			"url": "animation.json"
+		},
+		{
+			"name": "animation_png",
+			"type": "image",
+			"url": "animation.png"
+		},
+		{
+			"name": "assets_json",
+			"type": "sheet",
+			"url": "assets.json",
+			"subkeys": "120,x-1,btn_ble"
+		},
+		{
+			"name": "fireworks_json",
+			"type": "json",
+			"url": "assets/fireworks.json"
+		},
+		{
+			"name": "fireworks_png",
+			"type": "image",
+			"url": "assets/fireworks.png"
+		},
+		{
+			"name": "assets2_json",
+			"type": "sheet",
+			"url": "assets/assets.json",
+			"subkeys": "num_50,po_bg,polygon,X-1"
+		},
+		{
+			"name": "po_en_json",
+			"type": "sheet",
+			"url": "assets/po_en.json",
+			"subkeys": "btn_en,text_en"
+		},
+		{
+			"name": "po_es_json",
+			"type": "sheet",
+			"url": "assets/po_es.json",
+			"subkeys": "btn_es,text_es"
+		},
+		{
+			"name": "po_pt_json",
+			"type": "sheet",
+			"url": "assets/po_pt.json",
+			"subkeys": "btn_pt,text_pt"
+		},
+		{
+			"name": "bank_light_json",
+			"type": "json",
+			"url": "assets/bank_light.json"
+		},
+		{
+			"name": "bank_light_png",
+			"type": "image",
+			"url": "assets/bank_light.png"
+		},
+		{
+			"name": "coins_json",
+			"type": "json",
+			"url": "assets/coins.json"
+		},
+		{
+			"name": "coins_png",
+			"type": "image",
+			"url": "assets/coins.png"
+		},
+		{
+			"name": "defaultNewBank_json",
+			"type": "sheet",
+			"url": "assets/defaultNewBank.json",
+			"subkeys": "buy_btn_en,buy_btn_pt,buy_btn_es,b,bg_patch_price,bg_patch_reg,close_btn,coins01,coins02,coins03,coins04,coins05,coins06,collect_btn_bg,collect_btn,db_xp,dr_image,en_head,es_head,layer_bg,left_bar,light1,light2,pt_head,secure"
+		},
+		{
+			"name": "ooc_v1_json",
+			"type": "sheet",
+			"url": "assets/ooc_v1.json",
+			"subkeys": "po_3th_BG,x-1-1"
+		},
+		{
+			"name": "ooc_v1_en_json",
+			"type": "sheet",
+			"url": "assets/ooc_v1_en.json",
+			"subkeys": "Bitmap-en,BUTTON-en,po_3th_en"
+		},
+		{
+			"name": "ooc_v1_es_json",
+			"type": "sheet",
+			"url": "assets/ooc_v1_es.json",
+			"subkeys": "Bitmap-es,BUTTON-es,po_3th_es"
+		},
+		{
+			"name": "ooc_v1_pt_json",
+			"type": "sheet",
+			"url": "assets/ooc_v1_pt.json",
+			"subkeys": "Bitmap-pt,BUTTON-pt,po_3th_pt"
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"groups": [
+		{
+			"keys": "random_timer_po_v1_EN_png",
+			"name": "Standard_3471_en"
+		},
+		{
+			"keys": "random_timer_po_v1_ES_png",
+			"name": "Standard_3471_es"
+		},
+		{
+			"keys": "random_timer_po_v1_PT_png",
+			"name": "Standard_3471_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "random_timer_po_v1_EN.png",
+			"type": "image",
+			"name": "random_timer_po_v1_EN_png"
+		},
+		{
+			"url": "random_timer_po_v1_PT.png",
+			"type": "image",
+			"name": "random_timer_po_v1_PT_png"
+		},
+		{
+			"url": "random_timer_po_v1_ES.png",
+			"type": "image",
+			"name": "random_timer_po_v1_ES_png"
+		}
+	]
+}

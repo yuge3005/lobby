@@ -1,0 +1,6 @@
+{"file":"pachinko2Online_lan_en.png","frames":{
+"new_game_en":{"x":0,"y":127,"w":92,"h":83,"offX":0,"offY":0,"sourceW":92,"sourceH":83},
+"info_en":{"x":0,"y":79,"w":289,"h":46,"offX":28,"offY":3,"sourceW":345,"sourceH":52},
+"free_en":{"x":0,"y":212,"w":106,"h":42,"offX":23,"offY":4,"sourceW":152,"sourceH":51},
+"coins_en":{"x":231,"y":0,"w":99,"h":45,"offX":27,"offY":0,"sourceW":153,"sourceH":45},
+"btn_buy_en":{"x":0,"y":0,"w":229,"h":77,"offX":0,"offY":0,"sourceW":229,"sourceH":77}}}

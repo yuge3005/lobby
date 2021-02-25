@@ -1,0 +1,42 @@
+{
+	"groups": [
+		{
+			"keys": "assets_world_cup_json,world_cup_en_json",
+			"name": "canvas_world_cup_en"
+		},
+		{
+			"keys": "assets_world_cup_json,world_cup_es_json",
+			"name": "canvas_world_cup_es"
+		},
+		{
+			"keys": "assets_world_cup_json,world_cup_pt_json",
+			"name": "canvas_world_cup_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets_world_cup.json",
+			"type": "sheet",
+			"name": "assets_world_cup_json",
+			"subkeys": "X-1,bg,title_bg"
+		},
+		{
+			"url": "world_cup_en.json",
+			"type": "sheet",
+			"name": "world_cup_en_json",
+			"subkeys": "button_confirm_EN,get_EN,title_EN"
+		},
+		{
+			"url": "world_cup_es.json",
+			"type": "sheet",
+			"name": "world_cup_es_json",
+			"subkeys": "button_confirm_ES,get_ES,title_ES"
+		},
+		{
+			"url": "world_cup_pt.json",
+			"type": "sheet",
+			"name": "world_cup_pt_json",
+			"subkeys": "button_confirm_PT,get_PT,title_PT"
+		}
+	]
+}

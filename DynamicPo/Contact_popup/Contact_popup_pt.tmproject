@@ -1,0 +1,19 @@
+{
+    "options": {
+        "layoutMath": "0",
+        "sizeMode": "free",
+        "useExtension": 0,
+        "layoutGap": 1,
+        "extend": 0
+    },
+    "projectName": "Contact_popup_pt",
+    "files": [
+        "./../../../../Desktop/1/title_pt.png",
+        "./../../../../Desktop/1/sentence_pt.png",
+        "./../../../../Desktop/1/btn_facebook_pt.png",
+        "./../../../../Desktop/1/btn_email_pt.png",
+        "./../../../../Desktop/1/btn_close.png",
+        "./../../../../Desktop/1/bg.png"
+    ],
+    "version": 5
+}

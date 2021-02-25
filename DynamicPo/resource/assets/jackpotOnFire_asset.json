@@ -1,0 +1,6 @@
+{"file":"jackpotOnFire_asset.png","frames":{
+"bg":{"x":0,"y":0,"w":969,"h":576,"offX":0,"offY":0,"sourceW":969,"sourceH":576},
+"txt_frame-1":{"x":699,"y":578,"w":257,"h":214,"offX":0,"offY":0,"sourceW":257,"sourceH":214},
+"wheel_bg":{"x":0,"y":578,"w":697,"h":370,"offX":0,"offY":0,"sourceW":697,"sourceH":370},
+"wheel_center":{"x":910,"y":794,"w":148,"h":148,"offX":0,"offY":0,"sourceW":148,"sourceH":148},
+"wheel_frame":{"x":699,"y":794,"w":209,"h":208,"offX":0,"offY":0,"sourceW":209,"sourceH":208}}}

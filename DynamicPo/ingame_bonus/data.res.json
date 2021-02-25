@@ -1,0 +1,51 @@
+{
+	"groups": [
+		{
+			"keys": "fireworks_json,fireworks_png,assets_json,po_en_json",
+			"name": "ingame_bonus_en"
+		},
+		{
+			"keys": "assets_json,fireworks_json,fireworks_png,po_es_json",
+			"name": "ingame_bonus_es"
+		},
+		{
+			"keys": "assets_json,fireworks_json,fireworks_png,po_pt_json",
+			"name": "ingame_bonus_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "fireworks.json",
+			"type": "json",
+			"name": "fireworks_json"
+		},
+		{
+			"url": "fireworks.png",
+			"type": "image",
+			"name": "fireworks_png"
+		},
+		{
+			"url": "assets.json",
+			"type": "sheet",
+			"name": "assets_json"
+		},
+		{
+			"url": "po_en.json",
+			"type": "sheet",
+			"name": "po_en_json",
+			"subkeys": "btn_en,text_en"
+		},
+		{
+			"url": "po_es.json",
+			"type": "sheet",
+			"name": "po_es_json",
+			"subkeys": "btn_es,text_es"
+		},
+		{
+			"url": "po_pt.json",
+			"type": "sheet",
+			"name": "po_pt_json",
+			"subkeys": "btn_pt,text_pt"
+		}
+	]
+}

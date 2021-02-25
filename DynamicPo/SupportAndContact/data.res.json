@@ -1,0 +1,33 @@
+{
+	"groups": [
+		{
+			"keys": "random_33_EN_png",
+			"name": "Standard_33_en"
+		},
+		{
+			"keys": "random_33_ES_png",
+			"name": "Standard_33_es"
+		},
+		{
+			"keys": "random_33_PT_png",
+			"name": "Standard_33_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "random_33_EN.png",
+			"type": "image",
+			"name": "random_33_EN_png"
+		},
+		{
+			"url": "random_33_PT.png",
+			"type": "image",
+			"name": "random_33_PT_png"
+		},
+		{
+			"url": "random_33_ES.png",
+			"type": "image",
+			"name": "random_33_ES_png"
+		}
+	]
+}

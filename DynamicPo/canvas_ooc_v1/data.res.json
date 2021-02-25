@@ -1,0 +1,42 @@
+{
+	"groups": [
+		{
+			"keys": "ooc_v1_json,ooc_v1_en_json",
+			"name": "canvas_ooc_v1_en"
+		},
+		{
+			"keys": "ooc_v1_json,ooc_v1_es_json",
+			"name": "canvas_ooc_v1_es"
+		},
+		{
+			"keys": "ooc_v1_json,ooc_v1_pt_json",
+			"name": "canvas_ooc_v1_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "ooc_v1.json",
+			"type": "sheet",
+			"name": "ooc_v1_json",
+			"subkeys": "po_3th_BG,x-1-1"
+		},
+		{
+			"url": "ooc_v1_en.json",
+			"type": "sheet",
+			"name": "ooc_v1_en_json",
+			"subkeys": "BUTTON-en,Bitmap-en,po_3th_en"
+		},
+		{
+			"url": "ooc_v1_es.json",
+			"type": "sheet",
+			"name": "ooc_v1_es_json",
+			"subkeys": "BUTTON-es,Bitmap-es,po_3th_es"
+		},
+		{
+			"url": "ooc_v1_pt.json",
+			"type": "sheet",
+			"name": "ooc_v1_pt_json",
+			"subkeys": "BUTTON-pt,Bitmap-pt,po_3th_pt"
+		}
+	]
+}

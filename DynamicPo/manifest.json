@@ -1,0 +1,36 @@
+{
+	"initial": [
+		"libs/modules/egret/egret.js",
+		"libs/modules/egret/egret.web.js",
+		"libs/modules/eui/eui.js",
+		"libs/modules/res/res.js",
+		"libs/modules/tween/tween.js",
+		"libs/modules/game/game.js",
+		"promise/bin/promise.js",
+		"libs/modules/mouse/mouse.js",
+		"libs/modules/particle/particle.js"
+	],
+	"game": [
+		"bin-debug/genericUI/GenericModal.js",
+		"bin-debug/GenericPo.js",
+		"bin-debug/TimerPo.js",
+		"bin-debug/load - 副本.js",
+		"bin-debug/load.js",
+		"bin-debug/LoadingUI.js",
+		"bin-debug/LoyaltyVo.js",
+		"bin-debug/Main.js",
+		"bin-debug/PlayerConfig.js",
+		"bin-debug/util/Utils.js",
+		"bin-debug/GlobelSettings.js",
+		"bin-debug/genericUI/FlyingCoins.js",
+		"bin-debug/load - special.js",
+		"bin-debug/genericUI/MovieClipButton.js",
+		"bin-debug/genericUI/ScaleAbleButton.js",
+		"bin-debug/genericUI/TouchDownButton.js",
+		"bin-debug/util/Com.js",
+		"bin-debug/util/Lanuage.js",
+		"bin-debug/util/MatrixTool.js",
+		"bin-debug/util/SoundManager.js",
+		"bin-debug/genericUI/Coin.js"
+	]
+}

@@ -1,0 +1,39 @@
+{
+    "options": {
+        "useExtension": 0,
+        "layoutGap": 1,
+        "extend": 0,
+        "layoutMath": "0",
+        "sizeMode": "free"
+    },
+    "files": [
+        "./bonusbingo_blankBg.png",
+        "./ball_yellow.png",
+        "./txt_bg.png",
+        "./tutorail_txt_bg.png",
+        "./tutorail_doctor.png",
+        "./tutorail_bg.png",
+        "./tutorail_arrow.png",
+        "./light_U_02.png",
+        "./light_U.png",
+        "./light_S_02.png",
+        "./light_S.png",
+        "./light_O_02.png",
+        "./light_O.png",
+        "./light_N_02.png",
+        "./light_N.png",
+        "./light_bg.png",
+        "./light_B_02.png",
+        "./light_B.png",
+        "./fiveball_light.png",
+        "./fiveball_bg_special_cover.png",
+        "./fiveball_bg_special.png",
+        "./fiveball_bg_cover.png",
+        "./fiveball_bg.png",
+        "./doctor_bonus.png",
+        "./dark_S.png",
+        "./card_front.png"
+    ],
+    "version": 5,
+    "projectName": "bonusBingoTutorail"
+}

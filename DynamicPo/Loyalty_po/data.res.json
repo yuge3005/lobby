@@ -1,0 +1,42 @@
+{
+	"groups": [
+		{
+			"keys": "loyalty_po_01_json,loyalty_po_en_json",
+			"name": "loyalty_po_01_en"
+		},
+		{
+			"keys": "loyalty_po_01_json,loyalty_po_es_json",
+			"name": "loyalty_po_01_es"
+		},
+		{
+			"keys": "loyalty_po_01_json,loyalty_po_pt_json",
+			"name": "loyalty_po_01_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "loyalty_po_en.json",
+			"type": "sheet",
+			"name": "loyalty_po_en_json",
+			"subkeys": "btn-en,coins_en-1,info_en,title_en"
+		},
+		{
+			"url": "loyalty_po_01.json",
+			"type": "sheet",
+			"name": "loyalty_po_01_json",
+			"subkeys": "01,02,03,04,05,06,07,arrow,bg_01,bg_02,bg_light01,bg_light02,btn_close,coin01-1,coin02-1,coin03-1,coin04-1,coin05-1,coin06-1,coin07-1,coin08-1,coin09-1,coin10,coin11,coin12,title_shadow"
+		},
+		{
+			"url": "loyalty_po_pt.json",
+			"type": "sheet",
+			"name": "loyalty_po_pt_json",
+			"subkeys": "btn-pt,coins_pt-1,info_pt,title_pt"
+		},
+		{
+			"url": "loyalty_po_es.json",
+			"type": "sheet",
+			"name": "loyalty_po_es_json",
+			"subkeys": "btn-es,coins_es-1,info_es,title_es"
+		}
+	]
+}

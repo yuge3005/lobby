@@ -1,0 +1,51 @@
+{
+	"groups": [
+		{
+			"keys": "fireworks_json,fireworks_png,assets_newyear_json,newyear_en_json",
+			"name": "canvas_newyear_en"
+		},
+		{
+			"keys": "assets_newyear_json,fireworks_json,fireworks_png,newyear_es_json",
+			"name": "canvas_newyear_es"
+		},
+		{
+			"keys": "assets_newyear_json,fireworks_json,fireworks_png,newyear_pt_json",
+			"name": "canvas_newyear_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "fireworks.json",
+			"type": "json",
+			"name": "fireworks_json"
+		},
+		{
+			"url": "fireworks.png",
+			"type": "image",
+			"name": "fireworks_png"
+		},
+		{
+			"url": "assets_newyear.json",
+			"type": "sheet",
+			"name": "assets_newyear_json"
+		},
+		{
+			"url": "newyear_en.json",
+			"type": "sheet",
+			"name": "newyear_en_json",
+			"subkeys": "btn_en,text_en"
+		},
+		{
+			"url": "newyear_es.json",
+			"type": "sheet",
+			"name": "newyear_es_json",
+			"subkeys": "btn_es,text_es"
+		},
+		{
+			"url": "newyear_pt.json",
+			"type": "sheet",
+			"name": "newyear_pt_json",
+			"subkeys": "btn_pt,text_pt"
+		}
+	]
+}

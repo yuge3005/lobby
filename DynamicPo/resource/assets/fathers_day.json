@@ -1,0 +1,12 @@
+{"file":"fathersday.png","frames":{
+"bg":{"x":0,"y":0,"w":931,"h":504,"offX":0,"offY":0,"sourceW":931,"sourceH":504},
+"btn_close":{"x":1212,"y":257,"w":36,"h":36,"offX":0,"offY":0,"sourceW":36,"sourceH":36},
+"coin01":{"x":1354,"y":257,"w":233,"h":233,"offX":0,"offY":0,"sourceW":233,"sourceH":233},
+"coin02":{"x":1346,"y":586,"w":248,"h":259,"offX":0,"offY":0,"sourceW":248,"sourceH":259},
+"coin03":{"x":805,"y":506,"w":277,"h":312,"offX":0,"offY":0,"sourceW":277,"sourceH":312},
+"coin04":{"x":933,"y":0,"w":277,"h":312,"offX":0,"offY":0,"sourceW":277,"sourceH":312},
+"coin05":{"x":1084,"y":586,"w":260,"h":249,"offX":0,"offY":0,"sourceW":260,"sourceH":249},
+"coin06":{"x":1212,"y":0,"w":256,"h":255,"offX":0,"offY":0,"sourceW":256,"sourceH":255},
+"coin07":{"x":0,"y":506,"w":453,"h":456,"offX":0,"offY":0,"sourceW":453,"sourceH":456},
+"coin08":{"x":1084,"y":314,"w":268,"h":270,"offX":0,"offY":0,"sourceW":268,"sourceH":270},
+"coin09":{"x":455,"y":506,"w":348,"h":345,"offX":0,"offY":0,"sourceW":348,"sourceH":345}}}

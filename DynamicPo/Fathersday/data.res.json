@@ -1,0 +1,52 @@
+{
+	"groups": [
+		{
+			"keys": "fathers_day_json,fathersday_en_json,fathersdayAnimation_json,fathersdayAnimation_png",
+			"name": "fathersday_en"
+		},
+		{
+			"keys": "fathers_day_json,fathersday_es_json,fathersdayAnimation_json,fathersdayAnimation_png",
+			"name": "fathersday_es"
+		},
+		{
+			"keys": "fathers_day_json,fathersday_pt_json,fathersdayAnimation_json,fathersdayAnimation_png",
+			"name": "fathersday_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "fathersdayAnimation.png",
+			"type": "image",
+			"name": "fathersdayAnimation_png"
+		},
+		{
+			"url": "fathersdayAnimation.json",
+			"type": "json",
+			"name": "fathersdayAnimation_json"
+		},
+		{
+			"url": "fathersday_es.json",
+			"type": "sheet",
+			"name": "fathersday_es_json",
+			"subkeys": "btn_buy_es,coins_es,introduce_es,title_es"
+		},
+		{
+			"url": "fathersday_pt.json",
+			"type": "sheet",
+			"name": "fathersday_pt_json",
+			"subkeys": "btn_buy_pt,coins_pt,introduce_pt,title_pt"
+		},
+		{
+			"url": "fathers_day.json",
+			"type": "sheet",
+			"name": "fathers_day_json",
+			"subkeys": "bg,btn_close,coin01,coin02,coin03,coin04,coin05,coin06,coin07,coin08,coin09"
+		},
+		{
+			"url": "fathersday_en.json",
+			"type": "sheet",
+			"name": "fathersday_en_json",
+			"subkeys": "btn_buy_en,coins_en,introduce_en,title_en"
+		}
+	]
+}

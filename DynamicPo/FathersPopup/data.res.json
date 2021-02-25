@@ -1,0 +1,33 @@
+{
+	"groups": [
+		{
+			"keys": "popup_EN_png",
+			"name": "popup_en"
+		},
+		{
+			"keys": "popup_ES_png",
+			"name": "popup_es"
+		},
+		{
+			"keys": "popup_PT_png",
+			"name": "popup_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "popup_en.png",
+			"type": "image",
+			"name": "popup_EN_png"
+		},
+		{
+			"url": "popup_pt.png",
+			"type": "image",
+			"name": "popup_PT_png"
+		},
+		{
+			"url": "popup_es.png",
+			"type": "image",
+			"name": "popup_ES_png"
+		}
+	]
+}

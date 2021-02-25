@@ -1,0 +1,36 @@
+{
+	"groups": [
+		{
+			"keys": "contact_popup_en_json",
+			"name": "contact_popup_en"
+		},
+		{
+			"keys": "contact_popup_es_json",
+			"name": "contact_popup_es"
+		},
+		{
+			"keys": "contact_popup_pt_json",
+			"name": "contact_popup_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "contact_popup_en.json",
+			"type": "sheet",
+			"name": "contact_popup_en_json",
+			"subkeys": "bg,btn_close,btn_email_en,btn_facebook_en,sentence_en,title_en"
+		},
+		{
+			"url": "contact_popup_es.json",
+			"type": "sheet",
+			"name": "contact_popup_es_json",
+			"subkeys": "bg,btn_close,btn_email_es,btn_facebook_es,sentence_es,title_es"
+		},
+		{
+			"url": "contact_popup_pt.json",
+			"type": "sheet",
+			"name": "contact_popup_pt_json",
+			"subkeys": "bg,btn_close,btn_email_pt,btn_facebook_pt,sentence_pt,title_pt"
+		}
+	]
+}

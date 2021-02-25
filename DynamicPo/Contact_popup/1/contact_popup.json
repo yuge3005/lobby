@@ -1,0 +1,4 @@
+{"file":"contact_popup.png","frames":{
+"bg":{"x":0,"y":0,"w":1000,"h":563,"offX":0,"offY":0,"sourceW":1000,"sourceH":563},
+"btn_close":{"x":0,"y":622,"w":39,"h":40,"offX":0,"offY":0,"sourceW":39,"sourceH":40},
+"btn_email":{"x":0,"y":565,"w":336,"h":55,"offX":0,"offY":0,"sourceW":336,"sourceH":55}}}

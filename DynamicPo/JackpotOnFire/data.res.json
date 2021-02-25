@@ -1,0 +1,58 @@
+{
+	"groups": [
+		{
+			"keys": "jackpotOnFire_asset_json,newParticle_json,newParticle_png,jacklan_en_json,jack_mc_json,jack_mc_png",
+			"name": "jackpotOnFire_en"
+		},
+		{
+			"keys": "jackpotOnFire_asset_json,newParticle_json,newParticle_png,jacklan_es_json,jack_mc_png,jack_mc_json",
+			"name": "jackpotOnFire_es"
+		},
+		{
+			"keys": "jackpotOnFire_asset_json,newParticle_png,newParticle_json,jacklan_pt_json,jack_mc_png,jack_mc_json",
+			"name": "jackpotOnFire_pt"
+		}
+	],
+	"resources": [
+		{
+			"url": "jackpotOnFire_asset.json",
+			"type": "sheet",
+			"name": "jackpotOnFire_asset_json"
+		},
+		{
+			"url": "newParticle.png",
+			"type": "image",
+			"name": "newParticle_png"
+		},
+		{
+			"url": "newParticle.json",
+			"type": "json",
+			"name": "newParticle_json"
+		},
+		{
+			"url": "jacklan_pt.json",
+			"type": "sheet",
+			"name": "jacklan_pt_json"
+		},
+		{
+			"url": "jacklan_es.json",
+			"type": "sheet",
+			"name": "jacklan_es_json"
+		},
+		{
+			"url": "jacklan_en.json",
+			"type": "sheet",
+			"name": "jacklan_en_json"
+		},
+		{
+			"url": "jack_mc.png",
+			"type": "image",
+			"name": "jack_mc_png"
+		},
+		{
+			"url": "jack_mc.json",
+			"type": "json",
+			"name": "jack_mc_json"
+		}
+	]
+}

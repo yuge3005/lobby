@@ -1,0 +1,16 @@
+{
+	"groups": [
+		{
+			"keys": "bank_json",
+			"name": "bank"
+		}
+	],
+	"resources": [
+		{
+			"url": "bank.json",
+			"type": "sheet",
+			"name": "bank_json",
+			"subkeys": "bank_bg,bank_buy_btn,bank_discount,bank_price_bg,bank_xp_star,bg_patch_reg,coins01,coins02,coins03,coins04,coins05,coins06,layer_name,lobby_price"
+		}
+	]
+}

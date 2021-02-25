@@ -1,0 +1,4 @@
+{"file":"assets.png","frames":{
+"120":{"x":1,"y":1,"w":771,"h":600,"offX":0,"offY":0,"sourceW":771,"sourceH":600},
+"x-1":{"x":774,"y":100,"w":34,"h":35,"offX":2,"offY":2,"sourceW":38,"sourceH":39},
+"btn_ble":{"x":774,"y":1,"w":230,"h":97,"offX":2,"offY":2,"sourceW":234,"sourceH":100}}}

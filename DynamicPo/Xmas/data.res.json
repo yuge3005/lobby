@@ -1,0 +1,26 @@
+{
+	"groups": [
+		{
+			"keys": "assets_json,animation_png,animation_json",
+			"name": "po_light120"
+		}
+	],
+	"resources": [
+		{
+			"url": "animation.json",
+			"type": "json",
+			"name": "animation_json"
+		},
+		{
+			"url": "animation.png",
+			"type": "image",
+			"name": "animation_png"
+		},
+		{
+			"url": "assets.json",
+			"type": "sheet",
+			"name": "assets_json",
+			"subkeys": "120,btn_ble,x-1"
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{"file":"contact_popup_es.png","frames":{
+"bg":{"x":0,"y":0,"w":975,"h":563,"offX":0,"offY":0,"sourceW":975,"sourceH":563},
+"btn_close":{"x":977,"y":0,"w":35,"h":35,"offX":0,"offY":0,"sourceW":35,"sourceH":35},
+"btn_email_es":{"x":0,"y":565,"w":337,"h":63,"offX":0,"offY":0,"sourceW":337,"sourceH":63},
+"btn_facebook_es":{"x":0,"y":630,"w":337,"h":63,"offX":0,"offY":0,"sourceW":337,"sourceH":63},
+"sentence_es":{"x":339,"y":602,"w":583,"h":21,"offX":0,"offY":0,"sourceW":583,"sourceH":21},
+"title_es":{"x":339,"y":565,"w":583,"h":35,"offX":0,"offY":0,"sourceW":583,"sourceH":35}}}
