@@ -65,7 +65,7 @@ class Congratulations extends GenericPo {
 		// btn
 		let btn = Com.addDownButtonAt(btnContainer, "congratulations_json.btn", "congratulations_json.btn", 160, 41, this.collectCoins.bind(this), true );
 		// btn text
-		let btnText = Com.addTextAt(btnContainer, 0, 0, 320, 82, 44, false, false);
+		let btnText = Com.addTextAt(btnContainer, 10, 5, 300, 72, 44, false, false);
 		btnText.textColor = 0xFFFFFF;
 		btnText.fontFamily = "Righteous";
 		btnText.text = MuLang.getText("CONGRATULATIONS_BTN_TEXT", MuLang.CASE_UPPER);
