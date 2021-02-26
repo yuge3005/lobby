@@ -301,6 +301,21 @@ class Trigger {
 		}
 	}
 
+	private transationFinished(buyType: number, doubleXp: number, transactionData: any) {
+		let coins = Number(transactionData[buyType === 1 ? "add_chips" : "credit" ]);
+		let chips = Number(transactionData["add_chips"]);
+		// if (doubleXp > 0) Lobby.getInstance().updateDoubleXpDuration(doubleXp);
+
+		// if (transactionData["puzzle_piece_ids"] && transactionData["puzzle_piece_ids"].length > 0) {
+		// 	PuzzleVo.showPiecesPopup(transactionData["puzzle_piece_ids"]);
+		// }
+
+		Congratulations.type = buyType;
+		Congratulations.coins = coins;
+		Congratulations.chips = chips;
+		Trigger.insertInstance( new Congratulations );
+	}
+
 	private removePoFromContainer(){
 		this.poContainer.removeChild( this.currentPo );
 		this.poContainer.visible = false;
@@ -322,7 +337,13 @@ class Trigger {
 
 	public static flyingCoins( count: number, startPosition: egret.Point ){
 		let flyCoins: FlyingCoins = new FlyingCoins();
-		flyCoins.fly( count, startPosition, new egret.Point( 1000, 520 ), new egret.Point( 400, 300 ), 0.2, 0.1, 0.1 );
+		flyCoins.fly( count, startPosition, new egret.Point( 560, 70 ), new egret.Point( 1000, 500 ), 0.2, 0.4, 0.8 );
+		this.instance.stage.addChild( flyCoins );
+	}
+
+	public static flyingDinero( count: number, startPosition: egret.Point ){
+		let flyCoins: FlyingCoins = new FlyingCoins();
+		flyCoins.flyDenero( count, startPosition, new egret.Point( 1600, 520 ), new egret.Point( 400, 300 ), 0.4, 0.3, 0.5 );
 		this.instance.stage.addChild( flyCoins );
 	}
 }
