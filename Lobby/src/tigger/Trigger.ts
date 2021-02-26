@@ -297,7 +297,7 @@ class Trigger {
 			
 			egret.setTimeout(function (buyType: number, data: any) {
 				this.transationFinished(buyType, 0, data);
-			}.bind(this, buyType, data), this, 2600);
+			}.bind(this, buyType, data), this, 3000);
 		}
 	}
 

@@ -186,6 +186,10 @@ class UserVo {
 		}
 	}
 
+	private get dineros(): number {
+		return this._dinero;
+	}
+
 	public static addCoins( coins: number ){
 		this.coinsTo( coins + this._instance._coinsReal );
 	}
@@ -202,10 +206,6 @@ class UserVo {
 	public static dineroTo( dinero: number ){
 		this._instance._dineroReal = dinero;
 		TweenerTool.tweenTo( this._instance, { dinero: dinero }, 400 );
-	}
-
-	private get dineros(): number {
-		return this._dinero;
 	}
 
 	private set xp(xp: number) {

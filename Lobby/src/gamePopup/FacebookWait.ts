@@ -46,21 +46,13 @@ class FacebookWait extends GenericPo{
 	 * 金币旋转动画
 	 */
 	private startCoinsAnimation():void {
-		egret.Tween.get(this.coin, { loop: true }).to({ rotation: 360 }, 3600);
-		
-		egret.setTimeout(function () {
-			this.changeFacebookWaitStatus();
-		}, this, 2000);
+		TweenerTool.tweenTo( this.coin, { rotation: 360 }, 2000, this.changeFacebookWaitStatus.bind(this) );
 	}
 
 	/**
 	 * 改变状态
 	 */
 	private changeFacebookWaitStatus():void {
-		if (this.coin) {
-			egret.Tween.removeTweens(this.coin);
-			this.coin.rotation = 0;
-		}
 		if (this.topText) this.topText.text = MuLang.getText("FACEBOOK_WAIT_CONGRATULATIONS_TITLE", MuLang.CASE_UPPER);
 		if (this.bottomText) this.bottomText.text = MuLang.getText("FACEBOOK_WAIT_CONGRATULATIONS_FOOT", MuLang.CASE_UPPER);
 	}
