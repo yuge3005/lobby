@@ -23,6 +23,10 @@
 		{
 			"keys": "facebook_wait_json",
 			"name": "facebook_wait"
+		},
+		{
+			"keys": "congratulations_json",
+			"name": "congratulations"
 		}
 	],
 	"resources": [
@@ -131,6 +135,12 @@
 			"type": "sheet",
 			"name": "custom_json",
 			"subkeys": "close_blue,pay_bar,pay_bar_light,pay_bar_mask"
+		},
+		{
+			"url": "assets/generic/congratulations.json",
+			"type": "sheet",
+			"name": "congratulations_json",
+			"subkeys": "bg,btn,close_btn,coin_icon,icon_dinero"
 		}
 	]
 }

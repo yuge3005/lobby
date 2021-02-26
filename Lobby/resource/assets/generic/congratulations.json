@@ -1,0 +1,6 @@
+{"file":"congratulations.png","frames":{
+"bg":{"x":1,"y":1,"w":653,"h":630,"offX":0,"offY":19,"sourceW":653,"sourceH":649},
+"btn":{"x":656,"y":1,"w":320,"h":82,"offX":0,"offY":0,"sourceW":320,"sourceH":82},
+"close_btn":{"x":867,"y":85,"w":58,"h":58,"offX":0,"offY":0,"sourceW":58,"sourceH":58},
+"coin_icon":{"x":789,"y":85,"w":76,"h":75,"offX":0,"offY":0,"sourceW":76,"sourceH":75},
+"icon_dinero":{"x":656,"y":85,"w":131,"h":78,"offX":0,"offY":0,"sourceW":131,"sourceH":78}}}
