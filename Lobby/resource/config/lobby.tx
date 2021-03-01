@@ -1,7 +1,6 @@
 {
 "favorite":{"en":"favorite","pt":"favorito","es":"favorito"}
 ,"Slot":{"en":"slot","pt":"slots","es":"slots"}
-,"multiplayer":{"en":"room","pt":"salas","es":"sala"}
 ,"bet":{"en":"BET","pt":"APOSTA","es":"APUESTA"}
 ,"credit":{"en":"CREDIT", "es":"CRÉDITO","pt":"CRÉDITO"}
 		,"card":{"en":"CARD","es": "TARJETA", "pt":"CARTELA"}
@@ -18,10 +17,8 @@
 			"pt":"Sua aposta atual não se qualifica.\nPor favor,aumente sua aporta\npara {1} e jogue com {2} cartas."}
 		,"max":{"en": "MAX", "es": "MAX", "pt": "MAX" }
         ,"play":{"en": "PLAY", "es": "JUGAR", "pt": "JOGAR" }
-		,"stop":{"en": "STOP", "es": "PARAR", "pt": "PARAR" }
 		,"collect":{"en": "COLLECT", "es": "RECOGER", "pt": "COLETAR" }
 		,"total bet":{"en": "TOTAL BET", "es": "APUETA TOTAL", "pt": "APOSTA TOTAL" }
-		,"free":{"en": "FREE", "es": "GRATIS", "pt": "GRATIS" }
 		,"hold for auto":{"en": "HOLD FOR\nAUTOPLAY", "es": "PRESSIONE\nPARA AUTO", "pt": "PRESSIONE\nPARA AUTO" }
 		,"bingo":{ "en": "Bingo", "es": "Bingo", "pt": "Bingo" }
 		,"double":{ "en": "Double", "es": "Doble", "pt": "Dupla" }
@@ -56,28 +53,17 @@
 		,"coming_soon":{ "en": "COMING SOON", "es": "EN BREVE", "pt": "Em Breve" }
 		,"from_level":{ "en": "From level:", "es": "A partir del nivel:", "pt": "A partir do nível:" }
 		,"mission_updating_tip":{ "en": "Please wait. We are updating", "es": "Por favor espere. Estamos actualizando", "pt": "Por favor espere. Estamos atualizando" }
-		,"favorite":{"en":"favorite","pt":"favorito","es":"favorito"}
 		,"slot":{"en":"slots","pt":"slots","es":"slots"}
 		,"multiplayer":{"en":"room","pt":"salas","es":"sala"}
-		,"bingo":{"en":"bingo","pt":"bingo","es":"bingo"}
 		,"version":{"en":"version","pt":"Versão","es":"Versión"}
 		,"setting_title":{"en":"SETTINGS","pt":"CONFIGURAÇÕES","es":"AJUSTES"}
-		,"logout":{"en":"logout","pt":"logout","es":"SALIR"}
-		,"language":{"en":"language","pt":"language","es":"language"}
-		,"link":{"en":"link","pt":"link","es":"ENLACE"}
-		,"login":{"en":"login","pt":"Conecte-se","es":"Identificándose"}
-		,"support":{"en":"support","pt":"Suporte","es":"Soporte"}
-		,"contact":{"en":"contact","pt":"CONTATO","es":"CONTACTO"}
-		,"rate_us":{"en":"rate","pt":"rate","es":"rate"}
 		,"sound_effect":{"en":"SOUND EFFECTS","pt":"EFEITOS DE SONS","es":"EFECTOS DE SONIDO"}
 		,"setting_music":{"en":"MUSIC","pt":"MÚSICA","es":"MÚSICA"}
 		,"visual_effect":{"en":"VISUAL EFFECTS","pt":"EFEITOS VISUAIS","es":"EFECTOS VISUALES"}
 		,"notifications":{"en":"NOTIFICATIONS","pt":"NOTIFICAÇÕES","es":"NOTIFICACIONES"}
-		,"user_id":{"en":"USER ID","pt":"ID","es":"ID de Usuario"}
 		,"vip_club_contact":{"en":"To Contact your VIP Manager:","pt":"Para Contatar seu Gerente VIP:","es":"Para contactar con su Gerente VIP:"}
 		,"click_here":{"en":"Click Here","pt":"Clique Aqui","es":"Haga Clic"}
 		,"cards":{"en":"Cards","pt":"Cartelas","es":"Cards"}
-		,"players":{"en":"PLAYERS","pt":"JOGADORES","es":"JUGADORES"}
 		,"prize_pot":{"en":"PRIZE POT","pt":"Prêmio Total","es":"PREMIO ACUMULADO"}
 		,"begins_in":{"en":"BEGINS IN","pt":"Começa em","es":"COMIENZA EN"}
 		,"time":{"en":"time","pt":"Tempo","es":"hora"}
@@ -89,15 +75,10 @@
 		,"unselect_all":{"en":"Select All","pt":"SELECTIONAR TODOS","es":"Seleccionar Todo"}
 		,"select_50":{"en":"Select 50","pt":"Selecione 50","es":"Seleccionar 50"}
 		,"send_gift":{"en":"SEND GIFT","pt":"ENVIAR PRESENTE","es":"ENVIAR REGALO"}
-		,"invite_receive":{"en":"","pt":"","es":""}
 		,"buy":{"en":"buy","pt":"compre","es":"comprar"}
 		,"balls":{"en":"Balls","pt":"Bolas","es":"Bolas"}
-		,"bingo":{"en":"bingo","pt":"bingo","es":"bingo"}
-		,"double":{"en":"Double L.","pt":"L.Dupla","es":"L.Dupla"}
-		,"line":{"en":"line","pt":"Linha","es":"Línea"}
 		,"match4":{"en":"match 4","pt":"Quadra","es":"match 4"}
 		,"match3":{"en":"match 3","pt":"Terno","es":"match 3"}
-		,"cards":{"en":"cards","pt":"cartelas","es":"tarjetas"}
 		,"players":{"en":"players","pt":"pessoas","es":"personas"}
 		,"click_to_input":{"en":"Click to enter text...","pt":"Enviar mensagem...","es":"Haga clic para ingresar el texto..."}
 		,"joinRoom":{"en":"JOIN THE GAME","pt":"DIVIRTA-SE","es":"ÚNSE AL JUEGO"}
@@ -122,10 +103,6 @@
 		,"era_do_gelo_jump_txt4":{"en":"STAY TUNED ON","pt":"SE LIGA NO","es":"ATENCIÓN AL"}
 		,"era_do_gelo_free_spin_txt":{"en":"FREE SPINS WITH MULTIPLIED VALUES:","pt":"JOGADAS GRÁTIS COM OS VALORES MULTIPLICADOS:","es":"JUGADAS GRATIS CON VALORES MULTIPLICADOS:"}
 		,"era_do_gelo_collect_txt1":{"en":"You've won:","pt":"Você ganhou:","es":"Usted ha ganado:"}
-		,"coins":{"en":"coins","pt":"moedas","es":"monedas"}
-		,"hold for auto":{"en":"hold for auto","pt":"hold for auto","es":"hold for auto"}
-		,"click to stop":{"en":"click to stop","pt":"click to stop","es":"click to stop"}
-		,"auto":{"en":"AUTO","pt":"AUTO","es":"AUTO"}
 		,"SUN":{"en":"Sun","pt":"Dom","es":"Dom"}
 		,"MON":{"en":"Mon","pt":"Seg","es":"Lun"}
 		,"TUE":{"en":"Tue","pt":"Ter","es":"Mar"}
@@ -150,7 +127,6 @@
 		,"deal":{"en":"deal","pt":"oferta","es":"oferta"}
 		,"info":{"en":"inform","pt":"informe","es":"informe"}
 		,"profile":{"en":"profile","pt":"perfil","es":"perfil"}
-		,"support":{"en":"support","pt":"soporte","es":"soporte"}
 		,"dineros":{"en":"dineros","pt":"doletas","es":"doletas"}
 		,"talk_to_us":{"en":"talk to us","pt":"fale conosco","es":"hable con nosotros"}
 		,"sounds":{"en":"Sounds","pt":"Som","es":"Sonar"}
@@ -180,7 +156,6 @@
 		,"verify_error_8":{"en":"INVALID CODE.YOU STILL HAVE {1} ATTEMPTS","pt":"CÓDIGO INVÁLIDO. VOCÊ AINDA TEM {1} TENTATIVAS","es":"CÓDIGO NO VÁLIDO. TENDRÁS {1} INTENTOS"}
 		,"verify_error_8_":{"en":"TOO MANY ATTEMPTS.PLEASE TRY AGAIN LATER","pt":"MUITAS TENTATIVAS. POR FAVOR, TENTE NOVAMENTE DEPOIS","es":"MUCHAS TENTATIVAS. POR FAVOR, TENTE NOVAMENTE DESPUÉS"}
 		,"email_bonus_text":{"en":"You have already received bounes","pt":"Você já recebeu o bônus","es":"Usted ha recibido el bono"}
-		,"support":{"en":"Support","pt":"Suporte","es":"Soporte"}
 		,"set":{"en":"set","pt":"conjunto","es":"set"}
 		,"give_us_support":{"en":"Give us support","pt":"Dar o apoio","es":"Dar soporte"}
 		,"send":{"en":"Send","pt":"Enviar","es":"Enviar"}
@@ -328,20 +303,13 @@
 		,"REQUEST_MESSAGE_GIFT":{"en":"Moedas grátis para você jogar Doutor Bingo. Aproveite!","pt":"Moedas grátis para você jogar Doutor Bingo. Aproveite!","es":"Moedas grátis para você jogar Doutor Bingo. Aproveite!"}
 		,"welcome_top_text":{"en":"WELCOME TO DOCTOR BINGO WORLD ENJOY","pt":"WELCOME TO DOCTOR BINGO WORLD ENJOY","es":"WELCOME TO DOCTOR BINGO WORLD ENJOY"}
 		,"welcome_bottom_text":{"en":"COINS TO GET YOU STARTED","pt":"COINS TO GET YOU STARTED","es":"COINS TO GET YOU STARTED"}
-		,"collect":{"en":"collect","pt":"coletar","es":"recoger"}
 		,"claim_collect":{"en":"collect","pt":"recolher","es":"recoger"}
 		,"link_bonus_title":{"en":"ENJOY YOUR GIFT!","pt":"APROVEITE SEU PRESENTE","es":"DISRUTE DE SU REGALO!"}
 		,"spin_wheel":{"en":"spin wheel","pt":"roleta","es":"ruleta"}
 		,"wheel":{"en":"wheel","pt":"roleta","es":"ruleta"}
 		,"wins":{"en":"WINS","pt":"GANHOS","es":"WINS"}
 		,"no_wins":{"en":"NO WINS","pt":"NENHUM","es":"NO WINS"}
-		,"better_lucky":{"en":"BETTER
-		LUCKY NEXT
-		TIME","pt":"BOA SORTE
-		NA
-		PRóXIMA","es":"BETTER
-		LUCKY NEXT
-		TIME"}
+		,"better_lucky":{"en":"BETTER LUCKY NEXT TIME","pt":"BOA SORTE NA PRóXIMA","es":"BETTER LUCKY NEXT TIME"}
 		,"prizes":{"en":"PRIZES","pt":"PRÊMIOS","es":"PRIZES"}
 		,"collected":{"en":"COLLECTED","pt":"COLETADO","es":"COLLECTED"}
 		,"back":{"en":"Back","pt":"Voltar","es":"Volver"}
@@ -349,7 +317,6 @@
 		,"tournament":{"en":"TOURNAMENT","pt":"TORNEIO","es":"TOURNAMENT"}
 		,"date":{"en":"DATE","pt":"DIA","es":"DATE"}
 		,"place":{"en":"PLACE","pt":"POSIçãO","es":"PLACE"}
-		,"prize":{"en":"prize","pt":"prêmio","es":"premio"}
 		,"play_to_enter":{"en":"PLAY TO ENTER","pt":"JOGUE PARA ENTRAR","es":"Juegue para entrar"}
 		,"need_points":{"en":"YOU NEED 1 POINTS","pt":"Você Precisa 1 p","es":"Necesita 1 puntos"}
 		,"you_are_in":{"en":"YOU'RE IN","pt":"VOCê ESTá DENTRO","es":"Estás dentro"}
@@ -357,23 +324,10 @@
 		,"SPIN_WHEEL_FLAG_TEXT":{"en":"COINS","pt":"MOEDAS","es":"MONEDAS"}
 		,"SPIN_WHEEL_FLAG_BTN_TEXT":{"en":"COLLECT","pt":"COLETAR","es":"ACEPTAR"}
 		,"daily_bonus":{"en":"DAILY BONUS","pt":"BONUS DIÁRIO","es":"BONUS DIARIO"}
-		,"jackpot_tooltip":{"en":"Your current bet does not qualify
-		Please increase your bet to {1}
-		and play {2} cards","pt":"Sua aposta atual não se qualifica.
-		Por favor,aumente sua aporta
-		para {1} e jogue com {2} cartas.","es":"Su apuesta actual no cualifica.
-		Por favor,aumente su apuesta
-		para {1} y juega con {2} tarjetas."}
-		,"slot_jackpot_tooltip":{"en":"Your current bet does not qualify
-		Please increase your bet to {1}
-		and play {2} lines","pt":"Sua aposta atual não se qualifica.
-		Por favor,aumente sua aporta
-		para {1} e jogue com {2} linhas.","es":"Su apuesta actual no cualifica.
-		Por favor,aumente su apuesta
-		para {1} y juega con {2} lineas."}
-		,"daily_bonus_subtext":{"en":"COME BACK DAILY FOR THIS
-		CONSECUTIVE BONUS","pt":"VOLTE TODO DIA PARA GANHAR SEU BÔNUS DIÁRIO!","es":"¡VUELVA TODOS LOS DÍAS PARA OBTENER BONOS CONSECUTIVOS!"}
-		,"jackpot":{"en":"JACKPOT","pt":"Acumulado","es":"JACKPOT"}
+		,"slot_jackpot_tooltip":{"en":"Your current bet does not qualify Please increase your bet to {1} and play {2} lines"
+			,"pt":"Sua aposta atual não se qualifica.Por favor,aumente sua aporta para {1} e jogue com {2} linhas."
+			,"es":"Su apuesta actual no cualifica.Por favor,aumente su apuesta para {1} y juega con {2} lineas."}
+		,"daily_bonus_subtext":{"en":"COME BACK DAILY FOR THIS CONSECUTIVE BONUS","pt":"VOLTE TODO DIA PARA GANHAR SEU BÔNUS DIÁRIO!","es":"¡VUELVA TODOS LOS DÍAS PARA OBTENER BONOS CONSECUTIVOS!"}
 		,"halloween_25line_jackpot_rule":{"en":"playing with 20 lines and bet 250 or higher","pt":"jogando com 20 linhas e aposta 250 ou superior","es":"jugando con 20 líneas y apuestas de 250 o superiores"}
 		,"halloween_25line_dice_text":{"en":"Choose the dice to multiply your Prize:","pt":"Escolha o dado para multiplicar o seu Prêmio:","es":"Elija el dado para multiplicar su Premio:"}
 		,"halloween_25line_help_title":{"en":"PRIZE TABLE","pt":"Tabela de Premios","es":"Tabla de Premios"}
@@ -381,25 +335,16 @@
 		,"back_to_game":{"en":"Back to game","pt":"Voltar ao jogo","es":"Volver al juego"}
 		,"day":{"en":"Day","pt":"Dia","es":"Dia"}
 		,"today":{"en":"Today","pt":"Hoje","es":"Hoy"}
-		,"facebook wait":{"en":"FACEBOOK IS AUTHORIZING
-		YOUR PURCHASE","pt":"O FACEBOOK ESTÁ AUTORIZANDO
-		A SUA TRANSAÇÃO","es":"Facebook está autorizando
-		su pago"}
+		,"facebook wait":{"en":"FACEBOOK IS AUTHORIZING YOUR PURCHASE","pt":"O FACEBOOK ESTÁ AUTORIZANDO A SUA TRANSAÇÃO","es":"Facebook está autorizando su pago"}
 		,"invite title":{"en":"Doctor Bingo!","pt":"Doctor Bingo!","es":"¡Doctor Bingo!"}
 		,"invite message":{"en":"Invites you to play Doctor Bingo, Click here to PLAY NOW!","pt":"Convidaram você para jogar Doctor Bingo. Clique aqui para JOGAR AGORA!","es":"Convidaram você para jogar Doctor Bingo. Clique aqui para JOGAR AGORA!"}
 		,"GIFT_RECIEVE":{"en":"{1} FRIEND{2} SENT YOU A GIFT","pt":"{1} amigo{2} LHE ENVIARAM UM PRESENTE","es":"{1} amigo{2} enviou-te un regalo"}
 		,"FACEBOOK_WAIT_TITLE":{"en":"PLEASE WAIT!","pt":"POR FAVOR ESPERE!","es":"¡POR FAVOR ESPERE!"}
 		,"FACEBOOK_WAIT_CONGRATULATIONS_TITLE":{"en":"CONGRATULATIONS!","pt":"parabéns!","es":"¡FELICIDADES!"}
-		,"FACEBOOK_WAIT_FOOT":{"en":"FACEBOOK IS AUTHORIZING
-		YOUR PURCHASE","pt":"O FACEBOOK ESTÁ AUTORIZANDO
-		A SUA TRANSAÇÃO","es":"FACEBOOK ESTÁ AUTORIZANDO
-		SU PAGO"}
+		,"FACEBOOK_WAIT_FOOT":{"en":"FACEBOOK IS AUTHORIZING YOUR PURCHASE","pt":"O FACEBOOK ESTÁ AUTORIZANDO A SUA TRANSAÇÃO","es":"FACEBOOK ESTÁ AUTORIZANDO SU PAGO"}
 		,"FACEBOOK_WAIT_CONGRATULATIONS_FOOT":{"en":"TRANSACTION AUTHORIZED","pt":"SUA TRANSAÇÃO FOI AUTORIZANA","es":"SU PAGO HA SIDO AUTORIZADO"}
 		,"CONGRATULATIONS_TITLE":{"en":"SUCCESS!","pt":"SUCESSO!","es":"¡EXITOS!"}
-		,"CONGRATULATIONS_CONTENT":{"en":"YOUR ACCOUNT HAS BEEN
-		CREDITED WITH:","pt":"SUA CONTA FOI
-		CREDITADA COM:","es":"SU CUENTA FUE
-		ACREDITADA CON:"}
+		,"CONGRATULATIONS_CONTENT":{"en":"YOUR ACCOUNT HAS BEEN CREDITED WITH:","pt":"SUA CONTA FOI CREDITADA COM:","es":"SU CUENTA FUE ACREDITADA CON:"}
 		,"CONGRATULATIONS_BTN_TEXT":{"en":"PLAY NOW!","pt":"JOGUE!","es":"¡JUEGA!"}
 		,"invite_per_coins":{"en":"you can win {1} coins!","pt":"consiga ganhar {1} as moedas","es":"consiga ganhar {1} as moedas"}
 		,"ongoing":{"en":"ONGOING","pt":"EM CURSO","es":"en curso"}
@@ -408,52 +353,25 @@
 		,"starting":{"en":"STARTING:","pt":"começará em:","es":"Comenzamos:"}
 		,"more_games":{"en":"{1} MORE GAMES","pt":"MAIS {1} JOGOS","es":"{1} MORE GAMES"}
 		,"tournament_loading":{"en":"Loading...","pt":"carregando...","es":"carregando..."}
-		,"tournament_empty_title":{"en":"STAY
-		TUNED!","pt":"Fique
-		Ligado!","es":"STAY
-		TUNED!"}
-		,"tournament_empty_content":{"en":"MORE
-		TOURNAMENTS
-		WILL UPLOAD
-		SHORTLY","pt":"Logo,logo
-		teremos novos
-		Torneios!","es":"MORE
-		TOURNAMENTS
-		WILL UPLOAD
-		SHORTLY"}
+		,"tournament_empty_title":{"en":"STAY TUNED!","pt":"Fique Ligado!","es":"STAY TUNED!"}
+		,"tournament_empty_content":{"en":"MORE TOURNAMENTS WILL UPLOAD SHORTLY","pt":"Logo,logo teremos novos Torneios!","es":"MORE TOURNAMENTS WILL UPLOAD SHORTLY"}
 		,"share":{"en":"SHARE","pt":"COMPARTILHE","es":"PARTILHAR"}
 		,"level_up":{"en":"LEVEL UP","pt":"NOVO NÍVEL","es":"NUEVO LIVEL"}
-		,"level_up_bonus":{"en":"YOUR BONUS IS:","pt":"seu bÔnus é:","es":"YOUR BONUS IS:"}
 		,"new_max_bet":{"en":"NEW MAX BET:","pt":"sua nova aposta máx:","es":"NEW MAX BET:"}
 		,"unlock_game":{"en":"YOU'RE JUST UNLOCKED","pt":"novo jogo desbloqueado:","es":"acabas de desbkiquear un unevo juego!"}
 		,"continue":{"en":"CONTINUE GAME","pt":"continue","es":"continua"}
-		,"max_lines":{"en":"MAX
-		LINES","pt":"linhas
-		MAX","es":"linhas
-		MAX"}
+		,"max_lines":{"en":"MAX LINES","pt":"linhas MAX","es":"linhas MAX"}
 		,"max_bet":{"en":"MAX BET","pt":"APOSTA MAX","es":"APUESTA MAX"}
-		,"bet":{"en":"BET","pt":"APOSTA","es":"APUESTA"}
-		,"max":{"en":"MAX","pt":"MAX","es":"MAX"}
-		,"play":{"en":"PLAY","pt":"JOGAR","es":"JUGAR"}
 		,"stop":{"en":"STOP","pt":"pára","es":"pára"}
 		,"start_auto":{"en":"START AUTO","pt":"LIGAR AUTO","es":"INICIO AUTO"}
 		,"stop_auto":{"en":"STOP AUTO","pt":"PARAR AUTO","es":"DEJAR AUTO"}
 		,"auto_play":{"en":"AUTO PLAY","pt":"AUTO JOGAGA","es":"AUTO JOGO"}
-		,"extra":{"en":"EXTRA
-		BALL","pt":"BOLA
-		EXTRA","es":"PELOTA
-		EXTRA"}
-		,"win":{"en":"WIN","pt":"GANHOU","es":"GANAS"}
 		,"press_play":{"en":"Press Play","pt":"Tecle Jogar","es":"Press Play"}
 		,"good_luck":{"en":"Good Luck","pt":"Boa Sorte","es":"Good Luck"}
 		,"extra_ball":{"en":"Extra Ball","pt":"Bola extra","es":"Extra Ball"}
 		,"credits":{"en":"credits","pt":"créditos","es":"credits"}
 		,"select_lines":{"en":"Select Lines","pt":"Seleccionar Linhas","es":"Select Lines"}
-		,"total_bet":{"en":"TOTAL
-		BET","pt":"TOTAL
-		APOSTA","es":"TOTAL
-		BET"}
-		,"line":{"en":"LINE","pt":"LINHAS","es":"LINE"}
+		,"total_bet":{"en":"TOTAL BET","pt":"TOTAL APOSTA","es":"TOTAL BET"}
 		,"pick_a_strawberry":{"en":"PICK A STRAWBERRY","pt":"escolhe um mistura","es":"Escoge a berry"}
 		,"click_cauldron":{"en":"CLICK CAULDRON","pt":"O click ferver","es":"CLICK CAULDRON"}
 		,"eradegelo_default_text_animation":{"en":"Minimum Bet: {1} Coins","pt":"Aposta mínima: {1} moedas","es":"Aposta mínima: {1} moedas"}
@@ -469,49 +387,23 @@
 		,"tourny_win":{"en":"TOURNEY WON","pt":"TORNEIO GANHO","es":"TORNEO GANADO"}
 		,"claim_top_text":{"en":"YOU WERE DISCONNECTED WHILE PLAYING:","pt":"VOCê DESCONECTOU ENQUANTO JOGAVA:","es":"Estabas disconectada mientras estabas jugando:"}
 		,"claim_middle_text":{"en":"WE HAVE SAVED YOUR LAST WIN OF:","pt":"NóS GUARDAMOS O SEU ÚLTIMO PRêMIO DE:","es":"Hemos salvado tu último triunfo:"}
-		,"gold_tournament_end_top_text":{"en":"you won balls fof joy!
-		your rank:","pt":"you won balls fof joy!
-		your rank:","es":"you won balls fof joy!
-		your rank:"}
-		,"tournament_end_top_text":{"en":"YOU WON ON {1}
-		YOUR RANK:","pt":"Você ganhar na {1}
-		Sua posição:","es":"USTED GANO EN {1}
-		SU POSICÍON:"}
+		,"gold_tournament_end_top_text":{"en":"you won balls fof joy!your rank:","pt":"you won balls fof joy!your rank:","es":"you won balls fof joy!your rank:"}
+		,"tournament_end_top_text":{"en":"YOU WON ON {1} YOUR RANK:","pt":"Você ganhar na {1} Sua posição:","es":"USTED GANO EN {1} SU POSICÍON:"}
 		,"tournament_end_middle_text":{"en":"YOUR PRIZE:","pt":"SU PREMIO:","es":"SU PREMIO:"}
-		,"tourny_nowin_top_text":{"en":"DON'T STOP
-		NOW","pt":"Não pare
-		agora","es":"Don't stop
-		ahora"}
-		,"play_new_tourny":{"en":"PLAY NEW
-		TOURNAMENT","pt":"Jogar um novo
-		torneio","es":"PLAY NEW
-		TOURNAMENT"}
-		,"tourny_nowin_bottom_text":{"en":"OR CLICK BELOW
-		TO SEE YOUR
-		FINAL STATUS","pt":"oR Click below
-		to see your 
-		final stats","es":"OR Click abajo
-		para ver tu 
-		estado final"}
+		,"tourny_nowin_top_text":{"en":"DON'T STOP NOW","pt":"Não pare agora","es":"Don't stop ahora"}
+		,"play_new_tourny":{"en":"PLAY NEW TOURNAMENT","pt":"Jogar um novo torneio","es":"PLAY NEW TOURNAMENT"}
+		,"tourny_nowin_bottom_text":{"en":"OR CLICK BELOW TO SEE YOUR FINAL STATUS","pt":"oR Click below to see your final stats","es":"OR Click abajo para ver tu estado final"}
 		,"history":{"en":"HISTORY","pt":"história","es":"HISTORIA"}
-		,"tourny_end_top_text":{"en":"THE TOURNAMENT
-		HAS ENDED","pt":"FIM DO TOURNEIO","es":"FIM DO TORNEIO"}
-		,"tourny_end_bottom_text":{"en":"PLEASE WAIT FOR
-		THE RESULT","pt":"POR FAVOR ESPERE O
-		RESULTADO","es":"CALCULANDO EL
-		RESULTADO"}
-		,"tourny_start_top_text":{"en":"PLAY TO ENTER THE
-		TOURNAMENT","pt":"JOGUE PARA entrar
-		no torneio","es":"Juega al
-		torneo"}
+		,"tourny_end_top_text":{"en":"THE TOURNAMENT HAS ENDED","pt":"FIM DO TOURNEIO","es":"FIM DO TORNEIO"}
+		,"tourny_end_bottom_text":{"en":"PLEASE WAIT FOR THE RESULT","pt":"POR FAVOR ESPERE O RESULTADO","es":"CALCULANDO EL RESULTADO"}
+		,"tourny_start_top_text":{"en":"PLAY TO ENTER THE TOURNAMENT","pt":"JOGUE PARA entrar no torneio","es":"Juega al torneo"}
 		,"tourny_start_bottom_text":{"en":"WIN TO ENTER","pt":"GANHE PARA ENTRAR","es":"GANE PARA ENTRAR"}
 		,"halloweenX_devil_wheel_text":{"en":"Click on the roulette","pt":"Clique na roleta","es":"Pinche en la ruleta"}
 		,"halloweenX_devil_medal_text":{"en":"Choose a medal","pt":"Escolha uma medalha","es":"Elija medalla"}
 		,"halloweenX_devil_total_bonus":{"en":"YOUR TOTAL WIN","pt":"Ganhou Total","es":"Premio Total"}
 		,"SHARE_DESCRIPTION":{"en":"Celebrate this success!!!","pt":"Comemore este sucesso!!!","es":"Celebre este éxito!!!"}
 		,"no_gift_left":{"en":"You have no friends left to invite!","pt":"Você não tem amigos para convidar!","es":"¡No le quedan amigos a los que invitar!"}
-		,"support_success_text":{"en":"Your request has been sent and we will
-		process it as soon as possible.","pt":"A entrega foi bem sucedida e vamos
-		processá-la o mais rapidamente possível.","es":"La entrega es exitosa y la
-		procesaremos lo antes posible."}
+		,"support_success_text":{"en":"Your request has been sent and we will process it as soon as possible."
+			,"pt":"A entrega foi bem sucedida e vamos processá-la o mais rapidamente possível."
+			,"es":"La entrega es exitosa y la procesaremos lo antes posible."}
 }
