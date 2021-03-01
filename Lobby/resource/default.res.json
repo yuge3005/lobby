@@ -27,6 +27,14 @@
 		{
 			"keys": "congratulations_json",
 			"name": "congratulations"
+		},
+		{
+			"keys": "spin_wheel_vip_json,wheel_flag_json",
+			"name": "spin_wheel_vip"
+		},
+		{
+			"keys": "spin_wheel_json,wheel_flag_json",
+			"name": "wheel"
 		}
 	],
 	"resources": [
@@ -141,6 +149,24 @@
 			"type": "sheet",
 			"name": "congratulations_json",
 			"subkeys": "bg,btn,close_btn,coin_icon,icon_dinero"
+		},
+		{
+			"url": "assets/wheel/spin_wheel.json",
+			"type": "sheet",
+			"name": "spin_wheel_json",
+			"subkeys": "Wheel_frame,bg_lights_wheel,spin_txt,stage,stopper_body,stopper_ticker,wheel"
+		},
+		{
+			"url": "assets/wheel/spin_wheel_vip.json",
+			"type": "sheet",
+			"name": "spin_wheel_vip_json",
+			"subkeys": "background,background light,ceiling,close_button,curtain,doctor,doctor_bottomcase,flowlight,halo,light1,light2,lightball,lights,mask,spin_button,spotlight,stage,stage_mask,star,stopper,stopper_body,top_stars,wheel_frame,wheel_inner,win_outline"
+		},
+		{
+			"url": "assets/wheel/wheel_flag.json",
+			"type": "sheet",
+			"name": "wheel_flag_json",
+			"subkeys": "Group-3,button,pile_coins01,pile_coins02,pile_coins03,pile_coins04"
 		}
 	]
 }

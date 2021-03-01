@@ -1,0 +1,8 @@
+{"file":"spin_wheel.png","frames":{
+"Wheel_frame":{"x":1572,"y":0,"w":896,"h":896,"offX":0,"offY":0,"sourceW":896,"sourceH":896},
+"bg_lights_wheel":{"x":0,"y":0,"w":1562,"h":1258,"offX":0,"offY":0,"sourceW":1563,"sourceH":1258},
+"spin_txt":{"x":1878,"y":1728,"w":247,"h":247,"offX":0,"offY":0,"sourceW":247,"sourceH":247},
+"stage":{"x":0,"y":1728,"w":1868,"h":284,"offX":0,"offY":0,"sourceW":1868,"sourceH":284},
+"stopper_body":{"x":2135,"y":1728,"w":50,"h":151,"offX":0,"offY":0,"sourceW":50,"sourceH":151},
+"stopper_ticker":{"x":2135,"y":1889,"w":83,"h":80,"offX":0,"offY":0,"sourceW":83,"sourceH":80},
+"wheel":{"x":1572,"y":906,"w":812,"h":812,"offX":0,"offY":0,"sourceW":812,"sourceH":812}}}

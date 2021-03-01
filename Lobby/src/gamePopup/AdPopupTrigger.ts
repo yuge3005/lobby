@@ -25,7 +25,7 @@ class AdPopupTrigger {
 				// else if (click_behaviour == "open_po") Trigger.instance.showAdPo();
 				else if (click_behaviour == "open_wheel") {
 					Wheel.modal = SpinWheel.SpinWheelModel["COINS"];
-					// Trigger.insertModel(SpinWheelVIP);
+					Trigger.insertInstance(new SpinWheelVIP);
 				}
 				else if (click_behaviour == "open_mission_bingo") {
 					// MissionVo.initMission("1");
