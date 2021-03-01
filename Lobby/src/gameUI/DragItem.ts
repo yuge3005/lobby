@@ -10,6 +10,9 @@ class DragItem extends egret.Sprite{
 	private dragStarContentX: number;
 
 	protected draging: boolean;
+	public get isDraging(): boolean{
+		return this.draging;
+	}
 
 	protected get contentWidth(): number{
 		return this.currentContent.width;

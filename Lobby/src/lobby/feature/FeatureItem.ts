@@ -14,9 +14,10 @@ class FeatureItem extends egret.DisplayObjectContainer {
     constructor(index: number, data: Object) {
         super();
 
-        this.name = "" + index;
+        this.name = data["name"];
 		this.poPath = data["poPath"];
 
+        let alphaBtn: TouchDownButton = Com.addDownButtonAt(this, "lobby_json.ad_bg", "lobby_json.ad_bg", 0, 0, this.onAdAreaClick.bind( this ), true );
         this.bg = Com.addBitmapAt(this, "lobby_json.ad_bg", 0, 0);
 
 		// download picture
@@ -42,6 +43,14 @@ class FeatureItem extends egret.DisplayObjectContainer {
 		// 		this.addEndTimer();
 		// 	}
 		// } else this.status = 1;
+    }
+
+    private onAdAreaClick( event: egret.Event ){
+        if( this.parent.parent instanceof DragItem ){
+            if( ( this.parent.parent as DragItem ).isDraging ) return;
+		    AdPopupTrigger.doWhateverYuoWant( GlobelSettings[this.name] );
+        }
+        else throw new Error( "super class must be DragItem" );
     }
 
     /**
