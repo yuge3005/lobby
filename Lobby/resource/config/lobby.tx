@@ -101,9 +101,7 @@
 		,"players":{"en":"players","pt":"pessoas","es":"personas"}
 		,"click_to_input":{"en":"Click to enter text...","pt":"Enviar mensagem...","es":"Haga clic para ingresar el texto..."}
 		,"joinRoom":{"en":"JOIN THE GAME","pt":"DIVIRTA-SE","es":"ÚNSE AL JUEGO"}
-		,"to_start":{"en":"to start","pt":"para
-		começar","es":"para
-		empezar"}
+		,"to_start":{"en":"to start","pt":"para começar","es":"para empezar"}
 		,"roundStart":{"en":"Round Start","pt":"COMEÇO DA RODADA","es":"Inicio de partida"}
 		,"roundOver":{"en":"Round Over","pt":"fim da rodada","es":"Fin de partida"}
 		,"welcome":{"en":"Welcome","pt":"Bem Vindo","es":"Bienvenido"}
@@ -113,10 +111,9 @@
 		,"buy_next_round":{"en":"Buy card for next round","pt":"Compre Cartelas para próxima rodada","es":"Comprar Tarjetas para la "}
 		,"you_are_saved":{"en":"You will get","pt":"Você receberá","es":"Usted obtendrá"}
 		,"buy_saved_coins":{"en":"break now for","pt":"break now for","es":"break now for"}
-		,"piggy_bank_rule":{"en":"· We save small amount of your spending in the piggy bank
-		· You can break him whenever you want to earn the coins","pt":"· O valor do cofrinho cresce de acordo com os seus gastos no jogo
-		· Você pode quebrá-lo quando quiser para ganhar as moedas","es":"· El valor de la hucha crece de acuerdo con sus gastos en el juego
-		· Usted puede romperlo cuando quiera para ganar las monedas"}
+		,"piggy_bank_rule":{"en":"· We save small amount of your spending in the piggy bank · You can break him whenever you want to earn the coins"
+			,"pt":"· O valor do cofrinho cresce de acordo com os seus gastos no jogo· Você pode quebrá-lo quando quiser para ganhar as moedas"
+			,"es":"· El valor de la hucha crece de acuerdo con sus gastos en el juego · Usted puede romperlo cuando quiera para ganar las monedas"}
 		,"click_to_break_pig_bank":{"en":"Break the piggy bank","pt":"Quebre o cofrinho","es":"Romper la hucha"}
 		,"select_card":{"en":"Select Card","pt":"Selecione Cartelas","es":"Select card"}
 		,"era_do_gelo_jump_txt1":{"en":"PRESS THE BUTTON","pt":"PRESSIONE E SEGURE O BOTÃO","es":"PRESSIONE Y SEGURE EL BOTÓN"}
@@ -126,14 +123,8 @@
 		,"era_do_gelo_free_spin_txt":{"en":"FREE SPINS WITH MULTIPLIED VALUES:","pt":"JOGADAS GRÁTIS COM OS VALORES MULTIPLICADOS:","es":"JUGADAS GRATIS CON VALORES MULTIPLICADOS:"}
 		,"era_do_gelo_collect_txt1":{"en":"You've won:","pt":"Você ganhou:","es":"Usted ha ganado:"}
 		,"coins":{"en":"coins","pt":"moedas","es":"monedas"}
-		,"hold for auto":{"en":"hold for
-		auto","pt":"hold for
-		auto","es":"hold for
-		auto"}
-		,"click to stop":{"en":"click to
-		stop","pt":"click to
-		stop","es":"click to
-		stop"}
+		,"hold for auto":{"en":"hold for auto","pt":"hold for auto","es":"hold for auto"}
+		,"click to stop":{"en":"click to stop","pt":"click to stop","es":"click to stop"}
 		,"auto":{"en":"AUTO","pt":"AUTO","es":"AUTO"}
 		,"SUN":{"en":"Sun","pt":"Dom","es":"Dom"}
 		,"MON":{"en":"Mon","pt":"Seg","es":"Lun"}
@@ -161,47 +152,33 @@
 		,"profile":{"en":"profile","pt":"perfil","es":"perfil"}
 		,"support":{"en":"support","pt":"soporte","es":"soporte"}
 		,"dineros":{"en":"dineros","pt":"doletas","es":"doletas"}
-		,"talk_to_us":{"en":"talk to us","pt":"fale conosco","es":"hable con
-		nosotros"}
+		,"talk_to_us":{"en":"talk to us","pt":"fale conosco","es":"hable con nosotros"}
 		,"sounds":{"en":"Sounds","pt":"Som","es":"Sonar"}
-		,"fullscreen":{"en":"fullscreen","pt":"Tela Cheia","es":"Pantalla
-		Completa"}
+		,"fullscreen":{"en":"fullscreen","pt":"Tela Cheia","es":"Pantalla Completa"}
 		,"click_to_continue":{"en":"Click to continue","pt":"Clique para continuar","es":"Haga Clic para continuar"}
 		,"unlock":{"en":"UNLOCK","pt":"desbloquear","es":"desbloquear"}
 		,"email_format":{"en":"Email format is not correct","pt":"O formato de e-mail não está correto","es":"El formato de correo electrónico no es correcto"}
 		,"phone_format":{"en":"Telephone format is not correct","pt":"O formato do telefone não está correto","es":"El formato del teléfono no es correcto"}
 		,"inform_email_title":{"en":"Please give us your e-mail","pt":"Por Favor nos informe seu email","es":"Por favor, danos tu correo electrónico"}
 		,"inform_phone_title":{"en":"Please give us your telephone","pt":"Por Favor nos informe seu telefone","es":"Por favor, danos tu teléfono"}
-		,"inform_bottom_left_text":{"en":"COUNTRY DIALING
-		CODE","pt":"CÓDIGO DE DISCAGEM
-		DO PAÍS","es":"CÓDIGO DE MARCACIÓN
-		DEL PAÍS"}
-		,"inform_bottom_left_text2":{"en":"COUNTRY
-		DIALING CODE","pt":"CÓDIGO DE
-		DISCAGEM
-		DO PAÍS","es":"CÓDIGO DE
-		MARCACIÓN
-		DEL PAÍS"}
+		,"inform_bottom_left_text":{"en":"COUNTRY DIALING CODE","pt":"CÓDIGO DE DISCAGEM DO PAÍS","es":"CÓDIGO DE MARCACIÓN DEL PAÍS"}
+		,"inform_bottom_left_text2":{"en":"COUNTRY DIALING CODE","pt":"CÓDIGO DE DISCAGEM DO PAÍS","es":"CÓDIGO DE MARCACIÓN DEL PAÍS"}
 		,"inform_bottom_right_text":{"en":"START WITH THE LOCAL AREA CODE","pt":"COLOQUE O CÓDIGO DE SUA CIDADE","es":"INSIRA SU CÓDIGO DE ÁREA LOCAL"}
-		,"inform_bottom_text":{"en":"The following rewards can be obtained after completing the
-		phone and e-mail submission","pt":"As seguintes recompensas podem ser obtidas após completar
-		o envio do telefone e e-mail","es":"Las siguientes recompensas se pueden obtener después de completar
-		el envío del teléfono y correo electrónico"}
+		,"inform_bottom_text":{"en":"The following rewards can be obtained after completing the phone and e-mail submission"
+			,"pt":"As seguintes recompensas podem ser obtidas após completar o envio do telefone e e-mail"
+			,"es":"Las siguientes recompensas se pueden obtener después de completar el envío del teléfono y correo electrónico"}
 		,"inform_code_top_text":{"en":"WE'VE SENT YOU A CODE TO","pt":"NÓS LHE ENVIAMOS UM CÓDIGO","es":"TE HEMOS ENVIADO UN CÓDIGO"}
 		,"inform_code_bottom_text":{"en":"You have already received bounes","pt":"Você já recebeu o bônus","es":"Usted ha recibido el bono"}
 		,"inform_setting_tip_text":{"en":"Would you like receive text message from DR. Bingo?","pt":"Você gostaria de receber mensagens do DR. Bingo?","es":"¿Usted gustaria recibir mensajes del DR. Bingo?"}
 		,"inform_tip_text":{"en":"Please, verify if the code go to SPAM","pt":"Por favor, verifique se o código foi para o lixo eletrônico","es":"Por favor, compruebe que el código fue para la basura electrónica"}
-		,"email_bottom_text":{"en":"Complete e-mail verification and you can
-		get gold coins.","pt":"Complete a verificação de seu e-mail e você
-		pode ganhar moedas de ouro.","es":"Complete la verificación por correo electrónico
-		y podrá obtener monedas de oro."}
-		,"phone_bottom_text":{"en":"Complete the phone number verification and you will up on loyalty level for 1 day.","pt":"Complete a verificação do número de telefone e você subirá o
-		seu nível de fidelidade por 1 dia.","es":"Complete la verificación del número de teléfono y aumentará el nivel de fidelidad por 1 día."}
+		,"email_bottom_text":{"en":"Complete e-mail verification and you can get gold coins."
+			,"pt":"Complete a verificação de seu e-mail e você pode ganhar moedas de ouro."
+			,"es":"Complete la verificación por correo electrónico y podrá obtener monedas de oro."}
+		,"phone_bottom_text":{"en":"Complete the phone number verification and you will up on loyalty level for 1 day."
+			,"pt":"Complete a verificação do número de telefone e você subirá o seu nível de fidelidade por 1 dia."
+			,"es":"Complete la verificación del número de teléfono y aumentará el nivel de fidelidad por 1 día."}
 		,"verify_error_8":{"en":"INVALID CODE.YOU STILL HAVE {1} ATTEMPTS","pt":"CÓDIGO INVÁLIDO. VOCÊ AINDA TEM {1} TENTATIVAS","es":"CÓDIGO NO VÁLIDO. TENDRÁS {1} INTENTOS"}
-		,"verify_error_8_":{"en":"TOO MANY ATTEMPTS.PLEASE TRY
-		AGAIN LATER","pt":"MUITAS TENTATIVAS. POR FAVOR, TENTE
-		NOVAMENTE DEPOIS","es":"MUCHAS TENTATIVAS. POR FAVOR, TENTE
-		NOVAMENTE DESPUÉS"}
+		,"verify_error_8_":{"en":"TOO MANY ATTEMPTS.PLEASE TRY AGAIN LATER","pt":"MUITAS TENTATIVAS. POR FAVOR, TENTE NOVAMENTE DEPOIS","es":"MUCHAS TENTATIVAS. POR FAVOR, TENTE NOVAMENTE DESPUÉS"}
 		,"email_bonus_text":{"en":"You have already received bounes","pt":"Você já recebeu o bônus","es":"Usted ha recibido el bono"}
 		,"support":{"en":"Support","pt":"Suporte","es":"Soporte"}
 		,"set":{"en":"set","pt":"conjunto","es":"set"}
@@ -218,23 +195,12 @@
 		,"checkout_btn_text":{"en":"check out your exclusive privileges","pt":"Confira aqui os seus privilégios exclusivos!","es":"¡Compruebe aquí sus privilegios exclusivos!"}
 		,"loyalty_points_text":{"en":"Get {1} to up next level","pt":"Ganhe {1} de fidelidade para passar à próxima fase","es":"Gane {1} de fidelidad para pasar a la siguiente fase"}
 		,"verify_phone":{"en":"Verify Phone","pt":"Verificar Telefone","es":"Verificar el Teléfono"}
-		,"bank_unblock_text":{"en":"Thank you, our support will contact
-		you as soon as possible.","pt":"Obrigado, nosso suporte entrará em
-		contato com você o mais breve possível.","es":"Gracias, nuestro soporte lo contactará
-		lo más pronto posible."}
-		,"bank_warning_text":{"en":"We noticed that you made a request for a
-		reversal. This is the reason that you
-		are forbidding to do purchases.If you
-		would like that we contact you,
-		please send us your the phone number.","pt":"Notamos que você fez um pedido de
-		estorno.Por isso estamos proibindo você de
-		realizar transações. Se você quiser que
-		entremos em contato, favor nos mandar
-		o número de telefone.","es":"Notamos que usted ha hecho una anulación
-		de compra. Por isso que estamos
-		prohibiendo usted de realizar transacciones.
-		Se você quiser que entremos em contato,
-		favor nos mandar o número de telefone."}
+		,"bank_unblock_text":{"en":"Thank you, our support will contact you as soon as possible."
+			,"pt":"Obrigado, nosso suporte entrará em contato com você o mais breve possível."
+			,"es":"Gracias, nuestro soporte lo contactará lo más pronto posible."}
+		,"bank_warning_text":{"en":"We noticed that you made a request for a reversal. This is the reason that you are forbidding to do purchases.If you would like that we contact you,please send us your the phone number."
+			,"pt":"Notamos que você fez um pedido de estorno.Por isso estamos proibindo você de realizar transações. Se você quiser que entremos em contato, favor nos mandar o número de telefone."
+			,"es":"Notamos que usted ha hecho una anulación de compra. Por isso que estamos prohibiendo usted de realizar transacciones. Se você quiser que entremos em contato, favor nos mandar o número de telefone."}
 		,"mission_score":{"en":"mission_score","pt":"mission_score","es":"mission_score"}
 		,"is_mission_refresh":{"en":"is_mission_refresh","pt":"is_mission_refresh","es":"is_mission_refresh"}
 		,"mission_score_easy":{"en":"early weekly bounes","pt":"Bônus semanal antecipado","es":"Bono semanal temprano"}
@@ -247,15 +213,11 @@
 		,"ordinary":{"en":"Ordinary","pt":"Normal","es":"Normal"}
 		,"priority":{"en":"Priority","pt":"Prioridade","es":"Prioridad"}
 		,"special":{"en":"Special","pt":"Especial","es":"Especial"}
-		,"talk to us":{"en":"Talk to us","pt":"Fale Conosco","es":"Hable con
-		nosotros"}
-		,"will not restart":{"en":"Will not restart","pt":"Não irá
-		reiniciar","es":"No se
-		reiniciará"}
+		,"talk to us":{"en":"Talk to us","pt":"Fale Conosco","es":"Hable con nosotros"}
+		,"will not restart":{"en":"Will not restart","pt":"Não irá reiniciar","es":"No se reiniciará"}
 		,"puzzle_album_unlock_text":{"en":"Complete the previous picture to unlock this one","pt":"","es":""}
 		,"how_to_get":{"en":"HOW TO GET","pt":"HOW TO GET","es":"HOW TO GET"}
-		,"puzzle_lock_tip_text":{"en":"You need to complete the picture to unlock next one","pt":"Você precisa completar a imagem para desbloquear
-		a próxima","es":"Debes completar la imagen para desbloquear la siguiente"}
+		,"puzzle_lock_tip_text":{"en":"You need to complete the picture to unlock next one","pt":"Você precisa completar a imagem para desbloquear a próxima","es":"Debes completar la imagen para desbloquear la siguiente"}
 		,"completed":{"en":"Completed","pt":"Completada","es":"Completada"}
 		,"puzzle_prize_front_text":{"en":"Enjoy your incredible prize","pt":"Aproveite o seu incrível prêmio","es":"Disfruta tu increíble premio"}
 		,"puzzle_prize_after_text":{"en":"{1} Coins","pt":"{1} Moedas","es":"{1} Monedas"}
@@ -271,159 +233,77 @@
 		,"puzzle_watch_video_text":{"en":"WATCH THE VIDEO","pt":"WATCH THE VIDEO","es":"WATCH THE VIDEO"}
 		,"purchase_bonus":{"en":"Purchase bonus","pt":"Prêmio por Compra","es":"Premio por Compra"}
 		,"daily_bonus_reward":{"en":"Daily bonus reward","pt":"Prêmio do Bônus Diário","es":"Premio de Bonos Diario"}
-		,"hourly_bonus_reward":{"en":"Hourly bonus reward","pt":"Prêmio do Bônus a cada
-		duas horas","es":"Premio de Bonos de cada
-		dos horas"}
-		,"loyalty_points_reward":{"en":"Loyalty point return
-		to zero","pt":"Os pontos de fidelidade
-		retornarão ao zero","es":"Los puntos de fidelidad
-		regresaron a cero"}
-		,"different_daily_bonus_reward":{"en":"Different Daily Bonus type","pt":"Bônus diário diferenciado","es":"El bonos diario seran
-		diferentes"}
+		,"hourly_bonus_reward":{"en":"Hourly bonus reward","pt":"Prêmio do Bônus a cada duas horas","es":"Premio de Bonos de cada dos horas"}
+		,"loyalty_points_reward":{"en":"Loyalty point return to zero","pt":"Os pontos de fidelidade retornarão ao zero","es":"Los puntos de fidelidad regresaron a cero"}
+		,"different_daily_bonus_reward":{"en":"Different Daily Bonus type","pt":"Bônus diário diferenciado","es":"El bonos diario seran diferentes"}
 		,"customer_service_reward":{"en":"Customer service type","pt":"Suporte diferenciado","es":"Soporte diferenciado"}
-		,"play_new_game_reward":{"en":"Play new game before
-		anyone else","pt":"Seja o Primeiro a jogar
-		novas máquinas","es":"¡Sé el primero en jugar
-		nuevos juegos"}
+		,"play_new_game_reward":{"en":"Play new game before anyone else","pt":"Seja o Primeiro a jogar novas máquinas","es":"¡Sé el primero en jugar nuevos juegos"}
 		,"get_privilieges":{"en":"Get privilege","pt":"Ganhe Privilégios","es":"Ganar Privilegios"}
-		,"service_priorities":{"en":"Different customer service
-		priorities","pt":"Atendimento ao cliente
-		diferenciado","es":"Servicio al cliente
-		diferenciado"}
+		,"service_priorities":{"en":"Different customer service priorities","pt":"Atendimento ao cliente diferenciado","es":"Servicio al cliente diferenciado"}
 		,"vip_support":{"en":"Telephone verification","pt":"Verificação telefónica","es":"Verificación telefónica"}
-		,"purchase_bonus_instruct":{"en":"Increase the gold coins obtained
-		by the players' recharge according
-		to their loyalty levels","pt":"O jogador ganhará bônus por
-		compras de acordo com sua posição
-		no programa de fidelidade.","es":"El jugador ganará bonos por compras
-		de acuerdo con su posición en el
-		programa de fidelidad."}
-		,"daily_bonus_instruct":{"en":"Increase daily bonus for
-		playersbased on their
-		loyalty rating","pt":"O bônus diário aumentará de
-		acordo com sua posição no
-		programa de fidelidade.","es":"El Bono diario aumentaran
-		de acuerdo con su posición en
-		el programa de fidelidad."}
-		,"hourly_bonus_instruct":{"en":"Increase the hourly bonus
-		earned by players based on
-		their loyalty rating","pt":"O bônus a cada duas horas
-		aumentará de acordo com sua
-		posição no programa de fidelidade.","es":"Los Bonos de cada dos horas
-		aumentaran de acuerdo con su posición
-		en el programa de fidelidad."}
-		,"loyalty_points_instruct":{"en":"Loyalty point will be reset every year","pt":"Os pontos de fidelidade serão
-		redefinidos todos os anos","es":"Los puntos de fidelidad se reajustaran
-		a cada año"}
+		,"purchase_bonus_instruct":{"en":"Increase the gold coins obtained by the players' recharge according to their loyalty levels"
+			,"pt":"O jogador ganhará bônus por compras de acordo com sua posição no programa de fidelidade."
+			,"es":"El jugador ganará bonos por compras de acuerdo con su posición en el programa de fidelidad."}
+		,"daily_bonus_instruct":{"en":"Increase daily bonus for playersbased on their loyalty rating"
+			,"pt":"O bônus diário aumentará de acordo com sua posição no programa de fidelidade."
+			,"es":"El Bono diario aumentaran de acuerdo con su posición en el programa de fidelidad."}
+		,"hourly_bonus_instruct":{"en":"Increase the hourly bonus earned by players based on their loyalty rating"
+			,"pt":"O bônus a cada duas horas aumentará de acordo com sua posição no programa de fidelidade."
+			,"es":"Los Bonos de cada dos horas aumentaran de acuerdo con su posición en el programa de fidelidad."}
+		,"loyalty_points_instruct":{"en":"Loyalty point will be reset every year","pt":"Os pontos de fidelidade serão redefinidos todos os anos","es":"Los puntos de fidelidad se reajustaran a cada año"}
 		,"different_daily_instruct":{"en":"Different daily bonus rules","pt":"Novas Regras do Bônus Diário","es":"Nuevas Reglas del Bono Diario"}
 		,"mission_score_easy_instruct":{"en":"Can get weekly mission prize earlier","pt":"Pode receber prêmio de missão semanal mais cedo","es":"Puede obtener premio de la misión semanal antes"}
 		,"mission_can_refresh_instruct":{"en":"You can change the tasks once a day","pt":"Você pode trocar as tarefas uma vez por dia","es":"Usted puede cambiar las tareas una vez al día"}
 		,"customer_service_instruct":{"en":"Different customer support","pt":"Suporte diferenciado e exclusivo","es":"Soporte diferenciado y exclusivo"}
-		,"play_new_instruct":{"en":"Play new games ahead of time","pt":"Seja o Primeiro a jogar novas
-		máquinas!","es":"¡Sé el primero en jugar nuevos juegos!"}
-		,"service_priorities_instruct":{"en":"The higher your level of loyalty, the
-		faster your service will be.","pt":"Quanto maior for o seu nível de
-		Fidelidade, mais rápido será o seu
-		atendimento.","es":"Cuanto mayor sea su nivel de Fidelidad, más rápido será su Servicio."}
-		,"vip_support_instruct":{"en":"Whether the player can verify the
-		phone number.","pt":"Se o jogador pode verificar o número
-		de telefone.","es":"Si el jugador puede verificar el número
-		de teléfono."}
+		,"play_new_instruct":{"en":"Play new games ahead of time","pt":"Seja o Primeiro a jogar novas máquinas!","es":"¡Sé el primero en jugar nuevos juegos!"}
+		,"service_priorities_instruct":{"en":"The higher your level of loyalty, the faster your service will be.","pt":"Quanto maior for o seu nível de Fidelidade, mais rápido será o seu atendimento.","es":"Cuanto mayor sea su nivel de Fidelidad, más rápido será su Servicio."}
+		,"vip_support_instruct":{"en":"Whether the player can verify the phone number.","pt":"Se o jogador pode verificar o número de telefone.","es":"Si el jugador puede verificar el número de teléfono."}
 		,"faq_q_1":{"en":"What is Loyalty System?","pt":"O Que é o Programa de Fidelidade?","es":"¿Qué es Programa de Fidelidad?"}
-		,"faq_a_1":{"en":"Loyalty System is our rewarding and fun player loyalty program.
-		Players earn Loyalty Points through gameplay and purchases to receive
-		exclusive in-game privileges and rewards. Players are automatically enrolled
-		for free and earn points from their very first game!","pt":"Sistema de Fidelidade é o nosso programa de fidelidade de jogador
-		gratificante e divertido.
-		Os jogadores ganham pontos de fidelidade através do jogo e compras para
-		receber privilégios e recompensas exclusivas no jogo. Os jogadores são
-		automaticamente inscritos gratuitamente e ganham pontos desde o
-		primeiro jogo!","es":"Sistema de Fidelidad es nuestro programa de fidelización de jugadores
-		gratificante y divertido.
-		Los jugadores ganan puntos de Fidelidad a través del juego y las compras para recibir privilegios y recompensas exclusivas dentro del juego. ¡Los jugadores se inscriben automáticamente de forma gratuita y ganan puntos desde su primer juego!"}
+		,"faq_a_1":{"en":"Loyalty System is our rewarding and fun player loyalty program. Players earn Loyalty Points through gameplay and purchases to receive exclusive in-game privileges and rewards. Players are automatically enrolled for free and earn points from their very first game!"
+			,"pt":"Sistema de Fidelidade é o nosso programa de fidelidade de jogador gratificante e divertido. Os jogadores ganham pontos de fidelidade através do jogo e compras para receber privilégios e recompensas exclusivas no jogo. Os jogadores são automaticamente inscritos gratuitamente e ganham pontos desde o primeiro jogo!"
+			,"es":"Sistema de Fidelidad es nuestro programa de fidelización de jugadores gratificante y divertido. Los jugadores ganan puntos de Fidelidad a través del juego y las compras para recibir privilegios y recompensas exclusivas dentro del juego. ¡Los jugadores se inscriben automáticamente de forma gratuita y ganan puntos desde su primer juego!"}
 		,"faq_q_2":{"en":"What are Loyalty Level?","pt":"O que são os níveis de Fidelidade?","es":"¿Qué es el Nivel de Fidelidad?"}
-		,"faq_a_2":{"en":"Your Loyalty Level is based on the number of Loyalty Points earned each year.
-		Players receive bigger rewards and more exclusive in-game privileges by
-		moving up through all seven levels: Baby, Pupils, Students, Bachelor, Master,
-		Doctor, Crazy Doctor.","pt":"Seu nível de Fidelidade é baseado no número de pontos de fidelidade ganhos
-		anualmente.
-		Os jogadores recebem maiores recompensas e privilégios mais exclusivos no
-		jogo passando por todos os sete níveis: Neném, Alunos, Estudante
-		, Graduado, Mestre, Doctor, Super Doutor.","es":"Su Nivel de Fidelidad se basa en la cantidad de Puntos de Fidelidad ganados cada año.
-		Los jugadores reciben mayores recompensas y privilegios más exclusivos en el
-		juego al avanzar a través de los siete niveles: Chico, Pupilos, Estudiantes,
-		Bachiller, Maestro, doctor, Super doctor."}
+		,"faq_a_2":{"en":"Your Loyalty Level is based on the number of Loyalty Points earned each year. Players receive bigger rewards and more exclusive in-game privileges by moving up through all seven levels: Baby, Pupils, Students, Bachelor, Master,Doctor, Crazy Doctor."
+			,"pt":"Seu nível de Fidelidade é baseado no número de pontos de fidelidade ganhos anualmente.Os jogadores recebem maiores recompensas e privilégios mais exclusivos no jogo passando por todos os sete níveis: Neném, Alunos, Estudante, Graduado, Mestre, Doctor, Super Doutor."
+			,"es":"Su Nivel de Fidelidad se basa en la cantidad de Puntos de Fidelidad ganados cada año.Los jugadores reciben mayores recompensas y privilegios más exclusivos en el juego al avanzar a través de los siete niveles: Chico, Pupilos, Estudiantes,Bachiller, Maestro, doctor, Super doctor."}
 		,"faq_q_3":{"en":"How do I sign-up and start earning points and privileges?","pt":"Como me inscrevo e começo a ganhar pontos e privilégios?","es":"¿Cómo me inscribo y comienzo a ganar puntos y privilegios?"}
-		,"faq_a_3":{"en":"There is no need to sign-up. Every player is automatically enrolled in the
-		program and will earn points from their very first game!
-		Players begin by enjoying Baby level and privileges and move up from there.","pt":"Não há necessidade de se inscrever. Todos os jogadores são automaticamente
-		inscritos no programa e ganham pontos desde o primeiro jogo!
-		Os jogadores começam por desfrutar do nível e privilégios do Aluno e
-		avançam a partir daí.","es":"No es necesario registrarse. ¡Cada jugador se inscribe automáticamente en el
-		programa y ganará puntos desde su primer juego!
-		Los jugadores comienzan disfrutando del nivel y los privilegios del Chico y
-		avanzan desde allí."}
+		,"faq_a_3":{"en":"There is no need to sign-up. Every player is automatically enrolled in the program and will earn points from their very first game! Players begin by enjoying Baby level and privileges and move up from there."
+			,"pt":"Não há necessidade de se inscrever. Todos os jogadores são automaticamente inscritos no programa e ganham pontos desde o primeiro jogo!Os jogadores começam por desfrutar do nível e privilégios do Aluno e avançam a partir daí."
+			,"es":"No es necesario registrarse. ¡Cada jugador se inscribe automáticamente en el programa y ganará puntos desde su primer juego! Los jugadores comienzan disfrutando del nivel y los privilegios del Chico y avanzan desde allí."}
 		,"faq_q_4":{"en":"What are Loyalty Points?","pt":"O que são pontos de fidelidade?","es":"¿Qué son los puntos de fidelidad?"}
-		,"faq_a_4":{"en":"Loyalty Points determine your game level. Every time you make an in-game
-		purchase or level-up, you will receive Loyalty Points in your account.","pt":"Pontos de fidelidade determinam seu nível de jogo. Toda vez que você fizer
-		uma compra no jogo ou subir de nível receberá pontos de fidelidade em
-		sua conta.","es":"Los puntos de Fidelidad determinan tu nivel de juego. Cada vez que realice una compra en el juego o suba de nivel, recibirá puntos de fidelidad en su cuenta."}
+		,"faq_a_4":{"en":"Loyalty Points determine your game level. Every time you make an in-game purchase or level-up, you will receive Loyalty Points in your account."
+			,"pt":"Pontos de fidelidade determinam seu nível de jogo. Toda vez que você fizer uma compra no jogo ou subir de nível receberá pontos de fidelidade em sua conta."
+			,"es":"Los puntos de Fidelidad determinan tu nivel de juego. Cada vez que realice una compra en el juego o suba de nivel, recibirá puntos de fidelidad en su cuenta."}
 		,"faq_q_5":{"en":"How do I earn Loyalty Points?","pt":"Como ganho pontos de lealdade?","es":"¿Cómo gano puntos de Fidelidad?"}
-		,"faq_a_5":{"en":"Loyalty Points are earned with every in-game purchase and each in-game
-		level-up.","pt":"Os pontos de fidelidade são ganhos em cada compra no jogo e em cada nível de jogo.","es":"Los puntos de fidelidad se obtienen con cada compra en el juego y cada nivel
-		de juego en el nivel superior."}
+		,"faq_a_5":{"en":"Loyalty Points are earned with every in-game purchase and each in-game level-up."
+			,"pt":"Os pontos de fidelidade são ganhos em cada compra no jogo e em cada nível de jogo."
+			,"es":"Los puntos de fidelidad se obtienen con cada compra en el juego y cada nivel de juego en el nivel superior."}
 		,"faq_q_6":{"en":"How are Loyalty Points calculated?","pt":"Como os Pontos de Fidelidade são calculados?","es":"¿Cómo se calculan los puntos de fidelidad?"}
-		,"faq_a_6":{"en":"It’s simple. Every level-up and in-game purchase awards you Loyalty Points.
-		Bigger purchases award more Loyalty Points. As you reach higher game
-		levels, the amount of Loyalty Points.","pt":"É simples. Cada nível e compra no jogo premia você com Pontos de Fidelidade. Compras maiores concedem mais Pontos de fidelidade. À medida que você
-		alcança níveis de jogo mais altos, a quantidade de pontos de lealdade será
-		maior.","es":"Es sencillo. Cada compra en el nivel superior y en el juego te otorga puntos de fidelidad. Las compras más grandes otorgan más puntos de fidelidad. A
-		medida que alcances niveles de juego más altos, la cantidad de puntos de
-		fidelidad seran mayor."}
-		,"faq_q_7":{"en":"How do I check my Loyalty Level and privileges?","pt":"Como faço para verificar meu nível de Lealdade e
-		Privilégios?","es":"¿Cómo controlo mi Nivel de Fidelidad y mis privilegios?"}
-		,"faq_a_7":{"en":"To view privileges info, click on the Loyalty System icon located in the lobby.
-		The Loyalty privileges tab show: current Loyalty Points percentage, the
-		privileges you are getting now, and the amount of Loyalty Points needed to
-		reach the next Loyalty Level.
-		Tap the "Privileges" button on the bottom of the tab to view in-game
-		privileges, by Loyalty Level. For more info, tap the "!" icon.","pt":"Para visualizar informações sobre privilégios, clique no ícone Sistema de
-		fidelidade localizado no lobby.
-		A guia Privilégios de fidelidade mostra: a porcentagem atual de pontos de
-		fidelidade, os privilégios que você está obtendo agora e a quantidade de
-		pontos de fidelidade necessários para alcançar o próximo nível de
-		fidelidade.
-		Toque no botão "Privilégios" na parte inferior da guia para visualizar
-		privilégios no jogo, por Nível de lealdade. Para mais informações, toque
-		no ícone "!"","es":"Para ver información de privilegios, haga clic en el icono del Sistema de
-		Fidelidad ubicado en el lobby.
-		La pestaña de privilegios de Fidelidad muestra: porcentaje actual de puntos de Fidelidad, los privilegios que está obteniendo ahora y la cantidad de puntos de Fidelidad necesarios para alcanzar el siguiente nivel de Fidelidad.
-		Toque el botón "Privilegios" en la parte inferior de la pestaña para ver los
-		privilegios dentro del juego, por Nivel de Fidelidad. Para obtener más
-		información, toque el ícono "!"."}
+		,"faq_a_6":{"en":"It’s simple. Every level-up and in-game purchase awards you Loyalty Points.Bigger purchases award more Loyalty Points. As you reach higher game levels, the amount of Loyalty Points."
+			,"pt":"É simples. Cada nível e compra no jogo premia você com Pontos de Fidelidade. Compras maiores concedem mais Pontos de fidelidade. À medida que você alcança níveis de jogo mais altos, a quantidade de pontos de lealdade será maior."
+			,"es":"Es sencillo. Cada compra en el nivel superior y en el juego te otorga puntos de fidelidad. Las compras más grandes otorgan más puntos de fidelidad. A medida que alcances niveles de juego más altos, la cantidad de puntos de fidelidad seran mayor."}
+		,"faq_q_7":{"en":"How do I check my Loyalty Level and privileges?","pt":"Como faço para verificar meu nível de Lealdade e Privilégios?","es":"¿Cómo controlo mi Nivel de Fidelidad y mis privilegios?"}
+		,"faq_a_7":{"en":"To view privileges info, click on the Loyalty System icon located in the lobby.The Loyalty privileges tab show: current Loyalty Points percentage, the privileges you are getting now, and the amount of Loyalty Points needed to reach the next Loyalty Level.Tap the \"Privileges\" button on the bottom of the tab to view in-game privileges, by Loyalty Level. For more info, tap the \"!\" icon."
+			,"pt":"Para visualizar informações sobre privilégios, clique no ícone Sistema de fidelidade localizado no lobby.A guia Privilégios de fidelidade mostra: a porcentagem atual de pontos de fidelidade, os privilégios que você está obtendo agora e a quantidade de pontos de fidelidade necessários para alcançar o próximo nível de fidelidade.Toque no botão \"Privilégios\" na parte inferior da guia para visualizar privilégios no jogo, por Nível de lealdade. Para mais informações, toque no ícone \"!\""
+			,"es":"Para ver información de privilegios, haga clic en el icono del Sistema de Fidelidad ubicado en el lobby.La pestaña de privilegios de Fidelidad muestra: porcentaje actual de puntos de Fidelidad, los privilegios que está obteniendo ahora y la cantidad de puntos de Fidelidad necesarios para alcanzar el siguiente nivel de Fidelidad. Toque el botón \"Privilegios\" en la parte inferior de la pestaña para ver los privilegios dentro del juego, por Nivel de Fidelidad. Para obtener más información, toque el ícono \"!\"."}
 		,"faq_q_8":{"en":"How long do I keep my Loyalty Level for?","pt":"Por quanto tempo mantenho o meu nível de Fidelidade?","es":"¿Por cuánto tiempo guardo mi Nivel de Fidelidad?"}
-		,"faq_a_8":{"en":"Once you reach a Loyalty Level, you can keep this level until the loyalty
-		points expired.","pt":"Depois de atingir um nível de Fidelidade, você pode manter esse nível até que os pontos de fidelidade expirem.","es":"Una vez que alcances un Nivel de Fidelidad, puedes mantener este nivel hasta que expiren los puntos de Fidelidad."}
+		,"faq_a_8":{"en":"Once you reach a Loyalty Level, you can keep this level until the loyalty points expired."
+			,"pt":"Depois de atingir um nível de Fidelidade, você pode manter esse nível até que os pontos de fidelidade expirem."
+			,"es":"Una vez que alcances un Nivel de Fidelidad, puedes mantener este nivel hasta que expiren los puntos de Fidelidad."}
 		,"faq_q_9":{"en":"Do my Loyalty Points expire?","pt":"Meus pontos de Fidelidade expiram?","es":"¿Mis puntos de Fidelidad caducan?"}
-		,"faq_a_9":{"en":"Loyalty Level is an annual program, meaning your Loyalty Points is reset to
-		zero at the beginning of every calendar year (January).
-		According to the loyalty level, some players’ loyalty levels will not be
-		affectedo.","pt":"O nível de Fidelidade é um programa anual, o que significa que os seus Pontos de Fidelidade são redefinidos para zero no início de cada ano (janeiro).
-		De acordo com o nível de fidelidade, os níveis de fidelidade de alguns
-		jogadores não serão afetados.","es":"El nivel de Fidelidad es un programa anual, lo que significa que sus puntos de
-		Fidelidad se restablecen a cero al comienzo de cada año (enero).
-		De acuerdo con el nivel de Fidelidad, los niveles de Fidelidad de algunos
-		jugadores no se verán afectados."}
+		,"faq_a_9":{"en":"Loyalty Level is an annual program, meaning your Loyalty Points is reset to zero at the beginning of every calendar year (January).According to the loyalty level, some players’ loyalty levels will not be affectedo."
+			,"pt":"O nível de Fidelidade é um programa anual, o que significa que os seus Pontos de Fidelidade são redefinidos para zero no início de cada ano (janeiro).De acordo com o nível de fidelidade, os níveis de fidelidade de alguns jogadores não serão afetados."
+			,"es":"El nivel de Fidelidad es un programa anual, lo que significa que sus puntos de Fidelidad se restablecen a cero al comienzo de cada año (enero).De acuerdo con el nivel de Fidelidad, los niveles de Fidelidad de algunos jugadores no se verán afectados."}
 		,"faq_q_10":{"en":"Are Loyalty Points redeemable?","pt":"Os pontos de fidelidade são resgatáveis?","es":"¿Los puntos de fidelidad son canjeables?"}
-		,"faq_a_10":{"en":"No. You cannot redeem or cash out your Loyalty Points in any way.","pt":"Não. Você não pode resgatar ou sacar Pontos de Fidelidade de nenhuma
-		maneira.","es":"No. No puede canjear o retirar sus Puntos de fidelidad de ninguna manera."}
+		,"faq_a_10":{"en":"No. You cannot redeem or cash out your Loyalty Points in any way.","pt":"Não. Você não pode resgatar ou sacar Pontos de Fidelidade de nenhuma maneira.","es":"No. No puede canjear o retirar sus Puntos de fidelidad de ninguna manera."}
 		,"faq_q_11":{"en":"Are Loyalty Points transferable?","pt":"Os pontos de fidelidade são transferíveis?","es":"¿Los puntos de fidelidad son transferibles?"}
-		,"faq_a_11":{"en":"No. Loyalty Points are specific to each account and are not transferable to any other account.","pt":"Não. Os pontos de fidelidade são específicos para cada conta e são
-		transferíveis para qualquer outra conta.","es":"No. Los puntos de fidelidad son específicos de cada cuenta y no son transferibles a ninguna otra cuenta."}
+		,"faq_a_11":{"en":"No. Loyalty Points are specific to each account and are not transferable to any other account."
+			,"pt":"Não. Os pontos de fidelidade são específicos para cada conta e são transferíveis para qualquer outra conta."
+			,"es":"No. Los puntos de fidelidad son específicos de cada cuenta y no son transferibles a ninguna otra cuenta."}
 		,"faq_q_12":{"en":"What is the difference between each Loyalty Level?","pt":"Qual é a diferença entre cada nível de lealdade?","es":"¿Cuál es la diferencia entre cada Nivel de Fidelidad?"}
-		,"faq_a_12":{"en":"In-game privileges and rewards get bigger and better as you progress through Loyalty Levels.","pt":"Os privilégios e recompensas no jogo ficam maiores e melhores à medida que
-		você avança pelos níveis de Fidelidade.","es":"Los privilegios y las recompensas dentro del juego aumentan y mejoran a
-		medida que progresas en los niveles de Fidelidad."}
+		,"faq_a_12":{"en":"In-game privileges and rewards get bigger and better as you progress through Loyalty Levels."
+			,"pt":"Os privilégios e recompensas no jogo ficam maiores e melhores à medida que você avança pelos níveis de Fidelidade."
+			,"es":"Los privilegios y las recompensas dentro del juego aumentan y mejoran a medida que progresas en los niveles de Fidelidad."}
 		,"faq":{"en":"FAQ","pt":"FAQ","es":"FAQ"}
 		,"loyalty_level_up":{"en":"Your Loyalty Level Up!","pt":"Seu Nível de Fidelidade!","es":"¡Tu Nivel de Fidelidad!"}
 		,"top_1of4":{"en":"Top 1 of 4","pt":"Dica 1 de 4","es":"Consejo 1 de 4"}
@@ -438,36 +318,15 @@
 		,"skip":{"en":"skip","pt":"pular","es":"pasar"}
 		,"next":{"en":"next","pt":"Avançar","es":"siguiente"}
 		,"got_it":{"en":"got it","pt":"saquei","es":"entiendo"}
-		,"can_play_now":{"en":"CAN PLAY
-		NOW","pt":"pode jogar
-		agora","es":"puede jugar
-		ahora"}
+		,"can_play_now":{"en":"CAN PLAY NOW","pt":"pode jogar agora","es":"puede jugar ahora"}
 		,"unlock_in":{"en":"UNLOCK IN","pt":"desbloquear em","es":"desbloquear en"}
-		,"unlock_loyalty_level":{"en":"Loyalty level {1} can
-		play now, others unlock
-		the game after the
-		countdown ends.","pt":"O nível {1} de Fidelidade
-		pode jogar agora, os outros
-		desbloqueiam o jogo após o
-		término da contagem do
-		relógio.","es":"El nivel del {1} de 
-		fidelidad puede jugar ahora,
-		otros desbloquean el juego
-		una vez que lo minutero
-		se cierra."}
-		,"unlock_level":{"en":"FROM LEVEL:
-		{1}","pt":"A partir do
-		nivel: {1}","es":"A partir del
-		nivel: {1}"}
+		,"unlock_loyalty_level":{"en":"Loyalty level {1} can play now, others unlock the game after the countdown ends."
+			,"pt":"O nível {1} de Fidelidade pode jogar agora, os outros desbloqueiam o jogo após o término da contagem do relógio."
+			,"es":"El nivel del {1} de fidelidad puede jugar ahora, otros desbloquean el juego una vez que lo minutero se cierra."}
+		,"unlock_level":{"en":"FROM LEVEL:{1}","pt":"A partir do nivel: {1}","es":"A partir del nivel: {1}"}
 		,"SlotsStory Gift":{"en":"Presenteie seus amigos com o Doutor Bingo","pt":"Presenteie seus amigos com o Doutor Bingo","es":"Presenteie seus amigos com o Doutor Bingo"}
 		,"REQUEST_MESSAGE_GIFT":{"en":"Moedas grátis para você jogar Doutor Bingo. Aproveite!","pt":"Moedas grátis para você jogar Doutor Bingo. Aproveite!","es":"Moedas grátis para você jogar Doutor Bingo. Aproveite!"}
-		,"welcome_top_text":{"en":"WELCOME TO DOCTOR
-		BINGO WORLD
-		ENJOY","pt":"WELCOME TO DOCTOR
-		BINGO WORLD
-		ENJOY","es":"WELCOME TO DOCTOR
-		BINGO WORLD
-		ENJOY"}
+		,"welcome_top_text":{"en":"WELCOME TO DOCTOR BINGO WORLD ENJOY","pt":"WELCOME TO DOCTOR BINGO WORLD ENJOY","es":"WELCOME TO DOCTOR BINGO WORLD ENJOY"}
 		,"welcome_bottom_text":{"en":"COINS TO GET YOU STARTED","pt":"COINS TO GET YOU STARTED","es":"COINS TO GET YOU STARTED"}
 		,"collect":{"en":"collect","pt":"coletar","es":"recoger"}
 		,"claim_collect":{"en":"collect","pt":"recolher","es":"recoger"}
