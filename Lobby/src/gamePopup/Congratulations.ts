@@ -63,7 +63,7 @@ class Congratulations extends GenericPo {
 		this.collectButton = btnContainer;
 
 		// btn
-		let btn = Com.addDownButtonAt(btnContainer, "congratulations_json.btn", "congratulations_json.btn", 160, 41, this.collectCoins.bind(this), true );
+		let btn = Com.addDownButtonAt(btnContainer, "congratulations_json.btn", "congratulations_json.btn", 0, 0, this.collectCoins.bind(this), true );
 		// btn text
 		let btnText = Com.addTextAt(btnContainer, 10, 5, 300, 72, 44, false, false);
 		btnText.textColor = 0xFFFFFF;
@@ -176,14 +176,14 @@ class Congratulations extends GenericPo {
 			UserVo.addCoins( this.normalBonus )
 		}
 		else if (Congratulations.type === 1) {
-			Trigger.flyingDinero( 20, new egret.Point(1250,780) );
+			Trigger.flyingDinero( 20, new egret.Point(1230,780) );
 			UserVo.addDineros( this.normalBonus );
 		}
 		else if (Congratulations.type === 2) {
 			UserVo.addCoins( Congratulations.coins );
 			Trigger.flyingCoins(40, new egret.Point(1250,780) );
 			UserVo.addDineros( Congratulations.chips );
-			Trigger.flyingDinero( 20, new egret.Point(1250 - 430,780) );
+			Trigger.flyingDinero( 20, new egret.Point(1230,880) );
 		}
 		else{
 			console.error( "congratulations type error" );
@@ -218,6 +218,7 @@ class Congratulations extends GenericPo {
 			Wheel.modal = SpinWheel.SpinWheelModel["PO_COINS"];
 			Trigger.insertInstance( new SpinWheel );
 		};
+		super.onClose(null);
 	}
 
 	public static checkPoItemsWheel( poItems: Array<Object> ): Array<number>{

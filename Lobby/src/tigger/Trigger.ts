@@ -343,7 +343,7 @@ class Trigger {
 
 	public static flyingDinero( count: number, startPosition: egret.Point ){
 		let flyCoins: FlyingCoins = new FlyingCoins();
-		flyCoins.flyDenero( count, startPosition, new egret.Point( 1600, 520 ), new egret.Point( 400, 300 ), 0.4, 0.3, 0.5 );
+		flyCoins.flyDenero( count, startPosition, new egret.Point( 1600, 70 ), new egret.Point( 400, 300 ), 0.4, 0.3, 0.5 );
 		this.instance.stage.addChild( flyCoins );
 	}
 }
