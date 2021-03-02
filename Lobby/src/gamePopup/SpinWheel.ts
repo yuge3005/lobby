@@ -242,13 +242,21 @@ class SpinWheel extends GenericPo{
 			new DataServer().getDataFromUrl( eval("API_HOST") + "/cmd.php?action=collect_purchased_wheel", this.getWheelResult, this, true, dataObject, this.getDataFailed );
 		} else {
 			if (Wheel.sector === -1) {
-				Trigger.instance["spinBar"]["colectDailyBonus"](function () {
-					this.runWheelTo( Wheel.sector );
-				}.bind(this));
+				let data = {json: JSON.stringify({debug: {}, fb: PlayerConfig.player("facebook.id"), seed: new Date().valueOf()})};
+				new DataServer().getDataFromUrl(PlayerConfig.config("http") + "://" + PlayerConfig.config("host") + "/cmd.php?action=collect_bonus", this.updateBonusData.bind(this), this, true, data, null);
 			} else {
 				this.runWheelTo(Wheel.sector);
 			}
 		}
+	}
+
+	private updateBonusData( dataStr: string ){
+		let data: Object = JSON.parse(dataStr);
+
+		Wheel.sector = Number(data["sector"]);
+		Wheel.spinWheelCoinsNumber = Number(data["reward"]["value"]);
+
+		this.runWheelTo( Wheel.sector );
 	}
 
 	private getWheelResult( data: string ): void{
