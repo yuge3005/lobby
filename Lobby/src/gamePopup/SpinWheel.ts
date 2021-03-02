@@ -106,14 +106,13 @@ class SpinWheel extends GenericPo{
 			bmtContainer.anchorOffsetY = 36;
 			bmtContainer.rotation = -i * 22.5;
 
-			let text = Com.addTextAt(bmtContainer, 15, 0, 265, 72, textSize, false, false);
+			let text = Com.addLabelAt(bmtContainer, 15, 4, 265, 72, textSize, false, false);
 			text.fontFamily = "Righteous";
 			text.textAlign = "left";
-			text.verticalAlign = "middle";
 			text.textColor = isMax ? 0xFFFF00 : 0xFFFFFF;
 			text.stroke = 3;
 			text.strokeColor = 0x000000;
-			text.text = Utils.formatCoinsNumber(this.randomCoinsArray[i]);
+			text.setText( Utils.formatCoinsNumber(this.randomCoinsArray[i]) );
 
 			Com.addObjectAt(this.wheelUI, bmtContainer, 406, 406);
 		}
@@ -139,7 +138,7 @@ class SpinWheel extends GenericPo{
 		Com.addObjectAt(this.wheelContainer, this.spinBtn, 775, 665);
 
 		// spin btn text
-		Com.addBitmapAt(this.spinBtn, "spin_wheel_" + GlobelSettings.language + "_json.spin_text", 0, 0);
+		// Com.addBitmapAt(this.spinBtn, "spin_wheel_" + GlobelSettings.language + "_json.spin_text", 0, 0);
 
 		/**
 		 * flag container, after spin wheel, show this container
@@ -190,7 +189,7 @@ class SpinWheel extends GenericPo{
 		Com.addObjectAt(this.flagContainer, this.collectBtn, 121, 667);
 
 		// collect btn bg
-		Com.addBitmapAt(this.collectBtn, "wheel_flag_json.collect", 0, 0);
+		Com.addBitmapAt(this.collectBtn, "wheel_flag_json.button", 0, 0);
 
 		// collect text
 		let collectText = Com.addTextAt(this.collectBtn, 0, 0, 370, 121, 80, false, false);

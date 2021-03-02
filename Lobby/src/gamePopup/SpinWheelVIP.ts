@@ -239,7 +239,7 @@ class SpinWheelVIP extends GenericPo {
 		Com.addObjectAt(this.flagContainer, this.collectBtn, 121, 667);
 
 		// collect btn bg
-		Com.addBitmapAt(this.collectBtn, "wheel_flag_json.collect", 0, 0);
+		Com.addBitmapAt(this.collectBtn, "wheel_flag_json.button", 0, 0);
 
 		// collect text
 		let collectText = Com.addTextAt(this.collectBtn, 0, 0, 370, 121, 80, false, false);
