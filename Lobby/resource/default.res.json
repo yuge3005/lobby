@@ -33,7 +33,7 @@
 			"name": "spin_wheel_vip"
 		},
 		{
-			"keys": "spin_wheel_json,wheel_flag_json",
+			"keys": "spin_wheel_json,wheel_flag_json,win_wheel1_mp3",
 			"name": "wheel"
 		}
 	],
@@ -167,6 +167,11 @@
 			"type": "sheet",
 			"name": "wheel_flag_json",
 			"subkeys": "Group-3,button,pile_coins01,pile_coins02,pile_coins03,pile_coins04"
+		},
+		{
+			"url": "assets/wheel/win_wheel1.mp3",
+			"type": "sound",
+			"name": "win_wheel1_mp3"
 		}
 	]
 }
