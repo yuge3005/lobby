@@ -346,4 +346,31 @@ class Trigger {
 		flyCoins.flyDenero( count, startPosition, new egret.Point( 1600, 70 ), new egret.Point( 400, 300 ), 0.4, 0.3, 0.5 );
 		this.instance.stage.addChild( flyCoins );
 	}
+
+	public static openGame(gameID: string){
+		this.recordFavoriteIndex( gameID );
+		localStorage.setItem( "gotoGame" + gameID, "true" );
+		document.location.href = GameIconsMapping[gameID].gameURL;
+	}
+
+	private static recordFavoriteIndex( indexStr: string ){
+		let favoriteThree: string = localStorage.getItem( "favorite" );
+		let favArr: Array<string>;
+		if( favoriteThree ){
+			favArr = favoriteThree.split( "," );
+			let inFavIndex: number = favArr.indexOf( indexStr );
+			if( inFavIndex < 0 ){
+				favArr.unshift( indexStr );
+				if( favArr.length > 3 ) favArr.length = 3;
+			}
+			else{
+				favArr.splice( inFavIndex, 1 );
+				favArr.unshift( indexStr );
+			}
+		}
+		else{
+			favArr = [ indexStr ];
+		}
+		localStorage.setItem( "favorite", favArr.join( "," ) );
+	}
 }

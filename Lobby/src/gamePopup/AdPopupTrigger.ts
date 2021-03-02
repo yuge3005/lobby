@@ -7,7 +7,7 @@ class AdPopupTrigger {
 			let click_behaviour: string = trigger["click_behaviour"];
 			if( click_behaviour ){
 				if (click_behaviour == "open_machine") {
-                    // open game parseInt(trigger["featured"])
+					Trigger.openGame( trigger["featured"] );
                 }
 				else if (click_behaviour == "open_piggy") {
 					if (GlobelSettings["pigBankPoVo"]) {

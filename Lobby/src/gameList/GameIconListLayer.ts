@@ -121,30 +121,7 @@ class GameIconListLayer extends DragItem{
 
 	private openGame( event: egret.TouchEvent ){
 		if( this.draging )return;
-		this.recordFavoriteIndex( event.target.name );
-		localStorage.setItem( "gotoGame" + event.target.name, "true" );
-		document.location.href = GameIconsMapping[event.target.name].gameURL;
-	}
-
-	private recordFavoriteIndex( indexStr: string ){
-		let favoriteThree: string = localStorage.getItem( "favorite" );
-		let favArr: Array<string>;
-		if( favoriteThree ){
-			favArr = favoriteThree.split( "," );
-			let inFavIndex: number = favArr.indexOf( indexStr );
-			if( inFavIndex < 0 ){
-				favArr.unshift( indexStr );
-				if( favArr.length > 3 ) favArr.length = 3;
-			}
-			else{
-				favArr.splice( inFavIndex, 1 );
-				favArr.unshift( indexStr );
-			}
-		}
-		else{
-			favArr = [ indexStr ];
-		}
-		localStorage.setItem( "favorite", favArr.join( "," ) );
+		Trigger.openGame( event.target.name );
 	}
 
 	public setListTo( index: number ){
