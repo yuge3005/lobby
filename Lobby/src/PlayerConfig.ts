@@ -40,7 +40,7 @@ class PlayerConfig {
 		this.configObject = config;
 		this.playerObject = player;
 
-		// if( GlobelSettings.isForCom ) player.facebook = player.custom;
+		if( GlobelSettings.isForCom ) player.facebook = player.custom;
 		// PlayerConfig.player("platform", "com");
 
 		this.initExternalContents(player["external_contents"], config["version_po"] );
