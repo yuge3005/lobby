@@ -35,6 +35,10 @@
 		{
 			"keys": "spin_wheel_json,wheel_flag_json,win_wheel1_mp3",
 			"name": "wheel"
+		},
+		{
+			"keys": "rate_us_json,support_json,gameSettings_json",
+			"name": "gameSettings"
 		}
 	],
 	"resources": [
@@ -172,6 +176,24 @@
 			"url": "assets/wheel/win_wheel1.mp3",
 			"type": "sound",
 			"name": "win_wheel1_mp3"
+		},
+		{
+			"url": "assets/gameSettings/rate_us.json",
+			"type": "sheet",
+			"name": "rate_us_json",
+			"subkeys": "BUY COINS,M,Star,Star_b,doctor,roomCloseButton"
+		},
+		{
+			"url": "assets/gameSettings/support.json",
+			"type": "sheet",
+			"name": "support_json",
+			"subkeys": "button,button_close,button_send,icon_zendesk,popup_bg_big,select_box"
+		},
+		{
+			"url": "assets/gameSettings/gameSettings.json",
+			"type": "sheet",
+			"name": "gameSettings_json",
+			"subkeys": "X_btn,avatar,bg,bg_slider_off,bg_slider_on,btn_arrow,fb_bt_settings,flag_en,flag_es,flag_pt,gl_bt_settings,icon_connect,icon_notification,language_icon,music_icon,rate_icon,scroll_bar,scroll_bar_handle,slider_switch,sound_fx_icon,support_btn,support_icon,tab_bg,visual_fx_icon"
 		}
 	]
 }

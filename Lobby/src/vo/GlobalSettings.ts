@@ -39,7 +39,3 @@ class GlobelSettings {
 		return this.isForFacebook ? PlayerConfig.player( "facebook.currency.currency" ) == "BRL" : true;
 	}
 }
-
-function trace( item ){
-	// console.log( item );
-}
