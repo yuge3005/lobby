@@ -247,7 +247,7 @@ class Trigger {
         s.addEventListener('load', function () {
             s.parentNode.removeChild(s);
 			s.removeEventListener('load', eval("arguments.callee"), false);
-			if( egret.getDefinitionByName( className )["needZoomOut"] == null ) egret.getDefinitionByName( className )["needZoomOut"] = true;
+			egret.getDefinitionByName( className )["needZoomOut"] = egret.getDefinitionByName( className )["needZoomOut"] == null ? true : false;
             this.showPoWithClassName( className, assetConfigUrl );
 		}.bind(this), false);
         document.head.appendChild(s);
