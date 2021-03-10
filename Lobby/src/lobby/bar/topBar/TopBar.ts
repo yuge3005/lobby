@@ -139,6 +139,6 @@ class TopBar extends egret.DisplayObjectContainer {
      * show setting
      */
     private showSetting(): void {
-        // Trigger.insertModel(SettingPopup);
+        Trigger.insertInstance( new GameSettingPopup );
     }
 }

@@ -406,4 +406,6 @@
 		,"support_success_text":{"en":"Your request has been sent and we will process it as soon as possible."
 			,"pt":"A entrega foi bem sucedida e vamos processá-la o mais rapidamente possível."
 			,"es":"La entrega es exitosa y la procesaremos lo antes posible."}
+		,"rate_us_now":{"en":"Rate Us Now!","pt":"Avalie-nos agora!","es":"¡Denos una valoración!"}
+		,"how_to_rate":{"en":"How would you rate doctor bingo?","pt":"Como você classificaria o Doctor Bingo?","es":"¿Cómo valoraría Doctor Bingo?"}
 }
