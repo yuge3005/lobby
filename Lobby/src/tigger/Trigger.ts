@@ -213,7 +213,7 @@ class Trigger {
 		this.currentPo.addEventListener( GenericModal.MODAL_COMMAND, this.onModalCommand, this );
 
 		let scale = 1;
-		if (!this.currentPo["noScale"]) {
+		if (this.currentPo.needZoomOut) {
 			scale = Math.min(this.size.x / this.currentPo.width, this.size.y / this.currentPo.height, 1.5);
 		}
 
@@ -247,6 +247,7 @@ class Trigger {
         s.addEventListener('load', function () {
             s.parentNode.removeChild(s);
 			s.removeEventListener('load', eval("arguments.callee"), false);
+			egret.getDefinitionByName( className )["needZoomOut"] = egret.getDefinitionByName( className )["needZoomOut"] == null ? true : false;
             this.showPoWithClassName( className, assetConfigUrl );
 		}.bind(this), false);
         document.head.appendChild(s);
@@ -259,6 +260,7 @@ class Trigger {
 
 	private showPoWithClass(myClass: Function, assetConfigUrl: string) {
 		this.currentPo = eval("new myClass(assetConfigUrl)");
+		this.currentPo.needZoomOut = eval( "myClass" )["needZoomOut"];
 		if( this.currentPo.inited )this.addPo();
 		else this.currentPo.addEventListener( GenericModal.GENERIC_MODAL_LOADED, this.addPo, this );
 	}
