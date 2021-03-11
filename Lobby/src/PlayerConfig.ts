@@ -262,9 +262,9 @@ class PlayerConfig {
 	public static get properties(): string {
 		let properties: string = localStorage.getItem("user_account_info");
 		if( properties.indexOf( "login_type=custom" ) >= 0 ){
-			properties += "&network=custom";
 			properties += "&uid=" + PlayerConfig.player( "user.id" );
 		}
+		properties.replace( "login_type", "network" );
 		return properties;
 	}
 }
