@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,animation_json,animation_png,assets_json,fireworks_json,fireworks_png,assets2_json,po_en_json,po_es_json,po_pt_json,bank_light_json,bank_light_png,coins_json,coins_png,defaultNewBank_json,ooc_v1_json,ooc_v1_en_json,ooc_v1_es_json,ooc_v1_pt_json",
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,description_json,fireworks_json,fireworks_png,assets2_json,po_en_json,po_es_json,po_pt_json,bank_light_json,bank_light_png,coins_json,coins_png,defaultNewBank_json,ooc_v1_json,ooc_v1_en_json,ooc_v1_es_json,ooc_v1_pt_json,defaultBank_json",
 			"name": "preload"
 		}
 	],
@@ -122,109 +122,99 @@
 			"name": "track_sb_png"
 		},
 		{
-			"name": "description_json",
+			"url": "config/description.json",
 			"type": "json",
-			"url": "config/description.json"
+			"name": "description_json"
 		},
 		{
-			"name": "animation_json",
+			"url": "assets/fireworks.json",
 			"type": "json",
-			"url": "animation.json"
+			"name": "fireworks_json"
 		},
 		{
-			"name": "animation_png",
+			"url": "assets/fireworks.png",
 			"type": "image",
-			"url": "animation.png"
+			"name": "fireworks_png"
 		},
 		{
-			"name": "assets_json",
-			"type": "sheet",
-			"url": "assets.json",
-			"subkeys": "120,x-1,btn_ble"
-		},
-		{
-			"name": "fireworks_json",
-			"type": "json",
-			"url": "assets/fireworks.json"
-		},
-		{
-			"name": "fireworks_png",
-			"type": "image",
-			"url": "assets/fireworks.png"
-		},
-		{
-			"name": "assets2_json",
-			"type": "sheet",
 			"url": "assets/assets.json",
-			"subkeys": "num_50,po_bg,polygon,X-1"
+			"type": "sheet",
+			"name": "assets2_json",
+			"subkeys": "X-1,num_50,po_bg,polygon"
 		},
 		{
-			"name": "po_en_json",
-			"type": "sheet",
 			"url": "assets/po_en.json",
+			"type": "sheet",
+			"name": "po_en_json",
 			"subkeys": "btn_en,text_en"
 		},
 		{
-			"name": "po_es_json",
-			"type": "sheet",
 			"url": "assets/po_es.json",
+			"type": "sheet",
+			"name": "po_es_json",
 			"subkeys": "btn_es,text_es"
 		},
 		{
-			"name": "po_pt_json",
-			"type": "sheet",
 			"url": "assets/po_pt.json",
+			"type": "sheet",
+			"name": "po_pt_json",
 			"subkeys": "btn_pt,text_pt"
 		},
 		{
-			"name": "bank_light_json",
+			"url": "assets/bank_light.json",
 			"type": "json",
-			"url": "assets/bank_light.json"
+			"name": "bank_light_json"
 		},
 		{
-			"name": "bank_light_png",
+			"url": "assets/bank_light.png",
 			"type": "image",
-			"url": "assets/bank_light.png"
+			"name": "bank_light_png"
 		},
 		{
-			"name": "coins_json",
+			"url": "assets/coins.json",
 			"type": "json",
-			"url": "assets/coins.json"
+			"name": "coins_json"
 		},
 		{
-			"name": "coins_png",
+			"url": "assets/coins.png",
 			"type": "image",
-			"url": "assets/coins.png"
+			"name": "coins_png"
 		},
 		{
-			"name": "defaultNewBank_json",
-			"type": "sheet",
 			"url": "assets/defaultNewBank.json",
-			"subkeys": "buy_btn_en,buy_btn_pt,buy_btn_es,b,bg_patch_price,bg_patch_reg,close_btn,coins01,coins02,coins03,coins04,coins05,coins06,collect_btn_bg,collect_btn,db_xp,dr_image,en_head,es_head,layer_bg,left_bar,light1,light2,pt_head,secure"
+			"type": "sheet",
+			"name": "defaultNewBank_json",
+			"subkeys": "COIN-2-1,b,bg_patch_price,bg_patch_reg,buy_btn_en,buy_btn_es,buy_btn_pt,close_btn,coins01,coins02,coins03,coins04,coins05,coins06,collect_btn,collect_btn_bg,db_xp,dr_image,en_head,es_head,layer_bg,left_bar,light1,light2,patch_offer,pt_head,secure"
 		},
 		{
-			"name": "ooc_v1_json",
-			"type": "sheet",
 			"url": "assets/ooc_v1.json",
+			"type": "sheet",
+			"name": "ooc_v1_json",
 			"subkeys": "po_3th_BG,x-1-1"
 		},
 		{
-			"name": "ooc_v1_en_json",
-			"type": "sheet",
 			"url": "assets/ooc_v1_en.json",
-			"subkeys": "Bitmap-en,BUTTON-en,po_3th_en"
+			"type": "sheet",
+			"name": "ooc_v1_en_json",
+			"subkeys": "BUTTON-en,Bitmap-en,po_3th_en"
 		},
 		{
-			"name": "ooc_v1_es_json",
-			"type": "sheet",
 			"url": "assets/ooc_v1_es.json",
-			"subkeys": "Bitmap-es,BUTTON-es,po_3th_es"
+			"type": "sheet",
+			"name": "ooc_v1_es_json",
+			"subkeys": "BUTTON-es,Bitmap-es,po_3th_es"
 		},
 		{
-			"name": "ooc_v1_pt_json",
-			"type": "sheet",
 			"url": "assets/ooc_v1_pt.json",
-			"subkeys": "Bitmap-pt,BUTTON-pt,po_3th_pt"
+			"type": "sheet",
+			"name": "ooc_v1_pt_json",
+			"subkeys": "BUTTON-pt,Bitmap-pt,po_3th_pt"
+		},
+		{
+			"url": "assets/defaultBank.json",
+			"type": "sheet",
+			"name": "defaultBank_json",
+			"subkeys": "arrow_up,best,bg_single_buycoins,btn_close,buy_btn,coins01,coins02,coins03,coins04,coins05,coins06,coins_bg,coins_en,coins_es,coins_pt,dinero_01,dinero_02,dinero_03,dinero_bg,dinero_button_bg,dinero_en,dinero_es,dinero_free_bonus_bg,dinero_pt,extra_bg,flag_extra,icon_collection,loyalty_points_bg,loyalty_points_icon,puzzle_number_1,puzzle_number_2,puzzle_number_3,title_line"
 		}
 	]
 }

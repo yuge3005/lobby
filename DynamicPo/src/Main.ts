@@ -9,7 +9,7 @@ class Main extends egret.DisplayObjectContainer {
     }
 
 	private onAddToStage(event: egret.Event) {
-        this.loadDynamicClass( "po_brazil", "po_brazil/data.res.json", "po_brazil/load.js" );
+        this.loadDynamicClass( "DefaultBank", "DefaultBank/data.res.json", "DefaultBank/load.js" );
 		this.stage.scaleMode = egret.StageScaleMode.NO_SCALE;
 	}
 
