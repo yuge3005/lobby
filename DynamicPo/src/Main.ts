@@ -58,7 +58,7 @@ class Main extends egret.DisplayObjectContainer {
 
 	public closeCurrentPo( event: egret.Event ){
 		let tw: egret.Tween = egret.Tween.get( this.currentPo );
-		tw.to( {"scaleX": 0.4, "scaleY" : 0.4}, 300 );
+		tw.to( {"scaleX": 0.2, "scaleY" : 0.2}, 300 );
 		tw.call(function() {
 			this.removeChild( this.currentPo );
 		}, this);

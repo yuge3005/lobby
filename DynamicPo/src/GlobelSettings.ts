@@ -1,4 +1,7 @@
 class GlobelSettings {
+
+    public static bankOpenType: number = 1;
+
 	public constructor() {
 	}
 
