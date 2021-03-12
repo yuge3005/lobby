@@ -6,7 +6,7 @@ class CoinsBankLayer extends egret.DisplayObjectContainer{
 
 		for( let i: number = 0; i < products.length; i++ ){
 			let bankItem: BankCoinItem = new BankCoinItem( i, products[i] );
-			Com.addObjectAt( this, bankItem, 45, 145 + 145 * i );
+			Com.addObjectAt( this, bankItem, 45, 145 * ( 6 - i ) );
 			bankItem.addEventListener( egret.TouchEvent.TOUCH_TAP, this.onTap, this );
 		}
 
