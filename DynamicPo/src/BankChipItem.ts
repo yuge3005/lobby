@@ -1,4 +1,7 @@
 class BankChipItem extends egret.DisplayObjectContainer{
+
+	public hash: string;
+
 	public constructor( index: number, data: Object ) {
 		super();
 
@@ -34,6 +37,17 @@ class BankChipItem extends egret.DisplayObjectContainer{
 		priceTx.stroke = 4;
 		priceTx.strokeColor = 0x007F10;
 
+		let extraTx: TextLabel = Com.addLabelAt( this, 0, 55, 130, 40, 40, false, true );
+		extraTx.rotation = -45;
+		extraTx.scaleX = 0.6;
+		extraTx.setText( "EXTRA" );
+
+		let extraNumTx: TextLabel = Com.addLabelAt( this, 0, 110, 260, 35, 35, false, true );
+		extraNumTx.rotation = -45;
+		extraNumTx.scaleX = 0.6;
+		extraNumTx.setText( Math.round( data["items"][0]["chips_discount"] ) + "%" );
+
 		this.cacheAsBitmap = true;
+		this.hash = data["hash"];
 	}
 }
