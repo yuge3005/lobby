@@ -47,13 +47,13 @@ class Main extends egret.DisplayObjectContainer {
     private addPo( event:egret.Event = null ){
 		this.currentPo.x = this.stage.stageWidth >> 1;
 		this.currentPo.y = this.stage.stageHeight >> 1;
-		this.currentPo.scaleX = 0.4;
-		this.currentPo.scaleY = 0.4;
+		this.currentPo.scaleX = 0.2;
+		this.currentPo.scaleY = 0.2;
 		this.currentPo.addEventListener( "closeModal", this.closeCurrentPo, this  );
 
 		this.addChild( this.currentPo );
 		let tw: egret.Tween = egret.Tween.get( this.currentPo );
-		tw.to( {"scaleX": 1, "scaleY" : 1}, 300 );
+		tw.to( {"scaleX": 0.5, "scaleY" : 0.5}, 300 );
 	}
 
 	public closeCurrentPo( event: egret.Event ){

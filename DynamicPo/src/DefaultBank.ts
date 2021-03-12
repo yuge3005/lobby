@@ -17,7 +17,7 @@ class DefaultBank extends GenericPo{
 		this.anchorOffsetY = this.bg.height;
 		this.bg.scaleX = this.bg.scaleY = 2;
 
-		this.closeButton = Com.addDownButtonAt( this, "defaultBank_json.btn_close", "defaultBank_json.btn_close", this.bg.width << 1, - this.bg.height , this.onClose, true );
+		this.closeButton = Com.addDownButtonAt( this, "defaultBank_json.btn_close", "defaultBank_json.btn_close", ( this.bg.width << 1 ) - 45, -45, this.onClose, true );
 
 		this.inited = true;
 		this.dispatchEvent( new egret.Event( GenericModal.GENERIC_MODAL_LOADED ) );
