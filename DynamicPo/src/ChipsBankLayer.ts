@@ -7,10 +7,10 @@ class ChipsBankLayer extends egret.DisplayObjectContainer{
 		for( let i: number = 0; i < products.length; i++ ){
 			let bankItem: BankChipItem = new BankChipItem( i, products[i] );
 			Com.addObjectAt( this, bankItem, 56 + 512 * i, 159 );
-			bankItem.touchChildren = false;
-			bankItem.touchEnabled = true;
 			bankItem.addEventListener( egret.TouchEvent.TOUCH_TAP, this.onTap, this );
 		}
+
+		this.cacheAsBitmap = true;
 	}
 
 	private onTap( event: egret.TouchEvent ): void {

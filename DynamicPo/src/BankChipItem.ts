@@ -1,6 +1,4 @@
-class BankChipItem extends egret.DisplayObjectContainer{
-
-	public hash: string;
+class BankChipItem extends BankProductItem{
 
 	public constructor( index: number, data: Object ) {
 		super();
@@ -47,7 +45,6 @@ class BankChipItem extends egret.DisplayObjectContainer{
 		extraNumTx.scaleX = 0.6;
 		extraNumTx.setText( Math.round( data["items"][0]["chips_discount"] ) + "%" );
 
-		this.cacheAsBitmap = true;
 		this.hash = data["hash"];
 	}
 }
