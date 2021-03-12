@@ -39,6 +39,7 @@ class DefaultBank extends GenericPo{
 			this.coinsBankLayer = new CoinsBankLayer;
 			Com.addObjectAt( this, this.coinsBankLayer, 0, 0 );
 		}
+		this.coinsBankLayer.visible = true;
 		this.bg.texture = RES.getRes( "defaultBank_json.coins_bg" );
 	}
 
@@ -48,6 +49,7 @@ class DefaultBank extends GenericPo{
 			this.chipsBankLayer = new ChipsBankLayer;
 			Com.addObjectAt( this, this.chipsBankLayer, 0, 0 );
 		}
+		this.chipsBankLayer.visible = true;
 		this.bg.texture = RES.getRes( "defaultBank_json.dinero_bg" );
 	}
 }

@@ -1,5 +1,7 @@
 class CoinsBankLayer extends egret.DisplayObjectContainer{
 	public constructor() {
-		super()
+		super();
+
+		this.cacheAsBitmap = true;
 	}
 }
