@@ -93,9 +93,10 @@ var CoinsBankLayer = (function (_super) {
         return _this;
     }
     CoinsBankLayer.prototype.onTap = function (event) {
-        var ev = new egret.Event("buyBankProduct");
+        var ev = new egret.Event(GenericModal.MODAL_COMMAND);
         ev["product_hash"] = event.target.hash;
         ev["buy_type"] = 0;
+        ev["cmd"] = "buyBankProduct";
         this.parent.dispatchEvent(ev);
     };
     return CoinsBankLayer;
@@ -115,9 +116,10 @@ var ChipsBankLayer = (function (_super) {
         return _this;
     }
     ChipsBankLayer.prototype.onTap = function (event) {
-        var ev = new egret.Event("buyBankProduct");
+        var ev = new egret.Event(GenericModal.MODAL_COMMAND);
         ev["product_hash"] = event.target.hash;
         ev["buy_type"] = 1;
+        ev["cmd"] = "buyBankProduct";
         this.parent.dispatchEvent(ev);
     };
     return ChipsBankLayer;

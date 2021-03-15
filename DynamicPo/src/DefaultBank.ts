@@ -92,9 +92,10 @@ class CoinsBankLayer extends egret.DisplayObjectContainer{
 	}
 
 	private onTap( event: egret.TouchEvent ): void {
-		let ev: egret.Event = new egret.Event( "buyBankProduct" );
+		let ev: egret.Event = new egret.Event( GenericModal.MODAL_COMMAND );
 		ev["product_hash"] = event.target.hash;
 		ev["buy_type"] = 0;
+		ev["cmd"] = "buyBankProduct";
 		this.parent.dispatchEvent( ev );
 	}
 }
@@ -115,9 +116,10 @@ class ChipsBankLayer extends egret.DisplayObjectContainer{
 	}
 
 	private onTap( event: egret.TouchEvent ): void {
-		let ev: egret.Event = new egret.Event( "buyBankProduct" );
+		let ev: egret.Event = new egret.Event( GenericModal.MODAL_COMMAND );
 		ev["product_hash"] = event.target.hash;
 		ev["buy_type"] = 1;
+		ev["cmd"] = "buyBankProduct";
 		this.parent.dispatchEvent( ev );
 	}
 }
