@@ -201,7 +201,7 @@ class BankCoinItem extends BankProductItem{
 		lpTx.scaleX = 0.9;
 		lpTx.text = "+" + Math.round( data["loyalty_base_point"] );
 
-		if( data["total_pieces"] ){
+		if( Number( data["total_pieces"] ) ){
 			let puzzleBg: egret.Bitmap = Com.addBitmapAt( this, "defaultBank_json.loyalty_points_bg", 1023 - 215, 6 );
 			puzzleBg.width = 217;
 			let puzzle: egret.Bitmap = Com.addBitmapAt( this, "defaultBank_json.icon_collection", 847, 15 );
