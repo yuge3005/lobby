@@ -35,7 +35,8 @@ class DefaultBank extends GenericPo{
 		this.inited = true;
 		this.dispatchEvent( new egret.Event( GenericModal.GENERIC_MODAL_LOADED ) );
 
-		Com.addObjectAt( this, new CollectHourlyBonusBar, 0, 0 );
+		GlobelSettings.bonusUI = new DefaultBankHourlyBonusBar;
+		Com.addObjectAt( this, GlobelSettings.bonusUI, 761, 21 );
 	}
 
 	private buildCurrentBankType( type: number ){

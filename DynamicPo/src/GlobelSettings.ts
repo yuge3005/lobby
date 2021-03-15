@@ -1,6 +1,7 @@
 class GlobelSettings {
 
     public static bankOpenType: number = 1;
+    public static bonusUI: CollectHourlyBonusBar;
 
 	public constructor() {
 	}

@@ -3,6 +3,7 @@ class GlobelSettings {
 	public static serverVertion: number = 2;
 
 	public static bankOpenType: number;
+	public static bonusUI: CollectHourlyBonusBar;
 
 	public constructor() {
 	}
