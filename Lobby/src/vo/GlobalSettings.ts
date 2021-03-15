@@ -2,6 +2,8 @@ class GlobelSettings {
 	private static _playerInfo: any = null;
 	public static serverVertion: number = 2;
 
+	public static bankOpenType: number;
+
 	public constructor() {
 	}
 

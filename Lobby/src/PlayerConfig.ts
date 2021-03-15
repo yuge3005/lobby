@@ -157,8 +157,8 @@ class PlayerConfig {
 					case "po":
 					case "popup":
 						if (list[i].type === "pig_bank") PiggyBankVo.init(list[i]);
-						if (list[i].type === "bank") Bank.init(list[i]);
-						if (list[i].type === "chipbank") ChipBank.init(list[i]);
+						if (list[i].type === "bank") GlobelSettings["bank"] = list[i].products;
+						if (list[i].type === "chipbank") GlobelSettings["chipBank"] = list[i].products;
 
 						if( list[i]["art"] && list[i]["art"].length ){
 							let poPath: string = list[i]["art"][0]["file"]["file_id_html5"];

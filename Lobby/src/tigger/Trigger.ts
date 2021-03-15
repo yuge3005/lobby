@@ -330,11 +330,11 @@ class Trigger {
 
 	public showBank(type: number = 0) {
 		if (isNaN(type)) type = 0;
-		// Trigger.showBankTagIndex = type;
+		GlobelSettings.bankOpenType = type;
 
-		// this.waitingModals.unshift( GlobelSettings.bankPoVo );
-		// if( this.currentPo )this.closeCurrentPo();
-		// else this.showFirstWaitingModal();
+		this.waitingModals.unshift( GlobelSettings.bankPoVo );
+		if( this.currentPo )this.closeCurrentPo();
+		else this.showFirstWaitingModal();
 	}
 
 	public static flyingCoins( count: number, startPosition: egret.Point ){
