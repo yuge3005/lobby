@@ -141,6 +141,9 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
         PlayerConfig.player("score.coins", update["score"]["coins"]);
         Wheel.updateBonus(PlayerConfig.player("bonus"));
 
+        Trigger.flyingCoins( 40, new egret.Point(1250,780) );
+        UserVo.coinsTo( PlayerConfig.player("score.coins") );
+
         this.timeNextBonus = Number(update["bonus"]["time_next_bonus"]);
         this.bonus.update("timeNextBonus", Number(update["bonus"]["time_next_bonus"]));
 

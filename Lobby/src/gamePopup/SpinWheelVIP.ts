@@ -270,15 +270,15 @@ class SpinWheelVIP extends GenericPo {
 		Com.addBitmapAt(this, "spin_wheel_vip_json.doctor_bottomcase", 93, 874);
 		Com.addBitmapAt(this, "spin_wheel_vip_json.doctor", 147, 295);
 
-		// close button
-		this.closeButton = Com.addDownButtonAt(this, "spin_wheel_vip_json.close_button", "spin_wheel_vip_json.close_button", 1935, 64, super.onClose, true );
-
 		// screens
 		this.leftScreen = Com.addBitmapAt(this, "spin_wheel_vip_json.curtain", 0, 0);
 		this.rightScreen = Com.addBitmapAt(this, "spin_wheel_vip_json.curtain", 2000, 0);
 		this.rightScreen.scaleX = -1;
 
 		this.openScreens();
+
+		// close button
+		this.closeButton = Com.addDownButtonAt(this, "spin_wheel_vip_json.close_button", "spin_wheel_vip_json.close_button", 1900, 64, super.onClose, true );
 	}
 
 	/**
