@@ -131,7 +131,7 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
     /**
      * update bonus data
      */
-    public updateBonusData(data: any): void {
+    public updateBonusData(data: any, updateCoinsNow: boolean = true ): void {
         data = JSON.parse( data );
         let update = data["update"];
         PlayerConfig.player("bonus.hourly_bonus_count", update["bonus"]["hourly_bonus_count"]);
@@ -140,8 +140,10 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
         PlayerConfig.player("score.coins", update["score"]["coins"]);
         Wheel.updateBonus(PlayerConfig.player("bonus"));
 
-        Trigger.flyingCoins( 40, new egret.Point(1250,780) );
-        UserVo.coinsTo( PlayerConfig.player("score.coins") );
+        if( updateCoinsNow ) {
+            Trigger.flyingCoins( 40, new egret.Point(1250,780) );
+            UserVo.coinsTo( PlayerConfig.player("score.coins") );
+        }
 
         this.timeNextBonus = Number(update["bonus"]["time_next_bonus"]);
         this.bonus.update("timeNextBonus", Number(update["bonus"]["time_next_bonus"]));

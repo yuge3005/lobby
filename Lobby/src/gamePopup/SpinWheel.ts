@@ -259,6 +259,8 @@ class SpinWheel extends GenericPo{
 		Wheel.spinWheelCoinsNumber = Number(data["reward"]["value"]);
 
 		this.runWheelTo( Wheel.sector );
+
+		Trigger.instance["spinBar"].updateBonusData( dataStr, false );
 	}
 
 	private getWheelResult( data: string ): void{
