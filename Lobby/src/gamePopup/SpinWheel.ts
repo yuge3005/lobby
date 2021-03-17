@@ -34,6 +34,8 @@ class SpinWheel extends GenericPo{
 
 	public constructor() {
 		super();
+
+		this.cannotQuick = true;
 	}
 
 	protected init() {

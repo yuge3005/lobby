@@ -42,9 +42,8 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
         }
         // hourly overplus
         Com.addBitmapAt(this.hourlyPoint, "lobby_json.wheel_time_bg", 1, 35);
-        this.hourlyOverplusText = Com.addTextAt(this.hourlyPoint, 25, 114, 245, 47, 32, false, false);
+        this.hourlyOverplusText = Com.addLabelAt(this.hourlyPoint, 1, 35, 289, 53, 32);
         this.hourlyOverplusText.fontFamily = "Righteous";
-        this.hourlyOverplusText.verticalAlign = "middle";
         this.hourlyOverplusText.stroke = 2;
         this.hourlyOverplusText.strokeColor = 0x025416;
 

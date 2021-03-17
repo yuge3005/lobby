@@ -43,7 +43,7 @@ class Trigger {
 	 * quick close
 	 */
 	private quickClose(): void {
-		if (this.currentPo) this.closeCurrentPo();
+		if (this.currentPo && !this.currentPo["cannotQuick"] ) this.closeCurrentPo();
 	}
 
 	public static registTrigger( trigObject: Object, className: string, classUrl: string, configUrl: string ){
