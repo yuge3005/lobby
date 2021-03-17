@@ -1,4 +1,3 @@
-
 class HourlyBonusBar extends egret.DisplayObjectContainer {
     private _enabled: boolean;
     private bonus: BonusVo;
@@ -81,6 +80,8 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
      * on seconds timer
      */
     private onSecondsTimer(): void {
+        if( GlobelSettings.bonusUI && GlobelSettings.bonusUI.stage ) GlobelSettings.bonusUI.timerStaus( this.leftTime, PlayerConfig.player( "bonus.hourly_bonus_count" ) );
+
         if (this.leftTime <= 0) {
             this.enabled = true;
         } else {
@@ -132,6 +133,7 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
      * update bonus data
      */
     public updateBonusData(data: any): void {
+        data = JSON.parse( data );
         let update = data["update"];
         PlayerConfig.player("bonus.hourly_bonus_count", update["bonus"]["hourly_bonus_count"]);
         PlayerConfig.player("bonus.random", update["bonus"]["random"]);
@@ -187,5 +189,10 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
 				this.collectText.text = MuLang.getText( "spin_wheel", MuLang.CASE_UPPER );
 			}
 		} else this.hourlyOverplusText.visible = true;
+	}
+
+    public colectDailyBonus(): void {
+        let data = {json: JSON.stringify({debug: {}, fb: PlayerConfig.player("facebook.id"), seed: new Date().valueOf()})};
+        new DataServer().getDataFromUrl( eval("API_HOST") + "/cmd.php?action=collect_bonus", this.updateBonusData.bind(this), this, true, data, null);
 	}
 }

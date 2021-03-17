@@ -281,7 +281,7 @@ class Trigger {
 				break;
 			case "collect_bonus":
 				// if( this.currentPo )this.closeCurrentPo();
-				this["spinBar"].colectDailyBonus(event["callback"] || function () { });
+				this["spinBar"].colectDailyBonus();
 				break;
 		}
 	}
