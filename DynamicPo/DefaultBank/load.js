@@ -37,7 +37,8 @@ var DefaultBank = (function (_super) {
         Com.addBitmapAt(this, "defaultBank_json.title_line", 710, 21);
         this.inited = true;
         this.dispatchEvent(new egret.Event(GenericModal.GENERIC_MODAL_LOADED));
-        Com.addObjectAt(this, new CollectHourlyBonusBar, 0, 0);
+        GlobelSettings.bonusUI = new DefaultBankHourlyBonusBar;
+        Com.addObjectAt(this, GlobelSettings.bonusUI, 761, 21);
     };
     DefaultBank.prototype.buildCurrentBankType = function (type) {
         if (type == 0)
@@ -187,7 +188,7 @@ var BankCoinItem = (function (_super) {
         lpTx.strokeColor = 0xFF0000;
         lpTx.scaleX = 0.9;
         lpTx.text = "+" + Math.round(data["loyalty_base_point"]);
-        if (data["total_pieces"]) {
+        if (Number(data["total_pieces"])) {
             var puzzleBg = Com.addBitmapAt(_this, "defaultBank_json.loyalty_points_bg", 1023 - 215, 6);
             puzzleBg.width = 217;
             var puzzle = Com.addBitmapAt(_this, "defaultBank_json.icon_collection", 847, 15);
@@ -243,4 +244,44 @@ var BankChipItem = (function (_super) {
     return BankChipItem;
 }(BankProductItem));
 __reflect(BankChipItem.prototype, "BankChipItem");
+var DefaultBankHourlyBonusBar = (function (_super) {
+    __extends(DefaultBankHourlyBonusBar, _super);
+    function DefaultBankHourlyBonusBar() {
+        var _this = _super.call(this) || this;
+        Com.addBitmapAt(_this, "defaultBank_json.dinero_free_bonus_bg", 0, 0);
+        _this.coin = new Coin;
+        _this.coin.scaleX = _this.coin.scaleY = 0.5;
+        Com.addObjectAt(_this, _this.coin, 15, 38);
+        _this.coin.play(-1);
+        _this.titleTx = Com.addTextAt(_this, 100, 10, 300, 40, 40);
+        _this.titleTx.text = MuLang.getText("free_bonus");
+        _this.coinsTx = Com.addTextAt(_this, 100, 54, 300, 32, 32);
+        _this.touchChildren = false;
+        _this.addEventListener(egret.TouchEvent.TOUCH_TAP, _this.onTap, _this);
+        return _this;
+    }
+    DefaultBankHourlyBonusBar.prototype.timerStaus = function (time, status) {
+        if (this.coinsChangeingAnimation)
+            return;
+        if (time > 0)
+            this.coinsTx.text = Utils.secondToHour(time);
+        else {
+            if (!this.touchEnabled)
+                this.touchEnabled = true;
+            if (status == PlayerConfig.player("bonus.hourly_bonus_count_max")) {
+                this.coinsTx.text = GlobelSettings.language == "en" ? "FREE SPINS" : (GlobelSettings.language == "es" ? "JUGADAS GRATIS" : "JOGADA GRÁTIS");
+            }
+            var hourlyBonuses = PlayerConfig.player("bonus.hourly_bonuses");
+            var bonus = hourlyBonuses[PlayerConfig.player("score.level")];
+            this.coinsTx.text = Utils.formatCoinsNumber(bonus);
+        }
+    };
+    DefaultBankHourlyBonusBar.prototype.onTap = function (event) {
+        var ev = new egret.Event(GenericModal.MODAL_COMMAND);
+        ev["cmd"] = "collect_bonus";
+        this.parent.dispatchEvent(ev);
+    };
+    return DefaultBankHourlyBonusBar;
+}(CollectHourlyBonusBar));
+__reflect(DefaultBankHourlyBonusBar.prototype, "DefaultBankHourlyBonusBar");
 //# sourceMappingURL=DefaultBank.js.map
