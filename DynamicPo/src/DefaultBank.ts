@@ -292,16 +292,16 @@ class DefaultBankHourlyBonusBar extends CollectHourlyBonusBar{
 
 		if( time > 0 ) this.coinsTx.text = Utils.secondToHour( time );
 		else{
-			if( !this.touchEnabled ) this.touchEnabled = true;
-
 			if( status == PlayerConfig.player( "bonus.hourly_bonus_count_max" ) ){
 				this.coinsTx.text = GlobelSettings.language == "en" ? "FREE SPINS" : ( GlobelSettings.language == "es" ? "JUGADAS GRATIS": "JOGADA GRÁTIS" );
 			}
+			else{
+				if( !this.touchEnabled ) this.touchEnabled = true;
+				let hourlyBonuses: Array<number> = PlayerConfig.player( "bonus.hourly_bonuses" );
+				let bonus: number = hourlyBonuses[PlayerConfig.player("score.level")];
 
-			let hourlyBonuses: Array<number> = PlayerConfig.player( "bonus.hourly_bonuses" );
-			let bonus: number = hourlyBonuses[PlayerConfig.player("score.level")];
-
-			this.coinsTx.text = Utils.formatCoinsNumber( bonus );
+				this.coinsTx.text = Utils.formatCoinsNumber( bonus );
+			}
 		}
 	}
 
@@ -309,5 +309,7 @@ class DefaultBankHourlyBonusBar extends CollectHourlyBonusBar{
 		let ev: egret.Event = new egret.Event( GenericModal.MODAL_COMMAND );
 		ev["cmd"] = "collect_bonus";
 		this.parent.dispatchEvent( ev );
+
+		this.touchEnabled = false;
 	}
 }

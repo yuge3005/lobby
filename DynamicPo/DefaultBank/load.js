@@ -266,20 +266,23 @@ var DefaultBankHourlyBonusBar = (function (_super) {
         if (time > 0)
             this.coinsTx.text = Utils.secondToHour(time);
         else {
-            if (!this.touchEnabled)
-                this.touchEnabled = true;
             if (status == PlayerConfig.player("bonus.hourly_bonus_count_max")) {
                 this.coinsTx.text = GlobelSettings.language == "en" ? "FREE SPINS" : (GlobelSettings.language == "es" ? "JUGADAS GRATIS" : "JOGADA GRÁTIS");
             }
-            var hourlyBonuses = PlayerConfig.player("bonus.hourly_bonuses");
-            var bonus = hourlyBonuses[PlayerConfig.player("score.level")];
-            this.coinsTx.text = Utils.formatCoinsNumber(bonus);
+            else {
+                if (!this.touchEnabled)
+                    this.touchEnabled = true;
+                var hourlyBonuses = PlayerConfig.player("bonus.hourly_bonuses");
+                var bonus = hourlyBonuses[PlayerConfig.player("score.level")];
+                this.coinsTx.text = Utils.formatCoinsNumber(bonus);
+            }
         }
     };
     DefaultBankHourlyBonusBar.prototype.onTap = function (event) {
         var ev = new egret.Event(GenericModal.MODAL_COMMAND);
         ev["cmd"] = "collect_bonus";
         this.parent.dispatchEvent(ev);
+        this.touchEnabled = false;
     };
     return DefaultBankHourlyBonusBar;
 }(CollectHourlyBonusBar));
