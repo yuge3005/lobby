@@ -5,7 +5,7 @@
 		}],
 	"resources":[{
 			"name":"defaultBank_json",
-			"subkeys":"arrow_up,best,bg_single_buycoins,btn_close,buy_btn,coins01,coins02,coins03,coins04,coins05,coins06,coins_bg,coins_en,coins_es,coins_pt,dinero_01,dinero_02,dinero_03,dinero_bg,dinero_button_bg,dinero_en,dinero_es,dinero_free_bonus_bg,dinero_pt,extra_bg,flag_extra,icon_collection,loyalty_points_bg,loyalty_points_icon,puzzle_number_1,puzzle_number_2,puzzle_number_3,title_line",
+			"subkeys":"arrow_up,best,bg_single_buycoins,btn_close,buy_btn,coins01,coins02,coins03,coins04,coins05,coins06,coins_bg,coins_en,coins_es,coins_pt,dinero_01,dinero_02,dinero_03,dinero_bg,dinero_button_bg,dinero_en,dinero_es,dinero_free_bonus_bg,dinero_pt,extra_bg,flag_extra,icon_collection,loyalty_points_bg,loyalty_points_icon,puzzle_number_1,puzzle_number_2,puzzle_number_3,title_line,getCoinsParticle",
 			"type":"sheet",
 			"url":"defaultBank.json"
 		}]
