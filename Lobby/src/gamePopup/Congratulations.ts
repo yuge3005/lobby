@@ -175,11 +175,11 @@ class Congratulations extends GenericPo {
 
 		if (Congratulations.type === 0) {
 			Trigger.flyingCoins(40, new egret.Point(1250,780) );
-			UserVo.addCoins( this.normalBonus )
+			UserVo.addCoins( Congratulations.coins )
 		}
 		else if (Congratulations.type === 1) {
 			Trigger.flyingDinero( 20, new egret.Point(1230,780) );
-			UserVo.addDineros( this.normalBonus );
+			UserVo.addDineros( Congratulations.chips );
 		}
 		else if (Congratulations.type === 2) {
 			UserVo.addCoins( Congratulations.coins );

@@ -205,7 +205,7 @@ class UserVo {
 
 	public static dineroTo( dinero: number ){
 		this._instance._dineroReal = dinero;
-		TweenerTool.tweenTo( this._instance, { dinero: dinero }, 400 );
+		TweenerTool.tweenTo( this._instance, { dineros: dinero }, 400 );
 	}
 
 	private set xp(xp: number) {
