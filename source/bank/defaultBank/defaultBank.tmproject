@@ -1,5 +1,13 @@
 {
     "files": [
+        "./coins06.png",
+        "./coins05.png",
+        "./coins04.png",
+        "./coins03.png",
+        "./coins02.png",
+        "./coins01.png",
+        "./coins_pt.png",
+        "./coins_es.png",
         "./coins_en.png",
         "./coins_bg.png",
         "./buy_btn.png",
@@ -14,6 +22,7 @@
         "./loyalty_points_icon.png",
         "./loyalty_points_bg.png",
         "./icon_collection.png",
+        "./getCoinsParticle.png",
         "./flag_extra.png",
         "./extra_bg.png",
         "./dinero_pt.png",
@@ -24,15 +33,7 @@
         "./dinero_bg.png",
         "./dinero_03.png",
         "./dinero_02.png",
-        "./dinero_01.png",
-        "./coins06.png",
-        "./coins05.png",
-        "./coins04.png",
-        "./coins03.png",
-        "./coins02.png",
-        "./coins01.png",
-        "./coins_pt.png",
-        "./coins_es.png"
+        "./dinero_01.png"
     ],
     "projectName": "defaultBank",
     "version": 5,
