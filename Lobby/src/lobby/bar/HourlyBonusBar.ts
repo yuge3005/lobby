@@ -196,6 +196,11 @@ class HourlyBonusBar extends egret.DisplayObjectContainer {
 	}
 
     public colectDailyBonus(): void {
+        if( this.collectTimes == 4 ){
+            Wheel.modal = SpinWheel.SpinWheelModel["RANDOM"];
+            Trigger.insertInstance(new SpinWheel());
+            return;
+        }
         let data = {json: JSON.stringify({debug: {}, fb: PlayerConfig.player("facebook.id"), seed: new Date().valueOf()})};
         new DataServer().getDataFromUrl( eval("API_HOST") + "/cmd.php?action=collect_bonus", this.updateBonusData.bind(this), this, true, data, null);
 	}

@@ -280,8 +280,11 @@ class DefaultBankHourlyBonusBar extends CollectHourlyBonusBar{
 		this.coin.play( -1 );
 
 		this.titleTx = Com.addTextAt( this, 100, 10, 300, 40, 40 );
+		this.titleTx.fontFamily = "Righteous";
 		this.titleTx.text = MuLang.getText( "free_bonus" );
 		this.coinsTx = Com.addTextAt( this, 100, 54, 300, 32, 32 );
+		this.coinsTx.textColor = 0xFFF94E;
+		this.coinsTx.fontFamily = "Righteous";
 
 		this.touchChildren = false;
 		this.addEventListener( egret.TouchEvent.TOUCH_TAP, this.onTap, this );
@@ -292,11 +295,11 @@ class DefaultBankHourlyBonusBar extends CollectHourlyBonusBar{
 
 		if( time > 0 ) this.coinsTx.text = Utils.secondToHour( time );
 		else{
+			if( !this.touchEnabled ) this.touchEnabled = true;
 			if( status == PlayerConfig.player( "bonus.hourly_bonus_count_max" ) ){
 				this.coinsTx.text = GlobelSettings.language == "en" ? "FREE SPINS" : ( GlobelSettings.language == "es" ? "JUGADAS GRATIS": "JOGADA GRÁTIS" );
 			}
 			else{
-				if( !this.touchEnabled ) this.touchEnabled = true;
 				let hourlyBonuses: Array<number> = PlayerConfig.player( "bonus.hourly_bonuses" );
 				let bonus: number = hourlyBonuses[PlayerConfig.player("score.level")];
 
