@@ -249,15 +249,20 @@ var DefaultBankHourlyBonusBar = (function (_super) {
     function DefaultBankHourlyBonusBar() {
         var _this = _super.call(this) || this;
         Com.addBitmapAt(_this, "defaultBank_json.dinero_free_bonus_bg", 0, 0);
-        _this.coin = new Coin;
-        _this.coin.scaleX = _this.coin.scaleY = 0.5;
-        Com.addObjectAt(_this, _this.coin, 15, 38);
-        _this.coin.play(-1);
+        _this.coinUI = Com.addBitmapAtMiddle(_this, "defaultBank_json.getCoinsParticle", 70, 45);
+        _this.coinUI.scaleX = 1.25;
+        _this.coinUI.scaleY = 1.25;
+        _this.coinRotation = 0;
         _this.titleTx = Com.addTextAt(_this, 100, 10, 300, 40, 40);
+        _this.titleTx.fontFamily = "Righteous";
         _this.titleTx.text = MuLang.getText("free_bonus");
         _this.coinsTx = Com.addTextAt(_this, 100, 54, 300, 32, 32);
+        _this.coinsTx.textColor = 0xFFF94E;
+        _this.coinsTx.fontFamily = "Righteous";
         _this.touchChildren = false;
         _this.addEventListener(egret.TouchEvent.TOUCH_TAP, _this.onTap, _this);
+        _this.addEventListener(egret.Event.ENTER_FRAME, _this.onFrame, _this);
+        _this.addEventListener(egret.Event.REMOVED_FROM_STAGE, _this.onRemove, _this);
         return _this;
     }
     DefaultBankHourlyBonusBar.prototype.timerStaus = function (time, status) {
@@ -266,12 +271,12 @@ var DefaultBankHourlyBonusBar = (function (_super) {
         if (time > 0)
             this.coinsTx.text = Utils.secondToHour(time);
         else {
+            if (!this.touchEnabled)
+                this.touchEnabled = true;
             if (status == PlayerConfig.player("bonus.hourly_bonus_count_max")) {
                 this.coinsTx.text = GlobelSettings.language == "en" ? "FREE SPINS" : (GlobelSettings.language == "es" ? "JUGADAS GRATIS" : "JOGADA GRÁTIS");
             }
             else {
-                if (!this.touchEnabled)
-                    this.touchEnabled = true;
                 var hourlyBonuses = PlayerConfig.player("bonus.hourly_bonuses");
                 var bonus = hourlyBonuses[PlayerConfig.player("score.level")];
                 this.coinsTx.text = Utils.formatCoinsNumber(bonus);
@@ -283,6 +288,15 @@ var DefaultBankHourlyBonusBar = (function (_super) {
         ev["cmd"] = "collect_bonus";
         this.parent.dispatchEvent(ev);
         this.touchEnabled = false;
+    };
+    DefaultBankHourlyBonusBar.prototype.onFrame = function (event) {
+        this.coinRotation += 10 / 180 * Math.PI;
+        this.coinUI.scaleX = Math.sin(this.coinRotation);
+    };
+    DefaultBankHourlyBonusBar.prototype.onRemove = function (event) {
+        this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTap, this);
+        this.removeEventListener(egret.Event.ENTER_FRAME, this.onFrame, this);
+        this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onRemove, this);
     };
     return DefaultBankHourlyBonusBar;
 }(CollectHourlyBonusBar));

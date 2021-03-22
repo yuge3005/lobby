@@ -268,16 +268,18 @@ class BankChipItem extends BankProductItem{
 class DefaultBankHourlyBonusBar extends CollectHourlyBonusBar{
 
 	private coinsChangeingAnimation: boolean;
+	private coinUI: egret.Bitmap;
+	private coinRotation: number;
 
 	public constructor() {
 		super();
 
 		Com.addBitmapAt( this, "defaultBank_json.dinero_free_bonus_bg", 0, 0 );
 
-		this.coin = new Coin;
-		this.coin.scaleX = this.coin.scaleY = 0.5;
-		Com.addObjectAt( this, this.coin, 15, 38 );
-		this.coin.play( -1 );
+		this.coinUI = Com.addBitmapAtMiddle( this, "defaultBank_json.getCoinsParticle", 70, 45 );
+		this.coinUI.scaleX = 1.25;
+		this.coinUI.scaleY = 1.25;
+		this.coinRotation = 0;
 
 		this.titleTx = Com.addTextAt( this, 100, 10, 300, 40, 40 );
 		this.titleTx.fontFamily = "Righteous";
@@ -288,6 +290,9 @@ class DefaultBankHourlyBonusBar extends CollectHourlyBonusBar{
 
 		this.touchChildren = false;
 		this.addEventListener( egret.TouchEvent.TOUCH_TAP, this.onTap, this );
+
+		this.addEventListener( egret.Event.ENTER_FRAME, this.onFrame, this );
+		this.addEventListener( egret.Event.REMOVED_FROM_STAGE, this.onRemove, this );
 	}
 
 	public timerStaus( time: number, status: number ){
@@ -314,5 +319,17 @@ class DefaultBankHourlyBonusBar extends CollectHourlyBonusBar{
 		this.parent.dispatchEvent( ev );
 
 		this.touchEnabled = false;
+	}
+
+	private onFrame( event: egret.Event ){
+		this.coinRotation += 10 / 180 * Math.PI;
+		this.coinUI.scaleX = Math.sin( this.coinRotation );
+	}
+
+	private onRemove( event: egret.Event ){
+		this.removeEventListener( egret.TouchEvent.TOUCH_TAP, this.onTap, this );
+
+		this.removeEventListener( egret.Event.ENTER_FRAME, this.onFrame, this );
+		this.removeEventListener( egret.Event.REMOVED_FROM_STAGE, this.onRemove, this );
 	}
 }
