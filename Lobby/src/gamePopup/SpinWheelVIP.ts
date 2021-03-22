@@ -19,8 +19,7 @@ class SpinWheelVIP extends GenericPo {
 	private coinsIcon: egret.DisplayObjectContainer;
 	private spinText: egret.TextField;
 	private winText: egret.TextField;
-	private coinsNumber: egret.TextField;
-	private coinsScale: number;
+	private coinsNumber: TextLabel;
 	private coinsText: egret.TextField;
 	private coinsTimer: egret.Timer;
 	private collectBtn: egret.DisplayObjectContainer;
@@ -212,7 +211,7 @@ class SpinWheelVIP extends GenericPo {
 		this.winText.strokeColor = 0x0037AD;
 
 		// win coins number
-		this.coinsNumber = Com.addTextAt(this.flagContainer, 306, 452, 492, 121, 90, true, true);
+		this.coinsNumber = Com.addLabelAt(this.flagContainer, 306, 452, 492, 121, 90, true, true);
 		this.coinsNumber.fontFamily = "Righteous";
 		this.coinsNumber.anchorOffsetX = 246;
 		this.coinsNumber.anchorOffsetY = 60;
@@ -450,8 +449,7 @@ class SpinWheelVIP extends GenericPo {
 		this.btnContainer.touchEnabled = false;
 
 		this.flagContainer.visible = true;
-		this.coinsNumber.text = Utils.formatCoinsNumber(Wheel.spinWheelCoinsNumber);
-		this.coinsScale = 1.6 - (Wheel.spinWheelCoinsNumber.toString().length>3?(Wheel.spinWheelCoinsNumber.toString().length-3):0)*0.1;
+		this.coinsNumber.setText( Utils.formatCoinsNumber(Wheel.spinWheelCoinsNumber) );
 		egret.Tween.get(this.flag)
 			.to({skewX: 10, height: 281}, 250)
 			.to({skewX: -10, height: 562}, 250)
@@ -469,8 +467,9 @@ class SpinWheelVIP extends GenericPo {
 	 * coins text animation
 	 */
 	private startCoinsTextAnimation(scale: boolean):void {
+		let newScale: number = scale ? 1 : 0.9;
 		egret.Tween.get(this.coinsNumber)
-			.to({scaleX: scale ? this.coinsScale : (this.coinsScale-0.1), scaleY: scale ? this.coinsScale : (this.coinsScale-0.1)}, 400, egret.Ease.sineOut)
+			.to({scaleX: newScale, scaleY: newScale}, 400, egret.Ease.sineOut)
 			.call(this.startCoinsTextAnimation, this, [!scale]);
 	}
 
