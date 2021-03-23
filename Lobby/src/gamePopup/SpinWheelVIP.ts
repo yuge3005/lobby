@@ -18,7 +18,7 @@ class SpinWheelVIP extends GenericPo {
 	private flag: egret.Bitmap;
 	private coinsIcon: egret.DisplayObjectContainer;
 	private spinText: egret.TextField;
-	private winText: egret.TextField;
+	private winText: TextLabel;
 	private coinsNumber: TextLabel;
 	private coinsText: egret.TextField;
 	private coinsTimer: egret.Timer;
@@ -200,13 +200,12 @@ class SpinWheelVIP extends GenericPo {
 		this.flag.height = 0;
 
 		// win text
-		this.winText = Com.addTextAt(this.flagContainer, 308, 337, 432, 100, 72, true, true);
+		this.winText = Com.addLabelAt(this.flagContainer, 308, 337, 432, 100, 72, true, true);
 		this.winText.fontFamily = "Righteous";
-		this.winText.text = MuLang.getText("SPIN_WHEEL_FLAG_TITLE", MuLang.CASE_UPPER);
+		this.winText.setText( MuLang.getText("SPIN_WHEEL_FLAG_TITLE", MuLang.CASE_UPPER) );
 		this.winText.anchorOffsetX = 216;
 		this.winText.anchorOffsetY = 50;
 		this.winText.scaleX = this.winText.scaleY = 0;
-		this.winText.verticalAlign = "middle";
 		this.winText.stroke = 4;
 		this.winText.strokeColor = 0x0037AD;
 
