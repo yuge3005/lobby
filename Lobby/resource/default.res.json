@@ -29,7 +29,7 @@
 			"name": "congratulations"
 		},
 		{
-			"keys": "spin_wheel_vip_json,wheel_flag_json",
+			"keys": "spin_wheel_vip_json,wheel_flag_json,spin_wav",
 			"name": "spin_wheel_vip"
 		},
 		{
