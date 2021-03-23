@@ -33,7 +33,7 @@
 			"name": "spin_wheel_vip"
 		},
 		{
-			"keys": "spin_wheel_json,wheel_flag_json,win_wheel1_mp3",
+			"keys": "spin_wheel_json,wheel_flag_json,win_wheel1_mp3,spin_wav",
 			"name": "wheel"
 		},
 		{
@@ -194,6 +194,11 @@
 			"type": "sheet",
 			"name": "gameSettings_json",
 			"subkeys": "OK,X_btn,avatar,bg,bg_popup,bg_slider_off,bg_slider_on,btn_arrow,dr,fb_bt_settings,flag_en,flag_es,flag_pt,gl_bt_settings,icon_connect,icon_notification,language_icon,music_icon,rate_icon,scroll_bar,scroll_bar_handle,slider_switch,sound_fx_icon,support_btn,support_icon,tab_bg,visual_fx_icon"
+		},
+		{
+			"url": "assets/wheel/spin.wav",
+			"type": "sound",
+			"name": "spin_wav"
 		}
 	]
 }

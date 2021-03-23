@@ -422,10 +422,7 @@ class SpinWheelVIP extends GenericPo {
 	}
 
 	private runWheelTo(sector: number): void{
-		if (SoundManager.soundOn) {
-			let sound = <egret.Sound>RES.getRes("spin_wav");
-			sound.play(0, 1);
-		}
+		SoundManager.play("spin_wav");
 
 		let tween = egret.Tween.get(this.wheel, {onChange: this.onWheelRotate, onChangeObj: this});
 		tween.wait(50);
