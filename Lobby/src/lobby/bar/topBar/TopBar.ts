@@ -13,8 +13,8 @@ class TopBar extends egret.DisplayObjectContainer {
         super();
 
         this.blockPurchase = Boolean(PlayerConfig.player("is_block_purchase"));
-		// let haveDealOverplus = Trigger.instance.haveDealOverplus;
-        // let havePoTimer = Trigger.instance.havePoTimer;
+		let haveDealOverplus = Trigger.instance.haveDealOverplus;
+        let havePoTimer = Trigger.instance.havePoTimer;
 
         let bar_up: egret.Bitmap = Com.addBitmapAt(this, "lobby_json.bar_up", 0, 0);
         bar_up.scaleX = bar_up.scaleY = 2;
@@ -42,11 +42,11 @@ class TopBar extends egret.DisplayObjectContainer {
         bankBtnText.strokeColor = 0x004913;
         bankBtnText.text = MuLang.getText("buy", MuLang.CASE_UPPER);
 
-        let haveDealTimer = true;//havePoTimer && haveDealOverplus && !this.blockPurchase;
+        let haveDealTimer = havePoTimer && haveDealOverplus && !this.blockPurchase;
         // deal btn
         this.dealBtn = new egret.DisplayObjectContainer();
         this.dealBtn.touchEnabled = true;
-        // this.dealBtn.filters = (havePoTimer && !haveDealOverplus) || this.blockPurchase ? [MatrixTool.colorMatrix(0.33, 0.33, 1)] : [];
+        this.dealBtn.filters = (havePoTimer && !haveDealOverplus) || this.blockPurchase ? [MatrixTool.colorMatrix(0.33, 0.33, 1)] : [];
         this.dealBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.showPo, this);
         Com.addObjectAt(this, this.dealBtn, 1212, 16);
         // deal btn bg
@@ -118,7 +118,7 @@ class TopBar extends egret.DisplayObjectContainer {
      */
     private showPo(): void {
         if (this.blockPurchase) return;
-		// Trigger.showPo();
+		Trigger.showPo();
     }
 
     /**

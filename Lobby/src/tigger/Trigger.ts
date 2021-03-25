@@ -62,11 +62,26 @@ class Trigger {
 		this.instance.trigs.registPopupLimits(className, productId, startTime, endTime);
 	}
 
+	public get haveDealOverplus() {
+		return this.trigs.haveDealOverplus;
+	}
+
+	public get havePoTimer() {
+		return this.trigs.havePoTimer;
+	}
+
 	/**
 	 * enter lobby
 	 */
 	public static enterLobby(): void{
 		Trigger.instance.enterLobbyTrigger();
+	}
+
+	/**
+	 * show po
+	 */
+	public static showPo(): void {
+		Trigger.instance.showPo();
 	}
 
 	/**
