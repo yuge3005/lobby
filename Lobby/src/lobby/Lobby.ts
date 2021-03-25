@@ -4,7 +4,7 @@ class Lobby extends egret.DisplayObjectContainer{
     private static _instance: Lobby;
     private featureArea: AdArea;
     private gameList: GameList;
-    private topBar: TopBar;
+    public topBar: TopBar;
     private socialBar: SocialBar;
 
 	public constructor() {

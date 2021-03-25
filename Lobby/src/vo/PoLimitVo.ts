@@ -73,7 +73,7 @@ class PoLimitVo {
                 let time = Math.floor((this.expiredTime - new Date().valueOf()) / 1000);
                 if (time > 0) {
                     if (Lobby.getInstance()) {
-                        // Lobby.getInstance().updateDealOverplusText(time);
+                        Lobby.getInstance().topBar.updateOverplusText(time);
                     }
                     if (Trigger.instance["currentPo"]) {
                         Trigger.instance["currentPo"]["updateDealOverplusText"](time);
@@ -84,7 +84,7 @@ class PoLimitVo {
                         this.expiredTimer.stop();
                         this.expiredTimer = null;
                         if (Lobby.getInstance()) {
-                            // Lobby.getInstance().poOverplusOver();
+                            Lobby.getInstance().topBar.poOverplusOver();
                         }
                         if (Trigger.instance["currentPo"]) {
                             Trigger.instance["currentPo"]["poOverplusOver"]();
@@ -95,7 +95,7 @@ class PoLimitVo {
             this.expiredTimer.start();
         } else {
             if (Lobby.getInstance()) {
-                // Lobby.getInstance().poOverplusOver();
+                Lobby.getInstance().topBar.poOverplusOver();
             }
         }
 
