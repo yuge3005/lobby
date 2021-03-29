@@ -145,9 +145,11 @@ var BankCoinItem = (function (_super) {
                 bestTx.text = GlobelSettings.language == "en" ? "MOST POPULAR" : (GlobelSettings.language == "pt" ? "MAIS POPULAR" : "MÁS POPULAR");
             }
         }
+        var loyaltyLevel = LoyaltyVo.data["loyalty_level"];
+        var loyaltyArr = LoyaltyVo.data["privileges"];
         var coinsTx = Com.addLabelAt(_this, 230, 20, 400, 52, 52, true, true);
         coinsTx.textAlign = "left";
-        coinsTx.setText(Utils.formatCoinsNumber(data["items"][0]["after_discount_coins"]));
+        coinsTx.setText(Utils.formatCoinsNumber(Math.round(data["items"][0]["after_discount_coins"] * (1 + Number(loyaltyArr[loyaltyLevel]["purchase_bonus"])))));
         coinsTx.stroke = 4;
         coinsTx.strokeColor = 0;
         coinsTx.scaleX = 0.8;
@@ -212,8 +214,10 @@ var BankChipItem = (function (_super) {
         lp.scaleX = lp.scaleY = 0.5;
         var lpTx = Com.addTextAt(_this, 214, 586, 128, 46, 44, false, true);
         lpTx.text = "+" + Math.round(data["loyalty_base_point"]);
+        var loyaltyLevel = LoyaltyVo.data["loyalty_level"];
+        var loyaltyArr = LoyaltyVo.data["privileges"];
         var chipsTx = Com.addTextAt(_this, 0, 670, 480, 60, 56, true, true);
-        chipsTx.text = Utils.formatCoinsNumber(data["items"][0]["after_discount_chips"]);
+        chipsTx.text = Utils.formatCoinsNumber(Math.round(data["items"][0]["after_discount_chips"] * (1 + Number(loyaltyArr[loyaltyLevel]["purchase_bonus"]))));
         chipsTx.stroke = 5;
         chipsTx.strokeColor = 0x115F00;
         var oldTx = Com.addTextAt(_this, 0, 750, 480, 42, 40);
