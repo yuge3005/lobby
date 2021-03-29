@@ -236,7 +236,7 @@ class BankChipItem extends BankProductItem{
 		let loyaltyArr: Array<Object> = LoyaltyVo.data["privileges"];
 
 		let chipsTx: egret.TextField = Com.addTextAt( this, 0, 670, 480, 60, 56, true, true );
-		chipsTx.text = Utils.formatCoinsNumber( Math.round( data["items"][0]["after_discount_chips"] * ( 1 + Number(loyaltyArr[loyaltyLevel]["purchase_bonus"]) ) ) );
+		chipsTx.text = Utils.formatCoinsNumber( Math.round( data["items"][0]["after_discount_chips"] * ( 1 + Number(loyaltyArr[loyaltyLevel]["purchase_chips"]) ) ) );
 		chipsTx.stroke = 5;
 		chipsTx.strokeColor = 0x115F00;
 
