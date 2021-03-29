@@ -154,7 +154,7 @@ class BankCoinItem extends BankProductItem{
 
 		let coinsTx: TextLabel = Com.addLabelAt( this, 230, 20, 400, 52, 52, true, true );
 		coinsTx.textAlign = "left";
-		coinsTx.setText( Utils.formatCoinsNumber( data["items"][0]["after_discount_coins"] * ( 1 + Number(loyaltyArr[loyaltyLevel]["purchase_bonus"]) ) ) );
+		coinsTx.setText( Utils.formatCoinsNumber( Math.round( data["items"][0]["after_discount_coins"] * ( 1 + Number(loyaltyArr[loyaltyLevel]["purchase_bonus"]) ) ) ) );
 		coinsTx.stroke = 4;
 		coinsTx.strokeColor = 0;
 		coinsTx.scaleX = 0.8;
@@ -236,7 +236,7 @@ class BankChipItem extends BankProductItem{
 		let loyaltyArr: Array<Object> = LoyaltyVo.data["privileges"];
 
 		let chipsTx: egret.TextField = Com.addTextAt( this, 0, 670, 480, 60, 56, true, true );
-		chipsTx.text = Utils.formatCoinsNumber( data["items"][0]["after_discount_chips"] * ( 1 + Number(loyaltyArr[loyaltyLevel]["purchase_bonus"]) ) );
+		chipsTx.text = Utils.formatCoinsNumber( Math.round( data["items"][0]["after_discount_chips"] * ( 1 + Number(loyaltyArr[loyaltyLevel]["purchase_bonus"]) ) ) );
 		chipsTx.stroke = 5;
 		chipsTx.strokeColor = 0x115F00;
 
