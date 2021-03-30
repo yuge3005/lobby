@@ -33,7 +33,10 @@ class MuLang {
 		if( localStorage && ["pt","en","es"].indexOf( localStorage["language"] ) >= 0 )return localStorage["language"];
 		var resLan: string = PlayerConfig.player("settings.lang") || eval("getPlayer().settings.lang") || eval("getConfig().lang");
 		resLan = resLan.substr( 0, 2 );
-		if( ["pt","en","es"].indexOf(resLan ) >= 0 ) return resLan;
+		if( ["pt","en","es"].indexOf(resLan ) >= 0 ){
+			this.language = resLan;
+			return resLan;
+		}
 		return "pt";
 	}
 	public static lanuageNames: Object = {en:"english",es:"spanish",pt:"portuguese"};
