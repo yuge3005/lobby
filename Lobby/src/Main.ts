@@ -53,11 +53,6 @@ class Main extends egret.DisplayObjectContainer {
 		}catch(e){}
 		Trigger.isMobile = isMobile;
 
-		if( isMobile ){
-			this.x = stageW;
-			this.rotation = 90;
-		}
-
         Trigger.instance.stage = this;
         PlayerConfig.init();
         UserVo.init();
