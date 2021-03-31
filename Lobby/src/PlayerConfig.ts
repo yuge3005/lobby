@@ -202,7 +202,7 @@ class PlayerConfig {
 											let currentTime = Number(this.playerObject["time"]);
 											let expiredTime = Number(list[i]["expired_time"]);
 											let cooldownTime = Number(list[i]["cooldown_end_time"]);
-											Trigger.registLimits(className, Number(product["product_id"]), expiredTime - currentTime, cooldownTime - currentTime);
+											Trigger.registLimits(list[i]["id"], list[i]["type"], className, Number(product["product_id"]), expiredTime - currentTime, cooldownTime - currentTime);
 										}
 
 										GlobelSettings[className] = product;

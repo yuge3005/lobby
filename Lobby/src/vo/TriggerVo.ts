@@ -55,9 +55,9 @@ class TriggerVo {
 		}
 	}
 
-	public registLimits(className: string, productId: number, expiredTime: number, cooldownTime: number) {
+	public registLimits(id: number, type: string, className: string, productId: number, expiredTime: number, cooldownTime: number) {
 		this.haveTimer = true;
-		this.poLimits[className] = new PoLimitVo(className, productId, expiredTime, cooldownTime);
+		this.poLimits[className] = new PoLimitVo(id, type, className, productId, expiredTime, cooldownTime);
 	}
 
 	public registPopupLimits(className: string, productId: number, startTime: number, endTime: number) {

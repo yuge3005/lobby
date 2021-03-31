@@ -107,8 +107,8 @@ class TopBar extends egret.DisplayObjectContainer {
 	 */
 	public poOverplusOver(): void {
 		if (this.blockPurchase) return;
-		this.dealBtnText.height = 40;
-		this.dealBtnText.size = 20;
+		this.dealBtnText.height = 90;
+		this.dealBtnText.size = 48;
 		this.timeBg.visible = this.dealTimeOverplus.visible = false;
 		this.dealBtn.filters = [MatrixTool.colorMatrix(0.33, 0.33, 1)];
 	}
