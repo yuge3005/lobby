@@ -94,8 +94,8 @@ class TopBar extends egret.DisplayObjectContainer {
     public updateOverplusText(time: number): void {
         if (this.blockPurchase) return;
         if (this.timeBg.visible === false) {
-			this.dealBtnText.height = 32;
-			this.dealBtnText.size = 16;
+			this.dealBtnText.height = 64;
+			this.dealBtnText.size = 42;
 			this.timeBg.visible = this.dealTimeOverplus.visible = true;
 		}
 		this.dealBtn.filters = [];

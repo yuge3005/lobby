@@ -11,7 +11,7 @@ class PopupLimitVo extends PoLimitVo {
     }
 
     constructor(className: string, productId: number, startTime: number, endTime: number) {
-        super("", null, null, null);
+        super(0, "", "", null, null, null);
 
         this.className = className;
         this.productId = productId;
