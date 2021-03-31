@@ -37,6 +37,10 @@
     {
       "name": "promise",
       "path": "./promise"
+    },
+    {
+      "name": "basicUI",
+      "path": "../../Acom/library/basicUI/libsrc"
     }
   ]
 }
