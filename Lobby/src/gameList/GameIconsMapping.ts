@@ -5,16 +5,14 @@ class GameIconsMappingVo {
     private gameSmallIcon: string;
     private favoriteIcon: string;
     private gameURL: string;
-    private gameType: string;
     private position: number;
 
-    constructor(gameID: number, gameName: string, gameSmallIcon: string, favoriteIcon: string, gameURL: string = "", gameType: string = "") {
+    constructor(gameID: number, gameName: string, gameSmallIcon: string, favoriteIcon: string, gameURL: string = "" ) {
         this.gameID = gameID;
         this.gameName = gameName;
         this.gameSmallIcon = gameSmallIcon;
         this.favoriteIcon = favoriteIcon === "" ? gameSmallIcon: favoriteIcon;
         this.gameURL = gameURL;
-        this.gameType = gameType;
     }
 
     public get(key: string): any {
@@ -22,12 +20,6 @@ class GameIconsMappingVo {
             return this[key];
         }
         return null;
-    }
-
-    public get gamePath(): string {
-        let path = this.gameURL;
-        if (this.gameType !== "") path += (path.indexOf("?") >= 0 ? "&": "/?") + "gn=" + this.gameType;
-        return path;
     }
 }
 
@@ -43,8 +35,8 @@ let GameIconsMapping = {
     "41": new GameIconsMappingVo(41, "Pachinko", "pachinko_3", "", "/pachinko3"), 
     "42": new GameIconsMappingVo(42, "Pharaos", "pharao_s", "", "/pharos"), 
     "45": new GameIconsMappingVo(45, "DoubleBingo", "double_bingo", "", "/doubleBingo"), 
-    "46": new GameIconsMappingVo(46, "Halloween", "halloween", "", "/slotgames", "halloween"), 
-    "47": new GameIconsMappingVo(47, "EraDoGelo", "era_do_gelo", "", "/slotgames", "eradogelo"), 
+    "46": new GameIconsMappingVo(46, "Halloween", "halloween", "", "/halloween"), 
+    "47": new GameIconsMappingVo(47, "EraDoGelo", "era_do_gelo", "", "/slotgames"), 
     "48": new GameIconsMappingVo(48, "Prakaramba", "icon_prakaramba", "", "/prakaramba"), 
     "49": new GameIconsMappingVo(49, "SliverBall", "silver_ball", "", "/silverball"), 
     "50": new GameIconsMappingVo(50, "Aztec", "icon_aztecs", "", "/aztec"),
@@ -55,9 +47,9 @@ let GameIconsMapping = {
     "57": new GameIconsMappingVo(57, "DoubleTurbo90", "T90s", "", "/doubleTurbo90"), 
     "61": new GameIconsMappingVo(61, "Pachinko2", "pachinko_2", "", "/pachinko2"),
     "62": new GameIconsMappingVo(62, "DoubleMania", "double_mania", "", "/doublemania"),
-    "63": new GameIconsMappingVo(63, "HalloweenX", "halloweenX", "", "/slotgames", "halloweenx"),
+    "63": new GameIconsMappingVo(63, "HalloweenX", "halloweenX", "", "/halloweenX"),
     "65": new GameIconsMappingVo(65, "BonusBingo", "bonus_bingo", "", "/bonusBingo"),
-    "66": new GameIconsMappingVo(66, "Halloween25Line", "25_lines", "", "/slotgames", "halloween25line"),
+    "66": new GameIconsMappingVo(66, "Halloween25Line", "25_lines", "", "/halloween25Line"),
     "68": new GameIconsMappingVo(68, "Bonus Bingo", "copacabana", "", "/copacabana"),
     "69": new GameIconsMappingVo(69, "Bingo Bene", "bingo_bene", "", "/bingoBene"),
     "70": new GameIconsMappingVo(70, "SuperGoal", "super-goal", "", "/superGoal"),
