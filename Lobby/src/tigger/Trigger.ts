@@ -135,9 +135,9 @@ class Trigger {
 			// 	//new DataServer().getDataFromUrl( eval("API_HOST") + "cmd.php?action=list_requests", ......
 			// }
 
-			// if( Wheel.hasPurchase ){
-			// 	SpinWheelVo.showPurchasedWheelList();
-			// }
+			if( Wheel.hasPurchase ){
+				SpinWheelVo.showPurchasedWheelList();
+			}
 
 			// check secret bank purchase
 			// let isSecretPurchase = Boolean(PlayerConfig.player("is_secret_purchase"));

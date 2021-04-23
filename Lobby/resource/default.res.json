@@ -29,7 +29,7 @@
 			"name": "congratulations"
 		},
 		{
-			"keys": "spin_wheel_vip_json,wheel_flag_json,spin_wav",
+			"keys": "spin_wheel_vip_json,wheel_flag_json,spin_wav,wheel_running_mp3",
 			"name": "spin_wheel_vip"
 		},
 		{
@@ -199,6 +199,11 @@
 			"url": "assets/wheel/spin.wav",
 			"type": "sound",
 			"name": "spin_wav"
+		},
+		{
+			"url": "assets/wheel/wheel_running.mp3",
+			"type": "sound",
+			"name": "wheel_running_mp3"
 		}
 	]
 }

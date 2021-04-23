@@ -46,7 +46,7 @@ class Wheel {
 
 		let products = dataSource["products"], product = (products && products.length > 0) ? products[0]: null;
 		if (product) {
-			this.instance.purChaseProduct = new ProductVo(dataSource["product"]);
+			this.instance.purChaseProduct = new ProductVo(product);
 			this.hasPurchase = true;
 		}
 	}

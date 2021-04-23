@@ -1,4 +1,3 @@
-
 class SpinWheelVo {
     private static wheelList: Array<Object>;
 
@@ -15,23 +14,19 @@ class SpinWheelVo {
      * show purchased wheel list
      */
     public static showPurchasedWheelList(): void {
+        Wheel.hasPurchase = false;
         if (this.wheelList && this.wheelList.length > 0) {
-            this.wheelList.map((wheel, index) => {
-                if (wheel["type"] === "wheel_purchased") {
-                    let wheelData = this.wheelList.splice(index, 1)[0];
+            let wheelData = this.wheelList.shift();
 
-                    // Wheel.modal = SpinWheel.SpinWheelModel["COINS"];
-			        Wheel.initPurchased(wheelData);
+            Wheel.modal = SpinWheel.SpinWheelModel["COINS"];
+            Wheel.initPurchased(wheelData);
 
-                    if (Wheel.hasPurchase) {
-                        // wheel popup
-                        // let wheelPopup = new SpinWheel();
-                        // wheelPopup.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.showPurchasedWheelList.bind(this), this);
-                        // Trigger.insertInstance(wheelPopup);
-                        return;
-                    }
-                }
-            });
-        } else Wheel.hasPurchase = false;
+            if (Wheel.hasPurchase) {
+                let wheelPopup = new SpinWheel();
+                wheelPopup.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.showPurchasedWheelList.bind(this), this);
+                Trigger.insertInstance(wheelPopup);
+                return;
+            }
+        }
     }
 }
