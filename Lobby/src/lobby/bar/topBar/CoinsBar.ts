@@ -19,6 +19,7 @@ class CoinsBar extends egret.DisplayObjectContainer{
 	}
 
     private onCoinsChanged(coins: number): void {
+        coins = Math.round( coins );
 		this.coinsText.setText( Utils.formatCoinsNumber(coins) );
     }
 

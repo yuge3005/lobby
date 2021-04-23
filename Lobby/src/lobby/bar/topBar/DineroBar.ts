@@ -23,6 +23,7 @@ class DineroBar extends egret.DisplayObjectContainer{
     }
 
     private onDineroChanged(dinero: number): void {
+        dinero = Math.round( dinero );
 		this.dineroText.setText( Utils.formatCoinsNumber(dinero) );
     }
 }

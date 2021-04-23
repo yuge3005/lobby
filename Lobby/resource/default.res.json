@@ -33,7 +33,7 @@
 			"name": "spin_wheel_vip"
 		},
 		{
-			"keys": "spin_wheel_json,wheel_flag_json,win_wheel1_mp3,spin_wav",
+			"keys": "spin_wheel_json,wheel_flag_json,win_wheel1_mp3,spin_wav,wheel_running_mp3",
 			"name": "wheel"
 		},
 		{
