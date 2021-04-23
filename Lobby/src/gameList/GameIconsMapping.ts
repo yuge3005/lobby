@@ -36,7 +36,7 @@ let GameIconsMapping = {
     "42": new GameIconsMappingVo(42, "Pharaos", "pharao_s", "", "/pharos"), 
     "45": new GameIconsMappingVo(45, "DoubleBingo", "double_bingo", "", "/doubleBingo"), 
     "46": new GameIconsMappingVo(46, "Halloween", "halloween", "", "/halloween"), 
-    "47": new GameIconsMappingVo(47, "EraDoGelo", "era_do_gelo", "", "/slotgames"), 
+    "47": new GameIconsMappingVo(47, "EraDoGelo", "era_do_gelo", "", "/eraDoGelo"), 
     "48": new GameIconsMappingVo(48, "Prakaramba", "icon_prakaramba", "", "/prakaramba"), 
     "49": new GameIconsMappingVo(49, "SliverBall", "silver_ball", "", "/silverball"), 
     "50": new GameIconsMappingVo(50, "Aztec", "icon_aztecs", "", "/aztec"),
